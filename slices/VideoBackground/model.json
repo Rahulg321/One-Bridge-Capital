@@ -1,0 +1,16 @@
+{
+  "id": "video_background",
+  "type": "SharedSlice",
+  "name": "VideoBackground",
+  "description": "VideoBackground",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}
