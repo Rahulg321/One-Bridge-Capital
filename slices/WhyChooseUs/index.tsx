@@ -9,6 +9,7 @@ import {
   HeartHandshake,
   UserRound,
 } from "lucide-react";
+import { PrismicNextImage } from "@prismicio/next";
 
 /**
  * Props for `WhyChooseUs`.
@@ -69,22 +70,14 @@ const WhyChooseUs: FC<WhyChooseUsProps> = ({ slice }) => {
           className="absolute inset-0 bg-gradient-to-b from-slate-900/70 to-slate-800/70 mix-blend-multiply"
           aria-hidden="true"
         />
-        <img
-          src="/placeholder-pdkm6.png"
-          alt="Mountain backdrop"
-          className="w-full h-full object-cover"
+        <PrismicNextImage
+          field={slice.primary.background_image}
+          fill
+          priority
+          className="object-cover"
         />
       </div>
 
-      {/* Vertical "WHY US" text */}
-      <div
-        className="absolute left-4 top-1/2 -translate-y-1/2 text-white font-bold tracking-widest text-xl z-10 hidden lg:block"
-        style={{ writingMode: "vertical-lr" }}
-      >
-        WHY US
-      </div>
-
-      {/* Content Container */}
       <div className="container relative z-10 px-4 md:px-6 mx-auto max-w-7xl">
         <div className="flex flex-col items-center justify-center space-y-6 text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-white">

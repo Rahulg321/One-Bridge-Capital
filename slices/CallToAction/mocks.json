@@ -2,7 +2,27 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "fed",
+				"type": "Text"
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "deer",
+				"type": "Text"
+			},
+			"cta_link": {
+				"__TYPE__": "LinkContent",
+				"key": "765bcad0-41f6-4989-b2a5-c8abf1b8c9bd",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev",
+					"text": "talk"
+				}
+			}
+		},
 		"items": []
 	}
 ]

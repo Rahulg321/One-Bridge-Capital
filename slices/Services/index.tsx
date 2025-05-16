@@ -10,7 +10,6 @@ import {
   Database,
   TrendingUp,
 } from "lucide-react";
-
 /**
  * Props for `Services`.
  */
@@ -69,7 +68,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full py-16 md:py-24 bg-white relative"
+      className="relative  w-full py-16 md:py-24 bg-white"
     >
       <div className="container px-4 md:px-6 mx-auto max-w-7xl">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">

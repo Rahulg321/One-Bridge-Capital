@@ -5,6 +5,9 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | FeaturedImageSlice
+  | ContactHeroSlice
+  | ContactFormSlice
   | WhyChooseUsSlice
   | ServicesSlice
   | ImageBackgroundSlice
@@ -76,6 +79,9 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | FeaturedImageSlice
+  | ContactHeroSlice
+  | ContactFormSlice
   | WhyChooseUsSlice
   | ServicesSlice
   | ImageBackgroundSlice
@@ -145,6 +151,47 @@ export type PageDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomepageDocument | PageDocument;
 
 /**
+ * Primary content in *CallToAction → Default → Primary*
+ */
+export interface CallToActionSliceDefaultPrimary {
+  /**
+   * Heading field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+
+  /**
+   * Cta Link field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.cta_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
  * Default variation for CallToAction Slice
  *
  * - **API ID**: `default`
@@ -153,7 +200,7 @@ export type AllDocumentTypes = HomepageDocument | PageDocument;
  */
 export type CallToActionSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<CallToActionSliceDefaultPrimary>,
   never
 >;
 
@@ -172,6 +219,111 @@ type CallToActionSliceVariation = CallToActionSliceDefault;
 export type CallToActionSlice = prismic.SharedSlice<
   "call_to_action",
   CallToActionSliceVariation
+>;
+
+/**
+ * Default variation for ContactForm Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactFormSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *ContactForm*
+ */
+type ContactFormSliceVariation = ContactFormSliceDefault;
+
+/**
+ * ContactForm Shared Slice
+ *
+ * - **API ID**: `contact_form`
+ * - **Description**: ContactForm
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactFormSlice = prismic.SharedSlice<
+  "contact_form",
+  ContactFormSliceVariation
+>;
+
+/**
+ * Default variation for ContactHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactHeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *ContactHero*
+ */
+type ContactHeroSliceVariation = ContactHeroSliceDefault;
+
+/**
+ * ContactHero Shared Slice
+ *
+ * - **API ID**: `contact_hero`
+ * - **Description**: ContactHero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactHeroSlice = prismic.SharedSlice<
+  "contact_hero",
+  ContactHeroSliceVariation
+>;
+
+/**
+ * Primary content in *FeaturedImage → Default → Primary*
+ */
+export interface FeaturedImageSliceDefaultPrimary {
+  /**
+   * Main Image field in *FeaturedImage → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_image.default.primary.main_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  main_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for FeaturedImage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedImageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeaturedImageSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FeaturedImage*
+ */
+type FeaturedImageSliceVariation = FeaturedImageSliceDefault;
+
+/**
+ * FeaturedImage Shared Slice
+ *
+ * - **API ID**: `featured_image`
+ * - **Description**: FeaturedImage
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedImageSlice = prismic.SharedSlice<
+  "featured_image",
+  FeaturedImageSliceVariation
 >;
 
 /**
@@ -267,6 +419,21 @@ export type ImageBackgroundSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Services → Default → Primary*
+ */
+export interface ServicesSliceDefaultPrimary {
+  /**
+   * Background Image field in *Services → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+}
+
+/**
  * Default variation for Services Slice
  *
  * - **API ID**: `default`
@@ -275,7 +442,7 @@ export type ImageBackgroundSlice = prismic.SharedSlice<
  */
 export type ServicesSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<ServicesSliceDefaultPrimary>,
   never
 >;
 
@@ -327,6 +494,21 @@ export type VideoBackgroundSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *WhyChooseUs → Default → Primary*
+ */
+export interface WhyChooseUsSliceDefaultPrimary {
+  /**
+   * Background Image field in *WhyChooseUs → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_choose_us.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+}
+
+/**
  * Default variation for WhyChooseUs Slice
  *
  * - **API ID**: `default`
@@ -335,7 +517,7 @@ export type VideoBackgroundSlice = prismic.SharedSlice<
  */
 export type WhyChooseUsSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<WhyChooseUsSliceDefaultPrimary>,
   never
 >;
 
@@ -385,8 +567,19 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
       CallToActionSlice,
+      CallToActionSliceDefaultPrimary,
       CallToActionSliceVariation,
       CallToActionSliceDefault,
+      ContactFormSlice,
+      ContactFormSliceVariation,
+      ContactFormSliceDefault,
+      ContactHeroSlice,
+      ContactHeroSliceVariation,
+      ContactHeroSliceDefault,
+      FeaturedImageSlice,
+      FeaturedImageSliceDefaultPrimary,
+      FeaturedImageSliceVariation,
+      FeaturedImageSliceDefault,
       HeroSlice,
       HeroSliceVariation,
       HeroSliceDefault,
@@ -395,12 +588,14 @@ declare module "@prismicio/client" {
       ImageBackgroundSliceVariation,
       ImageBackgroundSliceDefault,
       ServicesSlice,
+      ServicesSliceDefaultPrimary,
       ServicesSliceVariation,
       ServicesSliceDefault,
       VideoBackgroundSlice,
       VideoBackgroundSliceVariation,
       VideoBackgroundSliceDefault,
       WhyChooseUsSlice,
+      WhyChooseUsSliceDefaultPrimary,
       WhyChooseUsSliceVariation,
       WhyChooseUsSliceDefault,
     };
