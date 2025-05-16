@@ -1,0 +1,16 @@
+{
+  "id": "why_choose_us",
+  "type": "SharedSlice",
+  "name": "WhyChooseUs",
+  "description": "WhyChooseUs",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

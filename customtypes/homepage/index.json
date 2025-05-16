@@ -11,6 +11,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "why_choose_us": {
+              "type": "SharedSlice"
+            },
+            "services": {
+              "type": "SharedSlice"
+            },
+            "image_background": {
+              "type": "SharedSlice"
+            },
             "hero": {
               "type": "SharedSlice"
             },

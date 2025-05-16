@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 /**
  * Props for `VideoBackground`.
@@ -16,36 +18,34 @@ const VideoBackground: FC<VideoBackgroundProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="relative h-screen w-full overflow-hidden"
     >
-      Placeholder component for video_background (variation: {slice.variation})
-      slices.
-      <br />
-      <strong>You can edit this slice directly in your code editor.</strong>
-      {/**
-       * 💡 Use Prismic MCP with your code editor
-       *
-       * Get AI-powered help to build your slice components — based on your actual model.
-       *
-       * ▶️ Setup:
-       * 1. Add a new MCP Server in your code editor:
-       *
-       * {
-       *   "mcpServers": {
-       *     "Prismic MCP": {
-       *       "command": "npx",
-       *       "args": ["-y", "@prismicio/mcp-server"]
-       *     }
-       *   }
-       * }
-       *
-       * 2. Select Claude 3.7 Sonnet (recommended for optimal output)
-       *
-       * ✅ Then open your slice file and ask your code editor:
-       *    "Code this slice"
-       *
-       * Your code editor reads your slice model and helps you code faster ⚡
-       * 📚 Give your feedback: https://community.prismic.io/t/help-us-shape-the-future-of-slice-creation/19505
-       */}
+      <div className="absolute inset-0 h-full w-full">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="h-full w-full object-cover"
+          aria-hidden="true"
+        >
+          <source src="/placeholder-g9db1.png" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>
+
+      <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-4 text-center text-white">
+        <h1 className="mb-4 max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+          Discover the Future of Digital Experience
+        </h1>
+        <p className="mb-8 max-w-2xl text-lg sm:text-xl md:text-2xl">
+          Immersive, innovative, and designed for the modern world
+        </p>
+        <Button size="lg" className="bg-white text-black hover:bg-white/90">
+          <Link href="#learn-more">Get Started</Link>
+        </Button>
+      </div>
     </section>
   );
 };

@@ -5,6 +5,9 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | WhyChooseUsSlice
+  | ServicesSlice
+  | ImageBackgroundSlice
   | HeroSlice
   | CallToActionSlice
   | VideoBackgroundSlice;
@@ -73,6 +76,9 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | WhyChooseUsSlice
+  | ServicesSlice
+  | ImageBackgroundSlice
   | HeroSlice
   | CallToActionSlice
   | VideoBackgroundSlice;
@@ -196,6 +202,101 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *ImageBackground → Default → Primary*
+ */
+export interface ImageBackgroundSliceDefaultPrimary {
+  /**
+   * Background Image field in *ImageBackground → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_background.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *ImageBackground → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_background.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *ImageBackground → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_background.default.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ImageBackground Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageBackgroundSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ImageBackgroundSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ImageBackground*
+ */
+type ImageBackgroundSliceVariation = ImageBackgroundSliceDefault;
+
+/**
+ * ImageBackground Shared Slice
+ *
+ * - **API ID**: `image_background`
+ * - **Description**: ImageBackground
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageBackgroundSlice = prismic.SharedSlice<
+  "image_background",
+  ImageBackgroundSliceVariation
+>;
+
+/**
+ * Default variation for Services Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Services*
+ */
+type ServicesSliceVariation = ServicesSliceDefault;
+
+/**
+ * Services Shared Slice
+ *
+ * - **API ID**: `services`
+ * - **Description**: Services
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesSlice = prismic.SharedSlice<
+  "services",
+  ServicesSliceVariation
+>;
+
+/**
  * Default variation for VideoBackground Slice
  *
  * - **API ID**: `default`
@@ -223,6 +324,36 @@ type VideoBackgroundSliceVariation = VideoBackgroundSliceDefault;
 export type VideoBackgroundSlice = prismic.SharedSlice<
   "video_background",
   VideoBackgroundSliceVariation
+>;
+
+/**
+ * Default variation for WhyChooseUs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WhyChooseUsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *WhyChooseUs*
+ */
+type WhyChooseUsSliceVariation = WhyChooseUsSliceDefault;
+
+/**
+ * WhyChooseUs Shared Slice
+ *
+ * - **API ID**: `why_choose_us`
+ * - **Description**: WhyChooseUs
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WhyChooseUsSlice = prismic.SharedSlice<
+  "why_choose_us",
+  WhyChooseUsSliceVariation
 >;
 
 declare module "@prismicio/client" {
@@ -259,9 +390,19 @@ declare module "@prismicio/client" {
       HeroSlice,
       HeroSliceVariation,
       HeroSliceDefault,
+      ImageBackgroundSlice,
+      ImageBackgroundSliceDefaultPrimary,
+      ImageBackgroundSliceVariation,
+      ImageBackgroundSliceDefault,
+      ServicesSlice,
+      ServicesSliceVariation,
+      ServicesSliceDefault,
       VideoBackgroundSlice,
       VideoBackgroundSliceVariation,
       VideoBackgroundSliceDefault,
+      WhyChooseUsSlice,
+      WhyChooseUsSliceVariation,
+      WhyChooseUsSliceDefault,
     };
   }
 }
