@@ -14,10 +14,7 @@ export default function Header() {
     { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Team", href: "/team" },
-    { name: "Insights", href: "/insights" },
     { name: "Contact", href: "/contact" },
-    { name: "Careers", href: "/careers" },
-    { name: "Resources", href: "/resources" },
   ];
 
   useEffect(() => {
@@ -77,20 +74,20 @@ export default function Header() {
 
             {/* CTA Buttons */}
             <div className="hidden sm:flex items-center space-x-3">
-              <a
+              <Link
                 href="/fact-sheet"
                 className="bg-slate-800 hover:bg-slate-700 text-white text-xs font-medium py-1 px-3 rounded flex items-center transition-colors"
               >
                 <FileText className="h-3 w-3 mr-1" />
                 <span>DOWNLOAD FACT SHEET</span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/appointment"
                 className="bg-slate-800 hover:bg-slate-700 text-white text-xs font-medium py-1 px-3 rounded flex items-center transition-colors"
               >
                 <Calendar className="h-3 w-3 mr-1" />
                 <span>SET AN APPOINTMENT</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -217,20 +214,20 @@ export default function Header() {
               <p className="text-sm font-medium text-slate-500 mb-3">
                 Quick Actions
               </p>
-              <a
+              <Link
                 href="/fact-sheet"
                 className="flex items-center py-2 px-3 text-sm font-medium text-white bg-slate-800 rounded-md hover:bg-slate-700 transition-colors"
               >
                 <FileText className="h-4 w-4 mr-2" />
                 Download Fact Sheet
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/appointment"
                 className="flex items-center py-2 px-3 text-sm font-medium text-white bg-slate-800 rounded-md hover:bg-slate-700 transition-colors"
               >
                 <Calendar className="h-4 w-4 mr-2" />
                 Set an Appointment
-              </a>
+              </Link>
             </div>
 
             {/* Contact info in mobile menu */}
@@ -238,22 +235,22 @@ export default function Header() {
               <p className="text-sm font-medium text-slate-500 mb-3">
                 Contact Us
               </p>
-              <a
+              <Link
                 href="tel:+12125557890"
                 className="block py-2 text-sm text-slate-700 hover:text-blue-600"
               >
                 +1 (212) 555-7890
-              </a>
-              <a
+              </Link>
+              <Link
                 href="mailto:info@meridianpartners.com"
                 className="block py-2 text-sm text-slate-700 hover:text-blue-600"
               >
                 info@meridianpartners.com
-              </a>
+              </Link>
 
               {/* Social media in mobile menu */}
               <div className="flex space-x-4 mt-4">
-                <a
+                <Link
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -261,8 +258,8 @@ export default function Header() {
                   aria-label="Facebook"
                 >
                   <Facebook className="h-5 w-5" />
-                </a>
-                <a
+                </Link>
+                <Link
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -270,7 +267,7 @@ export default function Header() {
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-5 w-5" />
-                </a>
+                </Link>
               </div>
             </div>
           </nav>
