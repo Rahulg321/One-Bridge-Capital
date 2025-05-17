@@ -1,0 +1,16 @@
+{
+  "id": "insight_index",
+  "type": "SharedSlice",
+  "name": "InsightIndex",
+  "description": "InsightIndex",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

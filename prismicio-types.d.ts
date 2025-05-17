@@ -80,7 +80,127 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+type InsightDocumentDataSlicesSlice =
+  | ImageBackgroundSlice
+  | VideoBackgroundSlice
+  | WhyChooseUsSlice
+  | ServicesSlice
+  | CallToActionSlice
+  | HeroSlice
+  | FeaturedImageSlice
+  | ContentHeadingSlice
+  | FaqSliceSlice
+  | ContactHeroSlice;
+
+/**
+ * Content for Insight documents
+ */
+interface InsightDocumentData {
+  /**
+   * Title field in *Insight*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insight.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Tag field in *Insight*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insight.tag
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tag: prismic.KeyTextField;
+
+  /**
+   * Description field in *Insight*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insight.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Featured Image field in *Insight*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insight.featured_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  featured_image: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *Insight*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insight.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<InsightDocumentDataSlicesSlice> /**
+   * Meta Title field in *Insight*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: insight.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Insight*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: insight.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Insight*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insight.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Insight document from Prismic
+ *
+ * - **API ID**: `insight`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type InsightDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<InsightDocumentData>,
+    "insight",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice =
+  | InsightIndexSlice
   | FaqSliceSlice
   | ContentHeadingSlice
   | FeaturedImageSlice
@@ -153,6 +273,10 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type ServiceDocumentDataSlicesSlice =
+  | FocusSectorsSlice
+  | ImageBackgroundSlice
+  | InsightIndexSlice
+  | FaqSliceSlice
   | VideoBackgroundSlice
   | ContentHeadingSlice
   | WhyChooseUsSlice
@@ -228,6 +352,7 @@ export type ServiceDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | HomepageDocument
+  | InsightDocument
   | PageDocument
   | ServiceDocument;
 
@@ -565,6 +690,36 @@ export type FeaturedImageSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for FocusSectors Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FocusSectorsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *FocusSectors*
+ */
+type FocusSectorsSliceVariation = FocusSectorsSliceDefault;
+
+/**
+ * FocusSectors Shared Slice
+ *
+ * - **API ID**: `focus_sectors`
+ * - **Description**: FocusSectors
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FocusSectorsSlice = prismic.SharedSlice<
+  "focus_sectors",
+  FocusSectorsSliceVariation
+>;
+
+/**
  * Default variation for Hero Slice
  *
  * - **API ID**: `default`
@@ -654,6 +809,36 @@ type ImageBackgroundSliceVariation = ImageBackgroundSliceDefault;
 export type ImageBackgroundSlice = prismic.SharedSlice<
   "image_background",
   ImageBackgroundSliceVariation
+>;
+
+/**
+ * Default variation for InsightIndex Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InsightIndexSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *InsightIndex*
+ */
+type InsightIndexSliceVariation = InsightIndexSliceDefault;
+
+/**
+ * InsightIndex Shared Slice
+ *
+ * - **API ID**: `insight_index`
+ * - **Description**: InsightIndex
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InsightIndexSlice = prismic.SharedSlice<
+  "insight_index",
+  InsightIndexSliceVariation
 >;
 
 /**
@@ -825,6 +1010,9 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      InsightDocument,
+      InsightDocumentData,
+      InsightDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
@@ -855,6 +1043,9 @@ declare module "@prismicio/client" {
       FeaturedImageSliceDefaultPrimary,
       FeaturedImageSliceVariation,
       FeaturedImageSliceDefault,
+      FocusSectorsSlice,
+      FocusSectorsSliceVariation,
+      FocusSectorsSliceDefault,
       HeroSlice,
       HeroSliceVariation,
       HeroSliceDefault,
@@ -862,6 +1053,9 @@ declare module "@prismicio/client" {
       ImageBackgroundSliceDefaultPrimary,
       ImageBackgroundSliceVariation,
       ImageBackgroundSliceDefault,
+      InsightIndexSlice,
+      InsightIndexSliceVariation,
+      InsightIndexSliceDefault,
       ServicesSlice,
       ServicesSliceDefaultPrimary,
       ServicesSliceVariation,
