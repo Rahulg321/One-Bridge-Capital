@@ -22,44 +22,51 @@ const Services: FC<ServicesProps> = ({ slice }) => {
   const services = [
     {
       icon: <BarChart3 className="h-6 w-6 text-white" />,
-      title: "M&A and Growth Capital",
+      title: "Financial Modelling",
       description:
-        "As specialists in M&A transaction advisory, we provide buy-side as well as sell-side advisory. We also assist our clients in raising private equity/ venture capital funding to expand, enter new markets or finance a significant acquisition without a change in control.",
+        "Building detailed financial models to support valuation, scenario analysis, and deal structuring.",
       link: "#",
     },
     {
       icon: <FileText className="h-6 w-6 text-white" />,
-      title: "Due Diligence",
+      title: "Financial, Commercial, and Operational Due Diligence",
       description:
-        "Acumen specializes in conducting accounting and financial due diligence on the target company on behalf of the client.",
-      link: "#",
+        "Conducting thorough assessments of financial health, market position, and operational capabilities to validate assumptions and identify risks",
+      link: "/services/due-diligence",
     },
     {
       icon: <DollarSign className="h-6 w-6 text-white" />,
-      title: "IM and Business Modelling",
+      title: "Synergy Assessment",
       description:
-        "We provide research assistance on different aspects of transactions such as buyer's list, information memorandums, analytical review of target companies, business model preparation etc. for our clients.",
+        "Evaluating potential cost savings, revenue enhancements, and operational efficiencies resulting from the transaction..",
       link: "#",
     },
     {
       icon: <ClipboardList className="h-6 w-6 text-white" />,
-      title: "Valuation",
+      title: " Information Memorandum Drafting",
       description:
-        "We provide valuation services including business valuation, valuation of intangible assets, purchase price allocations, valuations for regulatory compliances.",
+        "Preparing comprehensive documents that outline the target company’s business, financials, and growth prospects for potential buyers or investors.",
       link: "#",
     },
     {
       icon: <Database className="h-6 w-6 text-white" />,
-      title: "Data Room Assistance",
+      title: "Market Research and Industry Research",
       description:
-        "Acumen assists clients in getting ready for a due-diligence by setting up a data room.",
+        "Conducting in-depth analysis of market trends, industry dynamics, and competitive landscape to inform strategy and valuation.",
       link: "#",
     },
     {
       icon: <TrendingUp className="h-6 w-6 text-white" />,
-      title: "IPO Assistance",
+      title: "Data Room Set-up",
       description:
-        "We assist your team in the IPO process by providing inputs in drafting the business & industry section in the prospectus.",
+        "Establishing secure virtual data rooms to organize and share confidential documents during due diligence.",
+      link: "#",
+    },
+    {
+      icon: <TrendingUp className="h-6 w-6 text-white" />,
+      title: "Program Management",
+      description:
+        "Coordinating the overall M&A process, managing timelines, communications, and deliverables to ensure smooth execution.",
       link: "#",
     },
   ];

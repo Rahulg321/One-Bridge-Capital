@@ -16,23 +16,23 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full py-16 md:py-24 lg:py-32 bg-white"
+      className="w-full block-space narrow-container space-y-8"
     >
-      <div className="container px-4 md:px-6 mx-auto">
-        <div className="flex flex-col items-center text-center space-y-8 max-w-3xl mx-auto">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900">
-            {slice.primary.heading}
-          </h1>
+      <h2 className="text-gray-900 text-center mb-8 md:mb-12">
+        {slice.primary.heading}
+      </h2>
 
-          <p className="text-gray-800 leading-relaxed max-w-2xl">
-            {slice.primary.tagline}
-          </p>
+      {slice.primary.tagline && (
+        <p className="text-gray-800 mt-8 md:mt-12">{slice.primary.tagline}</p>
+      )}
 
-          <div className="space-y-4 max-w-2xl">
+      {slice.primary.content && (
+        <div className="mt-8 md:mt-12">
+          <article className="space-y-6 max-w-2xl text-lg prose">
             <PrismicRichText field={slice.primary.content} />
-          </div>
+          </article>
         </div>
-      </div>
+      )}
     </section>
   );
 };
