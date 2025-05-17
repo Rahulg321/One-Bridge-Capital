@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | ContentHeadingSlice
   | FeaturedImageSlice
   | ContactHeroSlice
   | ContactFormSlice
@@ -79,6 +80,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ContentHeadingSlice
   | FeaturedImageSlice
   | ContactHeroSlice
   | ContactFormSlice
@@ -282,6 +284,71 @@ export type ContactHeroSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ContentHeading → Default → Primary*
+ */
+export interface ContentHeadingSliceDefaultPrimary {
+  /**
+   * Heading field in *ContentHeading → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *ContentHeading → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.default.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+
+  /**
+   * content field in *ContentHeading → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ContentHeading Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentHeadingSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContentHeadingSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContentHeading*
+ */
+type ContentHeadingSliceVariation = ContentHeadingSliceDefault;
+
+/**
+ * ContentHeading Shared Slice
+ *
+ * - **API ID**: `content_heading`
+ * - **Description**: ContentHeading
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentHeadingSlice = prismic.SharedSlice<
+  "content_heading",
+  ContentHeadingSliceVariation
+>;
+
+/**
  * Primary content in *FeaturedImage → Default → Primary*
  */
 export interface FeaturedImageSliceDefaultPrimary {
@@ -464,6 +531,31 @@ export type ServicesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *VideoBackground → Default → Primary*
+ */
+export interface VideoBackgroundSliceDefaultPrimary {
+  /**
+   * Heading field in *VideoBackground → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_background.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *VideoBackground → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_background.default.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
  * Default variation for VideoBackground Slice
  *
  * - **API ID**: `default`
@@ -472,7 +564,7 @@ export type ServicesSlice = prismic.SharedSlice<
  */
 export type VideoBackgroundSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<VideoBackgroundSliceDefaultPrimary>,
   never
 >;
 
@@ -576,6 +668,10 @@ declare module "@prismicio/client" {
       ContactHeroSlice,
       ContactHeroSliceVariation,
       ContactHeroSliceDefault,
+      ContentHeadingSlice,
+      ContentHeadingSliceDefaultPrimary,
+      ContentHeadingSliceVariation,
+      ContentHeadingSliceDefault,
       FeaturedImageSlice,
       FeaturedImageSliceDefaultPrimary,
       FeaturedImageSliceVariation,
@@ -592,6 +688,7 @@ declare module "@prismicio/client" {
       ServicesSliceVariation,
       ServicesSliceDefault,
       VideoBackgroundSlice,
+      VideoBackgroundSliceDefaultPrimary,
       VideoBackgroundSliceVariation,
       VideoBackgroundSliceDefault,
       WhyChooseUsSlice,

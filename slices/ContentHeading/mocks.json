@@ -1,0 +1,30 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "sky",
+				"type": "Text"
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "where",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Qui aliquip Lorem ex enim ut ullamco et. Laborum labore nisi eiusmod eu sunt. Occaecat id mollit occaecat proident fugiat aliquip quis duis ex veniam ipsum."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
