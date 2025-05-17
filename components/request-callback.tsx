@@ -83,7 +83,7 @@ export function RequestCallback() {
   };
 
   return (
-    <div className=" z-50">
+    <div className="hidden md:block z-50">
       <Button
         onClick={toggleForm}
         className={cn(

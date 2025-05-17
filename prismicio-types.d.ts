@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | FaqSliceSlice
   | ContentHeadingSlice
   | FeaturedImageSlice
   | ContactHeroSlice
@@ -80,6 +81,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | FaqSliceSlice
   | ContentHeadingSlice
   | FeaturedImageSlice
   | ContactHeroSlice
@@ -426,6 +428,98 @@ export type ContentHeadingSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *FaqSlice → Default → Primary → Faq Questions*
+ */
+export interface FaqSliceSliceDefaultPrimaryFaqQuestionsItem {
+  /**
+   * Question field in *FaqSlice → Default → Primary → Faq Questions*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_slice.default.primary.faq_questions[].question
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  question: prismic.KeyTextField;
+
+  /**
+   * Answer field in *FaqSlice → Default → Primary → Faq Questions*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_slice.default.primary.faq_questions[].answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  answer: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *FaqSlice → Default → Primary*
+ */
+export interface FaqSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *FaqSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *FaqSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_slice.default.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+
+  /**
+   * Faq Questions field in *FaqSlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_slice.default.primary.faq_questions[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  faq_questions: prismic.GroupField<
+    Simplify<FaqSliceSliceDefaultPrimaryFaqQuestionsItem>
+  >;
+}
+
+/**
+ * Default variation for FaqSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FaqSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FaqSlice*
+ */
+type FaqSliceSliceVariation = FaqSliceSliceDefault;
+
+/**
+ * FaqSlice Shared Slice
+ *
+ * - **API ID**: `faq_slice`
+ * - **Description**: FaqSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSliceSlice = prismic.SharedSlice<
+  "faq_slice",
+  FaqSliceSliceVariation
+>;
+
+/**
  * Primary content in *FeaturedImage → Default → Primary*
  */
 export interface FeaturedImageSliceDefaultPrimary {
@@ -752,6 +846,11 @@ declare module "@prismicio/client" {
       ContentHeadingSliceDefaultPrimary,
       ContentHeadingSliceVariation,
       ContentHeadingSliceDefault,
+      FaqSliceSlice,
+      FaqSliceSliceDefaultPrimaryFaqQuestionsItem,
+      FaqSliceSliceDefaultPrimary,
+      FaqSliceSliceVariation,
+      FaqSliceSliceDefault,
       FeaturedImageSlice,
       FeaturedImageSliceDefaultPrimary,
       FeaturedImageSliceVariation,

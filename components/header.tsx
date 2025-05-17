@@ -75,14 +75,7 @@ export default function Header() {
             {/* CTA Buttons */}
             <div className="hidden sm:flex items-center space-x-3">
               <Link
-                href="/fact-sheet"
-                className="bg-slate-800 hover:bg-slate-700 text-white text-xs font-medium py-1 px-3 rounded flex items-center transition-colors"
-              >
-                <FileText className="h-3 w-3 mr-1" />
-                <span>DOWNLOAD FACT SHEET</span>
-              </Link>
-              <Link
-                href="/appointment"
+                href="#"
                 className="bg-slate-800 hover:bg-slate-700 text-white text-xs font-medium py-1 px-3 rounded flex items-center transition-colors"
               >
                 <Calendar className="h-3 w-3 mr-1" />

@@ -35,7 +35,7 @@ const FeaturedImage: FC<FeaturedImageProps> = ({ slice }) => {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2 bg-neutral-200 p-6 md:p-10 lg:p-12 flex flex-col justify-center mt-12 ml-[-4rem] z-20">
+          <div className="w-full lg:w-1/2 bg-neutral-200 p-6 md:p-10 lg:p-12 flex flex-col justify-center mt-12 lg:ml-[-4rem] z-20">
             <h2
               id="who-we-help-heading"
               className="text-2xl md:text-3xl lg:text-4xl font-medium text-neutral-800 mb-6"

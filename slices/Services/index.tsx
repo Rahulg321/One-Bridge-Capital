@@ -25,7 +25,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
       title: "Financial Modelling",
       description:
         "Building detailed financial models to support valuation, scenario analysis, and deal structuring.",
-      link: "#",
+      link: "/services/due-diligence",
     },
     {
       icon: <FileText className="h-6 w-6 text-white" />,
@@ -39,35 +39,35 @@ const Services: FC<ServicesProps> = ({ slice }) => {
       title: "Synergy Assessment",
       description:
         "Evaluating potential cost savings, revenue enhancements, and operational efficiencies resulting from the transaction..",
-      link: "#",
+      link: "/services/due-diligence",
     },
     {
       icon: <ClipboardList className="h-6 w-6 text-white" />,
       title: " Information Memorandum Drafting",
       description:
         "Preparing comprehensive documents that outline the target company’s business, financials, and growth prospects for potential buyers or investors.",
-      link: "#",
+      link: "/services/due-diligence",
     },
     {
       icon: <Database className="h-6 w-6 text-white" />,
       title: "Market Research and Industry Research",
       description:
         "Conducting in-depth analysis of market trends, industry dynamics, and competitive landscape to inform strategy and valuation.",
-      link: "#",
+      link: "/services/due-diligence",
     },
     {
       icon: <TrendingUp className="h-6 w-6 text-white" />,
       title: "Data Room Set-up",
       description:
         "Establishing secure virtual data rooms to organize and share confidential documents during due diligence.",
-      link: "#",
+      link: "/services/due-diligence",
     },
     {
       icon: <TrendingUp className="h-6 w-6 text-white" />,
       title: "Program Management",
       description:
         "Coordinating the overall M&A process, managing timelines, communications, and deliverables to ensure smooth execution.",
-      link: "#",
+      link: "/services/due-diligence",
     },
   ];
 
