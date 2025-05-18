@@ -83,7 +83,7 @@ export function RequestCallback() {
   };
 
   return (
-    <div className="hidden md:block z-50">
+    <div className="z-100">
       <Button
         onClick={toggleForm}
         className={cn(
@@ -105,7 +105,7 @@ export function RequestCallback() {
         )}
       >
         <div className="mb-4 flex items-center justify-between">
-          <h3 className="font-semibold">Request a Callback</h3>
+          <h4 className="font-semibold">Request a Callback</h4>
           <Button
             variant="ghost"
             size="icon"

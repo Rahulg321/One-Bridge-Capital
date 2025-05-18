@@ -29,7 +29,14 @@ const Services: FC<ServicesProps> = ({ slice }) => {
     },
     {
       icon: <FileText className="h-6 w-6 text-white" />,
-      title: "Financial, Commercial, and Operational Due Diligence",
+      title: "Financial Due Diligence",
+      description:
+        "Conducting thorough assessments of financial health, market position, and operational capabilities to validate assumptions and identify risks",
+      link: "/services/due-diligence",
+    },
+    {
+      icon: <FileText className="h-6 w-6 text-white" />,
+      title: "Operational Due Diligence",
       description:
         "Conducting thorough assessments of financial health, market position, and operational capabilities to validate assumptions and identify risks",
       link: "/services/due-diligence",

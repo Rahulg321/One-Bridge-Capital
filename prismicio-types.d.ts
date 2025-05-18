@@ -536,9 +536,60 @@ export type ContentHeadingSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *ContentHeading → Content With Left Heading → Primary*
+ */
+export interface ContentHeadingSliceContentWithLeftHeadingPrimary {
+  /**
+   * Heading field in *ContentHeading → Content With Left Heading → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentWithLeftHeading.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *ContentHeading → Content With Left Heading → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentWithLeftHeading.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+
+  /**
+   * content field in *ContentHeading → Content With Left Heading → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentWithLeftHeading.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Content With Left Heading variation for ContentHeading Slice
+ *
+ * - **API ID**: `contentWithLeftHeading`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentHeadingSliceContentWithLeftHeading =
+  prismic.SharedSliceVariation<
+    "contentWithLeftHeading",
+    Simplify<ContentHeadingSliceContentWithLeftHeadingPrimary>,
+    never
+  >;
+
+/**
  * Slice variation for *ContentHeading*
  */
-type ContentHeadingSliceVariation = ContentHeadingSliceDefault;
+type ContentHeadingSliceVariation =
+  | ContentHeadingSliceDefault
+  | ContentHeadingSliceContentWithLeftHeading;
 
 /**
  * ContentHeading Shared Slice
@@ -1032,8 +1083,10 @@ declare module "@prismicio/client" {
       ContactHeroSliceDefault,
       ContentHeadingSlice,
       ContentHeadingSliceDefaultPrimary,
+      ContentHeadingSliceContentWithLeftHeadingPrimary,
       ContentHeadingSliceVariation,
       ContentHeadingSliceDefault,
+      ContentHeadingSliceContentWithLeftHeading,
       FaqSliceSlice,
       FaqSliceSliceDefaultPrimaryFaqQuestionsItem,
       FaqSliceSliceDefaultPrimary,

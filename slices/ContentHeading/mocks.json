@@ -26,5 +26,38 @@
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "contentWithLeftHeading",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "belt",
+				"type": "Text"
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "done",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit enim est aliquip ea anim sunt duis nisi enim nisi. Labore aliquip adipisicing exercitation velit dolore dolor. Cupidatat ex cillum esse ea consectetur minim ex in voluptate culpa sint ea incididunt incididunt anim."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]
