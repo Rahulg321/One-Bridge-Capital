@@ -19,17 +19,19 @@
             "placeholder": ""
           }
         },
-        "tagline": {
-          "type": "Text",
-          "config": {
-            "label": "Tagline",
-            "placeholder": ""
-          }
-        },
         "content": {
           "type": "StructuredText",
           "config": {
             "label": "content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "tagline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Tagline",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
@@ -53,17 +55,19 @@
             "placeholder": ""
           }
         },
-        "tagline": {
-          "type": "Text",
-          "config": {
-            "label": "Tagline",
-            "placeholder": ""
-          }
-        },
         "content": {
           "type": "StructuredText",
           "config": {
             "label": "content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "tagline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Tagline",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"

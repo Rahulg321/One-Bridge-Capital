@@ -78,9 +78,8 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto ">
+    <div className="big-container">
       <div className="flex flex-col lg:flex-row items-center lg:gap-12">
-        {/* Left column - Company information */}
         <div className="lg:w-1/2 mb-8 lg:mb-0">
           <div className="inline-block bg-[#8B1D1D] text-white px-4 py-1 mb-4">
             <h2 className="text-sm font-medium">CONTACT US</h2>
@@ -106,8 +105,7 @@ export default function ContactForm() {
           </div>
         </div>
 
-        {/* Right column - Form */}
-        <div className="lg:w-1/2">
+        <div className="w-full">
           {formStatus.type && (
             <Alert
               className={`mb-6 ${formStatus.type === "success" ? "bg-green-50" : "bg-red-50"}`}

@@ -23,7 +23,9 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
             <div className="space-y-6">
               <h2 className="text-center">{slice.primary.heading}</h2>
               {slice.primary.tagline && (
-                <p className="text-lg">{slice.primary.tagline}</p>
+                <div className="prose prose-lg mx-auto">
+                  <PrismicRichText field={slice.primary.tagline} />
+                </div>
               )}
             </div>
             {slice.primary.content && (
@@ -38,11 +40,13 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
           <div className="max-w-3xl mx-auto text-center space-y-8">
             <h2 className="text-center">{slice.primary.heading}</h2>
             {slice.primary.tagline && (
-              <p className="text-lg">{slice.primary.tagline}</p>
+              <div className="prose prose-lg ">
+                <PrismicRichText field={slice.primary.tagline} />
+              </div>
             )}
             {slice.primary.content && (
               <div>
-                <article className="prose prose-lg mx-auto">
+                <article className="prose prose-lg ">
                   <PrismicRichText field={slice.primary.content} />
                 </article>
               </div>

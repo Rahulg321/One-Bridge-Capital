@@ -504,16 +504,6 @@ export interface ContentHeadingSliceDefaultPrimary {
   heading: prismic.KeyTextField;
 
   /**
-   * Tagline field in *ContentHeading → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: content_heading.default.primary.tagline
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  tagline: prismic.KeyTextField;
-
-  /**
    * content field in *ContentHeading → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -522,6 +512,16 @@ export interface ContentHeadingSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
+
+  /**
+   * Tagline field in *ContentHeading → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.default.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tagline: prismic.RichTextField;
 }
 
 /**
@@ -552,16 +552,6 @@ export interface ContentHeadingSliceContentWithLeftHeadingPrimary {
   heading: prismic.KeyTextField;
 
   /**
-   * Tagline field in *ContentHeading → Content With Left Heading → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: content_heading.contentWithLeftHeading.primary.tagline
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  tagline: prismic.KeyTextField;
-
-  /**
    * content field in *ContentHeading → Content With Left Heading → Primary*
    *
    * - **Field Type**: Rich Text
@@ -570,6 +560,16 @@ export interface ContentHeadingSliceContentWithLeftHeadingPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
+
+  /**
+   * Tagline field in *ContentHeading → Content With Left Heading → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentWithLeftHeading.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tagline: prismic.RichTextField;
 }
 
 /**

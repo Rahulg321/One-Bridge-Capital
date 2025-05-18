@@ -3,6 +3,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import InsightCard from "@/components/insight-card";
 import { createClient } from "@/prismicio";
+import InsightCardSkeleton from "@/components/skeletons/InsightCardSkeleton";
 /**
  * Props for `InsightIndex`.
  */
@@ -28,7 +29,17 @@ const InsightIndex: FC<InsightIndexProps> = ({ slice }) => {
         </p>
       </div>
       <div className="mt-10">
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+          fallback={
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+              <InsightCardSkeleton />
+              <InsightCardSkeleton />
+              <InsightCardSkeleton />
+              <InsightCardSkeleton />
+              <InsightCardSkeleton />
+            </div>
+          }
+        >
           <GetInsights />
         </Suspense>
       </div>

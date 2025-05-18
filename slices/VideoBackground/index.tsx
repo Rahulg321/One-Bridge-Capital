@@ -30,7 +30,7 @@ const VideoBackground: FC<VideoBackgroundProps> = ({ slice }) => {
           aria-hidden="true"
         >
           <source
-            src="https://videos.pexels.com/video-files/1994828/1994828-hd_1920_1080_24fps.mp4"
+            src="https://videos.pexels.com/video-files/27890193/12254165_2560_1440_60fps.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
@@ -40,11 +40,9 @@ const VideoBackground: FC<VideoBackgroundProps> = ({ slice }) => {
 
       <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-4 text-center text-white">
         <h1 className="mb-4 max-w-4xl  font-bold tracking-tight ">
-          Discover the Future of Digital Experience
+          {slice.primary.heading}
         </h1>
-        <p className="mb-8 max-w-2xl">
-          Immersive, innovative, and designed for the modern world
-        </p>
+        <p className="mb-8 max-w-2xl">{slice.primary.tagline}</p>
         <Button size="lg" className="bg-white text-black hover:bg-white/90">
           <Link href="#learn-more">Get Started</Link>
         </Button>

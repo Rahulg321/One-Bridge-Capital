@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
-import { RequestCallback } from "@/components/request-callback";
 
 const libreBaskerville = Libre_Baskerville({
   variable: "--font-libre-baskerville",
@@ -27,7 +26,6 @@ export default function RootLayout({
       <body className={`${libreBaskerville.variable} antialiased`}>
         <Header />
         {children}
-        <RequestCallback />
         <Footer />
         <Toaster />
       </body>

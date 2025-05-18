@@ -18,9 +18,11 @@ export default function Footer() {
                 <div className="text-sm">Advisory</div>
               </div>
             </div>
-            <h2 className="text-2xl font-light mt-8 mb-12">
-              Find out if you&apos;re Game Ready.
-            </h2>
+            <p className="font-light mt-8 mb-12">
+              OneBridge is a trusted knowledge partner in the mid-Market M&A,
+              providing agile and cost effective support to boutique M&A
+              Investment Banks and Advisory firms.
+            </p>
           </div>
 
           <div className="col-span-1">
