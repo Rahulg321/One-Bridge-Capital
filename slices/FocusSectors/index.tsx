@@ -85,7 +85,6 @@ const FocusSectors: FC<FocusSectorsProps> = ({ slice }) => {
             <div className="border-t border-dashed border-gray-300 mt-4"></div>
           </div>
 
-          {/* Consumer */}
           <div className="group cursor-pointer">
             <div className="flex items-center gap-4 p-4 transition-all duration-300 group-hover:bg-[#2c4159] group-hover:text-white">
               <div className="flex items-center justify-center w-16 h-16 rounded-full border border-gray-300 shrink-0 group-hover:border-white">

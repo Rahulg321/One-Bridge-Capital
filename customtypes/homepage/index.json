@@ -11,6 +11,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "focus_sectors": {
+              "type": "SharedSlice"
+            },
+            "insight_index": {
+              "type": "SharedSlice"
+            },
             "faq_slice": {
               "type": "SharedSlice"
             },

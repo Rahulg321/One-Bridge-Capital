@@ -36,11 +36,9 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
           </div>
         ) : (
           <div className="max-w-3xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#4a3f35]">
-              {slice.primary.heading}
-            </h2>
+            <h2 className="text-center">{slice.primary.heading}</h2>
             {slice.primary.tagline && (
-              <p className="text-lg text-gray-600">{slice.primary.tagline}</p>
+              <p className="text-lg">{slice.primary.tagline}</p>
             )}
             {slice.primary.content && (
               <div>
