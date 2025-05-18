@@ -83,14 +83,14 @@ export function RequestCallback() {
   };
 
   return (
-    <div className="z-100">
+    <div className="">
       <Button
         onClick={toggleForm}
         className={cn(
-          "cursor-pointer rotate-270 font-semibold fixed bottom-1/2 right-[-6rem] uppercase",
+          "cursor-pointer rotate-270 z-100 text-xs font-semibold fixed bottom-1/2 right-[-5rem] uppercase",
           isOpen ? "hidden" : "flex"
         )}
-        size={"sm"}
+        size={"xs"}
         variant="destructive"
       >
         <Phone className="mr-2 h-4 w-4" />
