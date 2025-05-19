@@ -14,12 +14,10 @@ export default function Footer() {
                 <span className="text-[#1e1e4b] font-bold text-xl">MSA</span>
               </div>
               <div className="uppercase">
-                <div className="text-xl font-semibold text-destructive">
+                <div className="text-xl font-semibold text-special">
                   OneBridge
                 </div>
-                <div className="text-sm text-destructive">
-                  Knowledge Partners
-                </div>
+                <div className="text-sm text-special">Knowledge Partners</div>
               </div>
             </div>
             <p className="font-light mt-8 mb-12">
@@ -30,14 +28,12 @@ export default function Footer() {
           </div>
 
           <div className="col-span-1">
-            <h3 className="text-[#e74c3c] font-semibold mb-4">
-              Important Links
-            </h3>
+            <h3 className="text-special font-semibold mb-4">Important Links</h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-[#f7941d] border-b border-white/30 inline-block"
+                  className="hover:text-special border-b border-white/30 inline-block"
                 >
                   About Us
                 </Link>
@@ -46,7 +42,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/insights"
-                  className="hover:text-[#f7941d] border-b border-white/30 inline-block"
+                  className="hover:text-special border-b border-white/30 inline-block"
                 >
                   Insights
                 </Link>
@@ -54,7 +50,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/team"
-                  className="hover:text-[#f7941d] border-b border-white/30 inline-block"
+                  className="hover:text-special border-b border-white/30 inline-block"
                 >
                   Team
                 </Link>
@@ -63,7 +59,7 @@ export default function Footer() {
           </div>
 
           <div className="col-span-1">
-            <h3 className="text-[#BD3F16] font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-special font-semibold mb-4">Contact Us</h3>
             <p className="flex items-center mb-2">
               <Phone size={16} className="mr-2" />
               <Link href="tel:+918561046369" className="hover:underline">

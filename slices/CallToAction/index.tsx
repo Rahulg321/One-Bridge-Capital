@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { Button } from "@/components/ui/button";
-import { PrismicNextLink } from "@prismicio/next";
+import Link from "next/link";
 
 /**
  * Props for `CallToAction`.
@@ -23,9 +23,7 @@ const CallToAction: FC<CallToActionProps> = ({ slice }) => {
         <div className="big-container">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mx-auto">
             <div className="max-w-2xl">
-              <h2 className="text-3xl font-semibold tracking-tight text-[#1e2a4a] mb-4">
-                {slice.primary.heading}
-              </h2>
+              <h2 className="mb-4">{slice.primary.heading}</h2>
               <p className=" text-lg">{slice.primary.tagline}</p>
             </div>
             <Button
@@ -33,7 +31,7 @@ const CallToAction: FC<CallToActionProps> = ({ slice }) => {
               size={"4xl"}
               className="bg-[#1e2a4a] hover:bg-[#2a3a5a] text-white rounded-none"
             >
-              <PrismicNextLink field={slice.primary.cta_link} />
+              <Link href={"/contact"}>Contact Us</Link>
             </Button>
           </div>
         </div>

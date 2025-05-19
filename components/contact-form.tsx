@@ -81,27 +81,24 @@ export default function ContactForm() {
     <div className="big-container">
       <div className="flex flex-col lg:flex-row items-center lg:gap-12">
         <div className="lg:w-1/2 mb-8 lg:mb-0">
-          <div className="inline-block bg-[#8B1D1D] text-white px-4 py-1 mb-4">
+          <div className="inline-block bg-special text-white px-4 py-1 mb-4">
             <h2 className="text-sm font-medium">CONTACT US</h2>
           </div>
           <h3 className="text-2xl font-medium text-gray-800">
             An opportunity for a strategic partnership awaits you.{" "}
-            <span className="italic text-[#8B1D1D]">
+            <span className="italic text-special">
               Let&apos;s get in touch.
             </span>
           </h3>
           <p className="mt-4 text-gray-600">
-            For more information regarding Redwood North or to discuss a
-            potential partnership please get in touch via the below or complete
-            our quick contact form.
+            We’re here to support your next project. Reach out to discuss how we
+            can partner on your next transaction or growth initiative. Please
+            get in touch via the below or complete our quick contact form
           </p>
 
           <div className="mt-12 text-gray-700">
-            <p className="font-medium">Suite 9.02, Level 9,</p>
-            <p>46 Market Street,</p>
-            <p>Sydney NSW 2000</p>
-            <p className="mt-4">info@redwoodnorth.com.au</p>
-            <p>(02) 8310 9187</p>
+            <p className="mt-4">info@onebridgekp.com</p>
+            <p>+91 8561046369</p>
           </div>
         </div>
 
@@ -186,7 +183,7 @@ export default function ContactForm() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#8B1D1D] hover:bg-[#6B1515] text-white px-8 py-2 rounded-none"
+                className="bg-special hover:bg-special/80 text-white px-8 py-2 rounded-none"
               >
                 {isSubmitting ? "Sending..." : "Submit"}
               </Button>
