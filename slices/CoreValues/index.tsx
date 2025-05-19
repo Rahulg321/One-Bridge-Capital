@@ -15,7 +15,7 @@ const CoreValues: FC<CoreValuesProps> = ({ slice }) => {
     {
       title: "Partnership",
       description:
-        "Working as a true extension of our clients’ internal teams.",
+        "Working as a true extension of our clients' internal teams.",
     },
     {
       title: "Trust",
@@ -45,14 +45,14 @@ const CoreValues: FC<CoreValuesProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="py-10 sm:py-16 px-2 sm:px-4 max-w-7xl mx-auto"
     >
-      <h2 className=" text-center text-gray-700 mb-12">Our Core Values</h2>
+      <h2 className="text-center text-gray-700 mb-12">Our Core Values</h2>
 
       <div className="relative flex justify-center mb-16 overflow-x-auto sm:overflow-visible px-4 py-2">
-        <div className="flex -space-x-4 xs:-space-x-5 sm:-space-x-6 md:-space-x-8 min-w-min">
+        <div className="flex -space-x-8 xs:-space-x-10 sm:-space-x-12 md:-space-x-14 min-w-min">
           {values.map((value, index) => (
             <div key={index} className="flex flex-col items-center">
-              <div className="w-[100px] h-[100px] xs:w-[120px] xs:h-[120px] sm:w-[140px] sm:h-[140px] md:w-[160px] md:h-[160px] rounded-full border-4 border-gray-300  bg-white flex items-center justify-center z-10 relative">
-                <span className="text-blue-600 font-bold text-xs xs:text-sm md:text-base px-2 text-center">
+              <div className="w-[8.75rem] h-[8.75rem] sm:w-[11.25rem] sm:h-[11.25rem] md:w-[13.75rem] md:h-[13.75rem] lg:w-[16.25rem] lg:h-[16.25rem] rounded-full border-4 border-gray-300 bg-white flex items-center justify-center z-10 relative">
+                <span className="text-blue-600 font-bold text-base sm:text-lg md:text-xl lg:text-2xl px-4 text-center">
                   {value.title}
                 </span>
               </div>
