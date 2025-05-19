@@ -78,29 +78,28 @@ const WhyChooseUs: FC<WhyChooseUsProps> = ({ slice }) => {
         />
       </div>
 
+      <div className="absolute inset-0 bg-blue-600/20"></div>
+
       <div className="container relative z-10 px-4 md:px-6 mx-auto max-w-7xl">
         <div className="flex flex-col items-center justify-center space-y-6 text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#1e2a4a]">
-            It&apos;s Our Culture That Makes Us Different
-          </h2>
+          <h2 className="">It&apos;s Our Culture That Makes Us Different</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="backdrop-blur-md bg-black/50 rounded-lg p-6 border border-white/10 hover:bg-black/40 transition-all duration-300 flex flex-col h-full"
+              className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-all duration-300 flex flex-col h-full space-y-4"
             >
-              <div className="mb-4 bg-white/20 w-10 h-10 rounded-full flex items-center justify-center">
-                {service.icon}
+              <div className="flex items-center justify-center">
+                <div className=" bg-[#1e2a4a] w-10 h-10 rounded-full flex items-center justify-center">
+                  {service.icon}
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-white">
-                {service.title}
-              </h3>
-              <div className="w-12 h-1 bg-white/30 mb-4"></div>
-              <p className="text-white/90 leading-relaxed">
+              <h4 className=" text-gray-900 md:text-center">{service.title}</h4>
+              <span className="text-gray-600 inline-block md:text-center">
                 {service.description}
-              </p>
+              </span>
             </div>
           ))}
         </div>

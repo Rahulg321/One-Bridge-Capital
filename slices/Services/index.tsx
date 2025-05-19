@@ -66,9 +66,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
     >
       <div className="container px-4 md:px-6 mx-auto max-w-7xl">
         <div className=" mb-12 md:text-center">
-          <h2 className="text-3xl md:text-4xl  font-bold tracking-tighter text-[#4a3f35]">
-            Services
-          </h2>
+          <h2 className="">Services</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {services.map((service, index) => (
@@ -77,7 +75,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#e74c3c] shrink-0 shadow-md transition-transform duration-300 group-hover:scale-110">
                   {service?.icon}
                 </div>
-                <h4 className="l font-bold mt-3 text-[#4a3f35] group-hover:text-[#e74c3c] transition-colors duration-300">
+                <h4 className="font-bold mt-3 transition-colors duration-300">
                   {service?.title}
                 </h4>
               </div>
