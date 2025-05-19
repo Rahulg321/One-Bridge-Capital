@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { Rocket, Scale, Shield, Globe, DollarSign, Heart } from "lucide-react";
+import { Rocket, Scale, Shield, Globe, DollarSign } from "lucide-react";
 import { PrismicNextImage } from "@prismicio/next";
 
 /**
@@ -72,11 +72,11 @@ const WhyChooseUs: FC<WhyChooseUsProps> = ({ slice }) => {
           <h2 className="">It&apos;s Our Culture That Makes Us Different</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg p-4 border border-gray-200 hover:shadow-lg transition-all duration-300 flex flex-col h-full space-y-3"
+              className="bg-white rounded-lg p-4 border border-gray-200 hover:shadow-lg transition-all duration-300 flex flex-col h-full space-y-3 w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)]"
             >
               <div className="flex items-center justify-start md:justify-center">
                 <div className="bg-special w-8 h-8 rounded-full flex items-center justify-center">

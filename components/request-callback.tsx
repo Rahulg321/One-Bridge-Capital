@@ -46,6 +46,9 @@ const formSchema = z.object({
   time: z.string({
     required_error: "Please select a preferred time.",
   }),
+  timezone: z.string({
+    required_error: "Please select your timezone.",
+  }),
 });
 
 export function RequestCallback() {
@@ -66,15 +69,14 @@ export function RequestCallback() {
 
     // Show success message
     setIsSubmitted(true);
+    toast.success("Request submitted successfully!");
 
-    // Reset form after 3 seconds and close
+    // Reset form and close after 2 seconds
     setTimeout(() => {
       setIsSubmitted(false);
       setIsOpen(false);
       form.reset();
-    }, 3000);
-
-    toast.success("Callback requested");
+    }, 2000);
   }
 
   const toggleForm = () => {
@@ -99,7 +101,7 @@ export function RequestCallback() {
       {/* Form Panel */}
       <div
         className={cn(
-          "fixed bottom-4 right-4 w-80 transform bg-white p-6 shadow-lg transition-transform duration-300 ease-in-out",
+          "fixed bottom-4 right-4 w-80 z-50 transform bg-white p-6 shadow-lg transition-transform duration-300 ease-in-out",
           isOpen ? "translate-y-0" : "translate-y-full opacity-0"
         )}
       >
@@ -121,7 +123,7 @@ export function RequestCallback() {
             <div className="rounded-full bg-green-100 p-3">
               <Phone className="h-6 w-6 text-green-600" />
             </div>
-            <h4 className="text-xl font-medium">Thank You!</h4>
+            <h4 className="text-xl font-medium">Request Submitted!</h4>
             <p className="text-muted-foreground">
               We&apos;ll call you at your preferred time.
             </p>
@@ -220,6 +222,36 @@ export function RequestCallback() {
                         </SelectItem>
                         <SelectItem value="evening">
                           Evening (5PM - 8PM)
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="timezone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Your Timezone</FormLabel>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select your timezone" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <SelectItem value="IST">India (IST)</SelectItem>
+                        <SelectItem value="EST">Eastern Time (EST)</SelectItem>
+                        <SelectItem value="CST">Central Time (CST)</SelectItem>
+                        <SelectItem value="PST">Pacific Time (PST)</SelectItem>
+                        <SelectItem value="GMT">
+                          Greenwich Mean Time (GMT)
                         </SelectItem>
                       </SelectContent>
                     </Select>
