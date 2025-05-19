@@ -58,18 +58,6 @@ async function GetInsights() {
       {insights.map((insight) => (
         <InsightCard key={insight.id} insight={insight} />
       ))}
-      {insights.map((insight) => (
-        <InsightCard key={insight.id} insight={insight} />
-      ))}
-      {insights.map((insight) => (
-        <InsightCard key={insight.id} insight={insight} />
-      ))}
-      {insights.map((insight) => (
-        <InsightCard key={insight.id} insight={insight} />
-      ))}
-      {insights.map((insight) => (
-        <InsightCard key={insight.id} insight={insight} />
-      ))}
     </div>
   );
 }
