@@ -66,7 +66,7 @@ export default function Footer() {
           </div>
 
           <div className="col-span-1">
-            <h3 className="text-[#f7941d] font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-[#BD3F16] font-semibold mb-4">Contact Us</h3>
             <p className="flex items-center mb-2">
               <Phone size={16} className="mr-2" />
               <Link href="tel:+918561046369" className="hover:underline">
