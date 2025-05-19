@@ -21,7 +21,7 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
         {slice.variation === "contentWithLeftHeading" ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12">
             <div className="space-y-6">
-              <h2 className="">{slice.primary.heading}</h2>
+              <h2 className="md:text-center">{slice.primary.heading}</h2>
               {slice.primary.tagline && (
                 <div className="prose prose-lg mx-auto">
                   <PrismicRichText field={slice.primary.tagline} />
@@ -38,7 +38,7 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
           </div>
         ) : (
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-center">{slice.primary.heading}</h2>
+            <h2 className="md:text-center">{slice.primary.heading}</h2>
             {slice.primary.tagline && (
               <div className="prose prose-lg ">
                 <PrismicRichText field={slice.primary.tagline} />

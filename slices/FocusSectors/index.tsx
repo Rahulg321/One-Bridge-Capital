@@ -25,23 +25,22 @@ const FocusSectors: FC<FocusSectorsProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="py-16 px-4 max-w-7xl mx-auto"
+      className="block-space big-container"
     >
-      <h2 className="text-4xl font-bold mb-8">FOCUS SECTORS</h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="col-span-1">
-          <p className="text-lg text-gray-700">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="flex flex-col items-start">
+          <h2 className="mb-4">FOCUS SECTORS</h2>
+          <p className="text-gray-700">
             Our team of investment bankers possess strong relationships and deep
             sector knowledge that provide optimal outcomes to owners and senior
             executives in six key industries.
           </p>
         </div>
 
-        <div className="col-span-1 md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
           {/* Industrials */}
           <div className="group cursor-pointer">
-            <div className="flex items-center gap-4 p-4 transition-all duration-300 group-hover:bg-[#2c4159] group-hover:text-white">
+            <div className="flex items-center gap-4 p-6 transition-all duration-300 group-hover:bg-[#2c4159] group-hover:text-white rounded-lg">
               <div className="flex items-center justify-center w-16 h-16 rounded-full border border-gray-300 shrink-0 group-hover:border-white">
                 <Building2 className="w-8 h-8 text-[#2c4159] group-hover:text-white" />
               </div>
@@ -52,7 +51,7 @@ const FocusSectors: FC<FocusSectorsProps> = ({ slice }) => {
 
           {/* Transportation & Logistics */}
           <div className="group cursor-pointer">
-            <div className="flex items-center gap-4 p-4 transition-all duration-300 group-hover:bg-[#2c4159] group-hover:text-white">
+            <div className="flex items-center gap-4 p-6 transition-all duration-300 group-hover:bg-[#2c4159] group-hover:text-white rounded-lg">
               <div className="flex items-center justify-center w-16 h-16 rounded-full border border-gray-300 shrink-0 group-hover:border-white">
                 <Truck className="w-8 h-8 text-[#2c4159] group-hover:text-white" />
               </div>
@@ -65,7 +64,7 @@ const FocusSectors: FC<FocusSectorsProps> = ({ slice }) => {
 
           {/* Healthcare */}
           <div className="group cursor-pointer">
-            <div className="flex items-center gap-4 p-4 transition-all duration-300 group-hover:bg-[#2c4159] group-hover:text-white">
+            <div className="flex items-center gap-4 p-6 transition-all duration-300 group-hover:bg-[#2c4159] group-hover:text-white rounded-lg">
               <div className="flex items-center justify-center w-16 h-16 rounded-full border border-gray-300 shrink-0 group-hover:border-white">
                 <Heart className="w-8 h-8 text-[#2c4159] group-hover:text-white" />
               </div>
@@ -76,7 +75,7 @@ const FocusSectors: FC<FocusSectorsProps> = ({ slice }) => {
 
           {/* Business & IT Services */}
           <div className="group cursor-pointer">
-            <div className="flex items-center gap-4 p-4 transition-all duration-300 group-hover:bg-[#2c4159] group-hover:text-white">
+            <div className="flex items-center gap-4 p-6 transition-all duration-300 group-hover:bg-[#2c4159] group-hover:text-white rounded-lg">
               <div className="flex items-center justify-center w-16 h-16 rounded-full border border-gray-300 shrink-0 group-hover:border-white">
                 <Briefcase className="w-8 h-8 text-[#2c4159] group-hover:text-white" />
               </div>
@@ -85,8 +84,9 @@ const FocusSectors: FC<FocusSectorsProps> = ({ slice }) => {
             <div className="border-t border-dashed border-gray-300 mt-4"></div>
           </div>
 
+          {/* Consumer */}
           <div className="group cursor-pointer">
-            <div className="flex items-center gap-4 p-4 transition-all duration-300 group-hover:bg-[#2c4159] group-hover:text-white">
+            <div className="flex items-center gap-4 p-6 transition-all duration-300 group-hover:bg-[#2c4159] group-hover:text-white rounded-lg">
               <div className="flex items-center justify-center w-16 h-16 rounded-full border border-gray-300 shrink-0 group-hover:border-white">
                 <ShoppingCart className="w-8 h-8 text-[#2c4159] group-hover:text-white" />
               </div>
@@ -97,7 +97,7 @@ const FocusSectors: FC<FocusSectorsProps> = ({ slice }) => {
 
           {/* Technology */}
           <div className="group cursor-pointer">
-            <div className="flex items-center gap-4 p-4 transition-all duration-300 group-hover:bg-[#2c4159] group-hover:text-white">
+            <div className="flex items-center gap-4 p-6 transition-all duration-300 group-hover:bg-[#2c4159] group-hover:text-white rounded-lg">
               <div className="flex items-center justify-center w-16 h-16 rounded-full border border-gray-300 shrink-0 group-hover:border-white">
                 <Cpu className="w-8 h-8 text-[#2c4159] group-hover:text-white" />
               </div>
