@@ -18,7 +18,7 @@ const VideoBackground: FC<VideoBackgroundProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="relative h-screen w-full overflow-hidden"
     >
-      <div className="absolute inset-0 h-full w-full">
+      <div className="absolute inset-0 h-full w-full bg-blue-700/40">
         <video
           autoPlay
           loop

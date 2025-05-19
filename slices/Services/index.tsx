@@ -65,8 +65,8 @@ const Services: FC<ServicesProps> = ({ slice }) => {
       className="relative w-full py-16 md:py-24 bg-white"
     >
       <div className="container px-4 md:px-6 mx-auto max-w-7xl">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#4a3f35]">
+        <div className=" mb-12 md:text-center">
+          <h2 className="text-3xl md:text-4xl  font-bold tracking-tighter text-[#4a3f35]">
             Services
           </h2>
         </div>

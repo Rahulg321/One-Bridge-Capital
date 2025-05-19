@@ -80,7 +80,7 @@ const WhyChooseUs: FC<WhyChooseUsProps> = ({ slice }) => {
 
       <div className="container relative z-10 px-4 md:px-6 mx-auto max-w-7xl">
         <div className="flex flex-col items-center justify-center space-y-6 text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#1e2a4a]">
             It&apos;s Our Culture That Makes Us Different
           </h2>
         </div>
@@ -89,7 +89,7 @@ const WhyChooseUs: FC<WhyChooseUsProps> = ({ slice }) => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="backdrop-blur-md bg-white/10 rounded-lg p-6 border border-white/10 hover:bg-white/20 transition-all duration-300 flex flex-col h-full"
+              className="backdrop-blur-md bg-black/50 rounded-lg p-6 border border-white/10 hover:bg-black/40 transition-all duration-300 flex flex-col h-full"
             >
               <div className="mb-4 bg-white/20 w-10 h-10 rounded-full flex items-center justify-center">
                 {service.icon}
