@@ -35,14 +35,11 @@ const FeaturedImage: FC<FeaturedImageProps> = ({ slice }) => {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2 bg-neutral-200 p-6 md:p-10 lg:p-12 flex flex-col justify-center mt-12 lg:ml-[-4rem] z-20">
-            <h2
-              id="who-we-help-heading"
-              className="text-3xl font-semibold mb-4 md:mb-6"
-            >
+          <div className="w-full lg:w-1/2 bg-[#3d6098] p-6 md:p-10 lg:p-12 flex flex-col justify-center mt-12 lg:ml-[-4rem] z-20">
+            <h2 id="who-we-help-heading" className="mb-4 md:mb-6 text-white">
               {slice.primary.title}
             </h2>
-            <div className="prose prose-lg max-w-none ">
+            <div className="prose prose-lg max-w-none text-white " style={{}}>
               <PrismicRichText field={slice.primary.content} />
             </div>
           </div>
