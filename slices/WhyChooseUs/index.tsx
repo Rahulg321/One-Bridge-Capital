@@ -44,12 +44,6 @@ const WhyChooseUs: FC<WhyChooseUsProps> = ({ slice }) => {
       description:
         "Premium execution support at optimized offshore rates, reducing costs without compromising quality.",
     },
-    {
-      icon: <Heart className="h-6 w-6 text-white" />,
-      title: "It's All About Servant Leadership",
-      description:
-        "This is the core purpose of why we exist — placing the needs of others before ourselves. Success will follow.",
-    },
   ];
 
   return (
