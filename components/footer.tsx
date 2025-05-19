@@ -26,7 +26,7 @@ export default function Footer() {
           </div>
 
           <div className="col-span-1">
-            <h3 className="text-[#f7941d] font-semibold mb-4">
+            <h3 className="text-[#e74c3c] font-semibold mb-4">
               Important Links
             </h3>
             <ul className="space-y-3">
