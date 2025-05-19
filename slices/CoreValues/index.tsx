@@ -51,24 +51,14 @@ const CoreValues: FC<CoreValuesProps> = ({ slice }) => {
         <div className="flex -space-x-4 xs:-space-x-5 sm:-space-x-6 md:-space-x-8 min-w-min">
           {values.map((value, index) => (
             <div key={index} className="flex flex-col items-center">
-              <div className="w-[100px] h-[100px] xs:w-[120px] xs:h-[120px] sm:w-[140px] sm:h-[140px] md:w-[160px] md:h-[160px] rounded-full border-2 border-gray-300 bg-white flex items-center justify-center z-10 relative">
-                <span className="text-blue-600 font-medium text-xs xs:text-sm md:text-base px-2 text-center">
+              <div className="w-[100px] h-[100px] xs:w-[120px] xs:h-[120px] sm:w-[140px] sm:h-[140px] md:w-[160px] md:h-[160px] rounded-full border-4 border-gray-300  bg-white flex items-center justify-center z-10 relative">
+                <span className="text-blue-600 font-bold text-xs xs:text-sm md:text-base px-2 text-center">
                   {value.title}
                 </span>
               </div>
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-600">
-        {values.map((value, index) => (
-          <div key={index} className="space-y-4">
-            <p className="text-sm md:text-base leading-relaxed">
-              {value.description}
-            </p>
-          </div>
-        ))}
       </div>
     </section>
   );

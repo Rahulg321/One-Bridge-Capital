@@ -35,7 +35,7 @@ const VideoBackground: FC<VideoBackgroundProps> = ({ slice }) => {
         </video>
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
-      <div className="relative flex items-center justify-center flex-col w-full bg-slate-800/60 px-4 text-center text-white min-h-screen">
+      <div className="relative flex items-center justify-center flex-col w-full bg-slate-800/60 px-4 text-white min-h-screen">
         <h1 className="mb-4">{slice.primary.heading}</h1>
         <p className="mb-8 max-w-2xl">{slice.primary.tagline}</p>
       </div>
