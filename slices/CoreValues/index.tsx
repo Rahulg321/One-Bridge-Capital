@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
@@ -13,8 +13,6 @@ export type CoreValuesProps = SliceComponentProps<Content.CoreValuesSlice>;
  * Component for "CoreValues" Slices.
  */
 const CoreValues: FC<CoreValuesProps> = ({ slice }) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
   const values = [
     {
       title: "Partnership",
@@ -51,31 +49,20 @@ const CoreValues: FC<CoreValuesProps> = ({ slice }) => {
     >
       <h2 className="text-center text-black mb-12">Our Core Values</h2>
 
-      <div className="relative flex justify-center mb-16 px-4 py-2">
-        <div className="flex flex-col sm:flex-row sm:-space-x-6 sm:xs:-space-x-8 sm:sm:-space-x-6 min-w-min gap-2 sm:gap-0">
-          {values.map((value, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center cursor-pointer"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <div
-                className={`w-[8rem] h-[8rem] sm:w-[10rem] sm:h-[10rem] md:w-[12rem] md:h-[12rem] lg:w-[14rem] lg:h-[14rem] rounded-full border-4 border-blue-800 flex items-center justify-center z-10 relative transition-all duration-300 hover:scale-110 hover:shadow-lg ${
-                  hoveredIndex === index ? "bg-blue-800" : "bg-white"
-                }`}
-              >
-                <span
-                  className={`font-bold text-base px-4 text-center ${
-                    hoveredIndex === index ? "text-white" : "text-blue-600"
-                  }`}
-                >
-                  {hoveredIndex === index ? value.description : value.title}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {values.map((value, index) => (
+          <div
+            key={index}
+            className="bg-[#3d6098] p-4  transition-all duration-300 hover:shadow-lg"
+          >
+            <h3 className="font-bold text-xl mb-3 border-b-1 border-white pb-2 text-white group-hover:text-white">
+              {value.title}
+            </h3>
+            <p className="text-white group-hover:text-white">
+              {value.description}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
