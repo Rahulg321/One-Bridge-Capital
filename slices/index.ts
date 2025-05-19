@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 
 export const components = {
   call_to_action: dynamic(() => import("./CallToAction")),
+  color_background: dynamic(() => import("./ColorBackground")),
   contact_form: dynamic(() => import("./ContactForm")),
   contact_hero: dynamic(() => import("./ContactHero")),
   content_heading: dynamic(() => import("./ContentHeading")),

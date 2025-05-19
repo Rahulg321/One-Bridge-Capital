@@ -1,0 +1,30 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "note",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eiusmod mollit deserunt do nulla. Ut aliquip voluptate magna culpa ad minim irure consequat aliqua enim mollit do voluptate. Et incididunt commodo non ex."
+						}
+					}
+				]
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "consider",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

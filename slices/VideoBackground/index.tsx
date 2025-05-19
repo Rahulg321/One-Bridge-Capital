@@ -16,7 +16,7 @@ const VideoBackground: FC<VideoBackgroundProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative h-screen w-full overflow-hidden"
+      className="relative min-h-screen flex flex-row items-center  w-full overflow-hidden"
     >
       <div className="absolute inset-0 h-full w-full bg-blue-700/40">
         <video
@@ -35,13 +35,11 @@ const VideoBackground: FC<VideoBackgroundProps> = ({ slice }) => {
         </video>
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
-
-      <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-4 text-center text-white">
-        <h1 className="mb-4 max-w-4xl  font-bold tracking-tight ">
-          {slice.primary.heading}
-        </h1>
+      <div className="relative flex items-center justify-center flex-col w-full bg-slate-800/60 px-4 text-center text-white min-h-screen">
+        <h1 className="mb-4">{slice.primary.heading}</h1>
         <p className="mb-8 max-w-2xl">{slice.primary.tagline}</p>
       </div>
+      <div className="relative h-full w-full "></div>
     </section>
   );
 };

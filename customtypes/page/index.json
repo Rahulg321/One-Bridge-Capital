@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "color_background": {
+              "type": "SharedSlice"
+            },
             "member_bio_slice": {
               "type": "SharedSlice"
             },

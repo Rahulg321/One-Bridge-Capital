@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | ColorBackgroundSlice
   | MemberBioSliceSlice
   | FocusSectorsSlice
   | InsightIndexSlice
@@ -203,6 +204,7 @@ export type InsightDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ColorBackgroundSlice
   | MemberBioSliceSlice
   | FocusSectorsSlice
   | InsightIndexSlice
@@ -430,6 +432,71 @@ type CallToActionSliceVariation = CallToActionSliceDefault;
 export type CallToActionSlice = prismic.SharedSlice<
   "call_to_action",
   CallToActionSliceVariation
+>;
+
+/**
+ * Primary content in *ColorBackground → Default → Primary*
+ */
+export interface ColorBackgroundSliceDefaultPrimary {
+  /**
+   * Title field in *ColorBackground → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: color_background.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Content field in *ColorBackground → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: color_background.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Tagline field in *ColorBackground → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: color_background.default.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ColorBackground Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ColorBackgroundSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ColorBackgroundSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ColorBackground*
+ */
+type ColorBackgroundSliceVariation = ColorBackgroundSliceDefault;
+
+/**
+ * ColorBackground Shared Slice
+ *
+ * - **API ID**: `color_background`
+ * - **Description**: ColorBackground
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ColorBackgroundSlice = prismic.SharedSlice<
+  "color_background",
+  ColorBackgroundSliceVariation
 >;
 
 /**
@@ -1155,6 +1222,10 @@ declare module "@prismicio/client" {
       CallToActionSliceDefaultPrimary,
       CallToActionSliceVariation,
       CallToActionSliceDefault,
+      ColorBackgroundSlice,
+      ColorBackgroundSliceDefaultPrimary,
+      ColorBackgroundSliceVariation,
+      ColorBackgroundSliceDefault,
       ContactFormSlice,
       ContactFormSliceVariation,
       ContactFormSliceDefault,

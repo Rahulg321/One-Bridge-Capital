@@ -234,11 +234,10 @@ body {
 
 .prose {
   max-width: 65ch;
-  color: var(--color-foreground);
+  font-weight: normal;
 }
 
 .prose [class~="lead"] {
-  color: var(--color-muted-foreground);
   font-size: 1.25em;
   line-height: 1.6;
   margin-top: 1.2em;

@@ -26,7 +26,7 @@ const CallToAction: FC<CallToActionProps> = ({ slice }) => {
               <h2 className="text-3xl font-semibold tracking-tight text-[#1e2a4a] mb-4">
                 {slice.primary.heading}
               </h2>
-              <p className="text-[#1e2a4a] text-lg">{slice.primary.tagline}</p>
+              <p className=" text-lg">{slice.primary.tagline}</p>
             </div>
             <Button
               asChild
