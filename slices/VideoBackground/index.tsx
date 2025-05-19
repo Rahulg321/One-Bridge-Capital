@@ -39,7 +39,7 @@ const VideoBackground: FC<VideoBackgroundProps> = ({ slice }) => {
         <h1 className="mb-4">{slice.primary.heading}</h1>
         <p className="mb-8 max-w-2xl">{slice.primary.tagline}</p>
       </div>
-      <div className="relative h-full w-full "></div>
+      <div className="hidden md:block relative h-full w-full"></div>
     </section>
   );
 };

@@ -15,9 +15,11 @@ export default function Footer() {
               </div>
               <div className="uppercase">
                 <div className="text-xl font-semibold text-destructive">
-                  Morgan Shaw
+                  OneBridge
                 </div>
-                <div className="text-sm text-destructive">Advisory</div>
+                <div className="text-sm text-destructive">
+                  Knowledge Partners
+                </div>
               </div>
             </div>
             <p className="font-light mt-8 mb-12">
@@ -34,23 +36,16 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="#"
+                  href="/about"
                   className="hover:text-[#f7941d] border-b border-white/30 inline-block"
                 >
                   About Us
                 </Link>
               </li>
+
               <li>
                 <Link
-                  href="#"
-                  className="hover:text-[#f7941d] border-b border-white/30 inline-block"
-                >
-                  FAQs
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
+                  href="/insights"
                   className="hover:text-[#f7941d] border-b border-white/30 inline-block"
                 >
                   Insights
@@ -58,7 +53,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/team"
                   className="hover:text-[#f7941d] border-b border-white/30 inline-block"
                 >
                   Team
