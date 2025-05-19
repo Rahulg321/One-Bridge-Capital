@@ -46,7 +46,7 @@ export default function Header() {
       {/* Topbar */}
       <div
         className={cn(
-          "bg-slate-900 text-white w-full transition-all duration-300 z-50"
+          "bg-slate-900 text-white w-full transition-all duration-300 z-50 fixed top-0"
         )}
       >
         <div className="container mx-auto px-4">
@@ -81,7 +81,7 @@ export default function Header() {
       {/* Main Header */}
       <header
         className={cn(
-          "w-full transition-all duration-300 z-40",
+          "w-full transition-all duration-300 z-40 fixed top-10",
           "bg-gradient-to-r from-slate-900 to-slate-800 text-white py-5"
         )}
       >
@@ -136,6 +136,9 @@ export default function Header() {
           aria-hidden="true"
         ></div>
       </header>
+
+      {/* Add padding to body to account for fixed header */}
+      <div className="h-[120px]"></div>
 
       {/* Slide-in Mobile Navigation */}
       <div
