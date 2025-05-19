@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="bg-slate-900 text-white py-12 px-4 md:px-8">
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="mb-10">
+          <div className="mb-4 md:mb-6">
             <div className="flex items-center mb-4">
               <div className="bg-white rounded-full h-16 w-16 flex items-center justify-center mr-4">
                 <span className="text-[#1e1e4b] font-bold text-xl">MSA</span>
@@ -20,7 +20,7 @@ export default function Footer() {
                 <div className="text-sm text-special">Knowledge Partners</div>
               </div>
             </div>
-            <p className="font-light mt-8 mb-12">
+            <p className="">
               OneBridge is a trusted knowledge partner in the mid-Market M&A,
               providing agile and cost effective support to boutique M&A
               Investment Banks and Advisory firms.

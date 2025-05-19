@@ -23,33 +23,33 @@ const WhyChooseUs: FC<WhyChooseUsProps> = ({ slice }) => {
   const services = [
     {
       icon: <Link2 className="h-6 w-6 text-white" />,
-      title: "We Take Action",
+      title: "Execution Expertise",
       description:
-        "Our professional advisors bring perseverance, problem-solving, and a 'get it done' attitude to the table.",
+        "A team of trained professionals fluent in M&A analysis and deliverables.",
     },
     {
       icon: <Award className="h-6 w-6 text-white" />,
-      title: "Our Team Works Hard & Plays Hard",
+      title: "Flexible and Scalable Delivery",
       description:
-        "We balance a strong work ethic that brings profitable results to our clients within a culture that celebrates the process.",
+        "Ramp up capacity as deal pipelines shift, without fixed overhead.",
     },
     {
       icon: <Users className="h-6 w-6 text-white" />,
-      title: "We're Leaders In More Ways Than One",
+      title: "Confidential & Secure",
       description:
-        "At True North Mergers & Acquisitions, we're a leader to our clients, a leader in the marketplace, and leaders to each other.",
+        "Trusted by global firms for our strict discretion and robust security protocols.",
     },
     {
       icon: <Users2 className="h-6 w-6 text-white" />,
-      title: "We Believe in Teamwork",
+      title: "Follow the SUN model",
       description:
-        "We bring our whole selves and work as a team to deliver world-class service to our clients.",
+        "Global project experience with seamless, timezone-aligned execution.",
     },
     {
       icon: <HeartHandshake className="h-6 w-6 text-white" />,
-      title: "Help People First & Success Will Follow",
+      title: "•	Cost Efficiency",
       description:
-        "We're devoted to encouraging, equipping, collaborating and uplifting all who come in contact with us.",
+        "Premium execution support at optimized offshore rates, reducing costs without compromising quality.",
     },
     {
       icon: <UserRound className="h-6 w-6 text-white" />,
