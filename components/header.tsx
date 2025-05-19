@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Facebook, Linkedin, FileText, Calendar } from "lucide-react";
+import { Menu, X, Linkedin, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function Header() {
@@ -53,15 +53,6 @@ export default function Header() {
           <div className="flex items-center justify-between h-10">
             {/* Social Media Icons */}
             <div className="flex items-center space-x-4">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-blue-400 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
@@ -208,13 +199,7 @@ export default function Header() {
               <p className="text-sm font-medium text-slate-500 mb-3">
                 Quick Actions
               </p>
-              <Link
-                href="/fact-sheet"
-                className="flex items-center py-2 px-3 text-sm font-medium text-white bg-slate-800 rounded-md hover:bg-slate-700 transition-colors"
-              >
-                <FileText className="h-4 w-4 mr-2" />
-                Download Fact Sheet
-              </Link>
+
               <Link
                 href="/appointment"
                 className="flex items-center py-2 px-3 text-sm font-medium text-white bg-slate-800 rounded-md hover:bg-slate-700 transition-colors"
@@ -244,15 +229,6 @@ export default function Header() {
 
               {/* Social media in mobile menu */}
               <div className="flex space-x-4 mt-4">
-                <Link
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-600 hover:text-blue-600 transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="h-5 w-5" />
-                </Link>
                 <Link
                   href="https://linkedin.com"
                   target="_blank"

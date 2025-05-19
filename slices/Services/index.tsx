@@ -42,6 +42,20 @@ const Services: FC<ServicesProps> = ({ slice }) => {
         "Establishing secure virtual data rooms to organize and share confidential documents during due diligence.",
       link: "/services/data-room-assistance",
     },
+    {
+      icon: <TrendingUp className="h-6 w-6 text-white" />,
+      title: "Market and Industry Research",
+      description:
+        "Conducting comprehensive market and industry research to provide insights and competitive positioning.",
+      link: "/services/market-and-industry-research",
+    },
+    {
+      icon: <TrendingUp className="h-6 w-6 text-white" />,
+      title: "Program Management",
+      description:
+        "Overseeing the implementation of strategic initiatives, ensuring alignment with business goals and timelines.",
+      link: "/services/program-management",
+    },
   ];
 
   return (
