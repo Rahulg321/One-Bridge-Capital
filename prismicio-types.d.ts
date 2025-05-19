@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | MemberBioSliceSlice
   | FocusSectorsSlice
   | InsightIndexSlice
   | FaqSliceSlice
@@ -202,6 +203,8 @@ export type InsightDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | MemberBioSliceSlice
+  | FocusSectorsSlice
   | InsightIndexSlice
   | FaqSliceSlice
   | ContentHeadingSlice
@@ -895,6 +898,81 @@ export type InsightIndexSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *MemberBioSlice → Default → Primary*
+ */
+export interface MemberBioSliceSliceDefaultPrimary {
+  /**
+   * Member Name field in *MemberBioSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member_bio_slice.default.primary.member_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  member_name: prismic.KeyTextField;
+
+  /**
+   * Designation field in *MemberBioSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member_bio_slice.default.primary.designation
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  designation: prismic.KeyTextField;
+
+  /**
+   * Bio field in *MemberBioSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member_bio_slice.default.primary.bio
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  bio: prismic.RichTextField;
+
+  /**
+   * Member Image field in *MemberBioSlice → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member_bio_slice.default.primary.member_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  member_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for MemberBioSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MemberBioSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MemberBioSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *MemberBioSlice*
+ */
+type MemberBioSliceSliceVariation = MemberBioSliceSliceDefault;
+
+/**
+ * MemberBioSlice Shared Slice
+ *
+ * - **API ID**: `member_bio_slice`
+ * - **Description**: MemberBioSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MemberBioSliceSlice = prismic.SharedSlice<
+  "member_bio_slice",
+  MemberBioSliceSliceVariation
+>;
+
+/**
  * Primary content in *Services → Default → Primary*
  */
 export interface ServicesSliceDefaultPrimary {
@@ -1111,6 +1189,10 @@ declare module "@prismicio/client" {
       InsightIndexSlice,
       InsightIndexSliceVariation,
       InsightIndexSliceDefault,
+      MemberBioSliceSlice,
+      MemberBioSliceSliceDefaultPrimary,
+      MemberBioSliceSliceVariation,
+      MemberBioSliceSliceDefault,
       ServicesSlice,
       ServicesSliceDefaultPrimary,
       ServicesSliceVariation,

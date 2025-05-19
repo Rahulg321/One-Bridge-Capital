@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "member_bio_slice": {
+              "type": "SharedSlice"
+            },
             "focus_sectors": {
               "type": "SharedSlice"
             },

@@ -1,0 +1,53 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"member_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+					"width": 4000,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+				"width": 4000,
+				"height": 4000,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "eventually",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"designation": {
+				"__TYPE__": "FieldContent",
+				"value": "society",
+				"type": "Text"
+			},
+			"bio": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sit dolore eiusmod in. Incididunt nostrud quis nulla mollit magna sit veniam nisi sunt consequat. Dolor qui velit sit officia commodo ullamco eiusmod adipisicing anim aliqua dolore incididunt."
+						}
+					}
+				]
+			},
+			"member_name": {
+				"__TYPE__": "FieldContent",
+				"value": "thou",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

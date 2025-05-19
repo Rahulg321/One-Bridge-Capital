@@ -13,6 +13,7 @@ export const components = {
   hero: dynamic(() => import("./Hero")),
   image_background: dynamic(() => import("./ImageBackground")),
   insight_index: dynamic(() => import("./InsightIndex")),
+  member_bio_slice: dynamic(() => import("./MemberBioSlice")),
   services: dynamic(() => import("./Services")),
   video_background: dynamic(() => import("./VideoBackground")),
   why_choose_us: dynamic(() => import("./WhyChooseUs")),
