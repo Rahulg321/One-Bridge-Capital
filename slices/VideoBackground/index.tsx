@@ -1,8 +1,6 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 /**
  * Props for `VideoBackground`.
@@ -43,9 +41,6 @@ const VideoBackground: FC<VideoBackgroundProps> = ({ slice }) => {
           {slice.primary.heading}
         </h1>
         <p className="mb-8 max-w-2xl">{slice.primary.tagline}</p>
-        <Button size="lg" className="bg-white text-black hover:bg-white/90">
-          <Link href="#learn-more">Get Started</Link>
-        </Button>
       </div>
     </section>
   );
