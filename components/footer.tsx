@@ -26,7 +26,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="col-span-1 mx-auto">
+          <div className="col-span-1 md:mx-auto">
             <h3 className="text-special font-semibold mb-4">Important Links</h3>
             <ul className="space-y-3">
               <li>
@@ -57,7 +57,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="col-span-1 mx-auto">
+          <div className="col-span-1 md:mx-auto">
             <h3 className="text-special font-semibold mb-4">Contact Us</h3>
             <span className="flex items-center mb-2">
               <Phone size={16} className="mr-2" />

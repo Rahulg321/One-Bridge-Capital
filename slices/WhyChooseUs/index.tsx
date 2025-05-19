@@ -84,7 +84,7 @@ const WhyChooseUs: FC<WhyChooseUsProps> = ({ slice }) => {
               key={index}
               className="bg-white rounded-lg p-4 border border-gray-200 hover:shadow-lg transition-all duration-300 flex flex-col h-full space-y-3"
             >
-              <div className="flex items-center justify-center">
+              <div className="flex items-center md:justify-center">
                 <div className="bg-special w-8 h-8 rounded-full flex items-center justify-center">
                   {service.icon}
                 </div>
