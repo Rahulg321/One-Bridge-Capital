@@ -69,7 +69,7 @@ const WhyChooseUs: FC<WhyChooseUsProps> = ({ slice }) => {
 
       <div className="container relative z-10 px-4 md:px-6 mx-auto max-w-7xl">
         <div className="flex flex-col items-center justify-center space-y-6 text-center mb-16">
-          <h2 className="">It&apos;s Our Culture That Makes Us Different</h2>
+          <h2 className="">Why Choose Us?</h2>
         </div>
 
         <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
@@ -83,10 +83,10 @@ const WhyChooseUs: FC<WhyChooseUsProps> = ({ slice }) => {
                   {service.icon}
                 </div>
               </div>
-              <h4 className="text-gray-900 md:text-center text-sm font-medium">
+              <h4 className="text-gray-900 md:text-center text-sm font-bold">
                 {service.title}
               </h4>
-              <span className="text-gray-600 inline-block md:text-center text-sm">
+              <span className="text-gray-600 inline-block md:text-center text-xs">
                 {service.description}
               </span>
             </div>
