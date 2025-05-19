@@ -12,9 +12,9 @@ export default function Header() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Insights", href: "/insights" },
     { name: "Services", href: "/services" },
     { name: "Team", href: "/team" },
+    { name: "Insights", href: "/insights" },
     { name: "Contact Us", href: "/contact" },
   ];
 
@@ -218,16 +218,16 @@ export default function Header() {
                 Contact Us
               </p>
               <Link
-                href="tel:+12125557890"
+                href="tel:+918561046369"
                 className="block py-2 text-sm text-slate-700 hover:text-blue-600"
               >
-                +1 (212) 555-7890
+                +91 8561046369
               </Link>
               <Link
-                href="mailto:info@meridianpartners.com"
+                href="mailto:info@onebridgekp.com"
                 className="block py-2 text-sm text-slate-700 hover:text-blue-600"
               >
-                info@meridianpartners.com
+                info@onebridgekp.com
               </Link>
 
               {/* Social media in mobile menu */}
