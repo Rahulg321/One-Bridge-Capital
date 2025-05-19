@@ -6,7 +6,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-slate-900 text-white py-12 px-4 md:px-8">
-      <div className="container mx-auto max-w-7xl">
+      <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="mb-4 md:mb-6">
             <div className="flex items-center mb-4">
@@ -27,7 +27,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="col-span-1">
+          <div className="col-span-1 mx-auto">
             <h3 className="text-special font-semibold mb-4">Important Links</h3>
             <ul className="space-y-3">
               <li>
@@ -58,7 +58,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="col-span-1">
+          <div className="col-span-1 mx-auto">
             <h3 className="text-special font-semibold mb-4">Contact Us</h3>
             <p className="flex items-center mb-2">
               <Phone size={16} className="mr-2" />
