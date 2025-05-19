@@ -1,14 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import {
-  Link2,
-  Users,
-  Award,
-  Users2,
-  HeartHandshake,
-  UserRound,
-} from "lucide-react";
+import { Rocket, Scale, Shield, Globe, DollarSign, Heart } from "lucide-react";
 import { PrismicNextImage } from "@prismicio/next";
 
 /**
@@ -22,37 +15,37 @@ export type WhyChooseUsProps = SliceComponentProps<Content.WhyChooseUsSlice>;
 const WhyChooseUs: FC<WhyChooseUsProps> = ({ slice }) => {
   const services = [
     {
-      icon: <Link2 className="h-6 w-6 text-white" />,
+      icon: <Rocket className="h-6 w-6 text-white" />,
       title: "Execution Expertise",
       description:
         "A team of trained professionals fluent in M&A analysis and deliverables.",
     },
     {
-      icon: <Award className="h-6 w-6 text-white" />,
+      icon: <Scale className="h-6 w-6 text-white" />,
       title: "Flexible and Scalable Delivery",
       description:
         "Ramp up capacity as deal pipelines shift, without fixed overhead.",
     },
     {
-      icon: <Users className="h-6 w-6 text-white" />,
+      icon: <Shield className="h-6 w-6 text-white" />,
       title: "Confidential & Secure",
       description:
         "Trusted by global firms for our strict discretion and robust security protocols.",
     },
     {
-      icon: <Users2 className="h-6 w-6 text-white" />,
+      icon: <Globe className="h-6 w-6 text-white" />,
       title: "Follow the SUN model",
       description:
         "Global project experience with seamless, timezone-aligned execution.",
     },
     {
-      icon: <HeartHandshake className="h-6 w-6 text-white" />,
-      title: "•	Cost Efficiency",
+      icon: <DollarSign className="h-6 w-6 text-white" />,
+      title: "Cost Efficiency",
       description:
         "Premium execution support at optimized offshore rates, reducing costs without compromising quality.",
     },
     {
-      icon: <UserRound className="h-6 w-6 text-white" />,
+      icon: <Heart className="h-6 w-6 text-white" />,
       title: "It's All About Servant Leadership",
       description:
         "This is the core purpose of why we exist — placing the needs of others before ourselves. Success will follow.",
@@ -89,15 +82,17 @@ const WhyChooseUs: FC<WhyChooseUsProps> = ({ slice }) => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-all duration-300 flex flex-col h-full space-y-4"
+              className="bg-white rounded-lg p-4 border border-gray-200 hover:shadow-lg transition-all duration-300 flex flex-col h-full space-y-3"
             >
               <div className="flex items-center justify-center">
-                <div className=" bg-[#1e2a4a] w-10 h-10 rounded-full flex items-center justify-center">
+                <div className="bg-special w-8 h-8 rounded-full flex items-center justify-center">
                   {service.icon}
                 </div>
               </div>
-              <h4 className=" text-gray-900 md:text-center">{service.title}</h4>
-              <span className="text-gray-600 inline-block md:text-center">
+              <h4 className="text-gray-900 md:text-center text-sm font-medium">
+                {service.title}
+              </h4>
+              <span className="text-gray-600 inline-block md:text-center text-sm">
                 {service.description}
               </span>
             </div>
