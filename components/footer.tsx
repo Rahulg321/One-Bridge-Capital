@@ -14,8 +14,10 @@ export default function Footer() {
                 <span className="text-[#1e1e4b] font-bold text-xl">MSA</span>
               </div>
               <div className="uppercase">
-                <div className="text-xl font-semibold">Morgan Shaw</div>
-                <div className="text-sm">Advisory</div>
+                <div className="text-xl font-semibold text-destructive">
+                  Morgan Shaw
+                </div>
+                <div className="text-sm text-destructive">Advisory</div>
               </div>
             </div>
             <p className="font-light mt-8 mb-12">
