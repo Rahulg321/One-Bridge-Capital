@@ -30,7 +30,8 @@ const CallToAction: FC<CallToActionProps> = ({ slice }) => {
             </div>
             <Button
               asChild
-              className="bg-[#1e2a4a] hover:bg-[#2a3a5a] text-white font-medium px-8 py-6 h-auto rounded-none"
+              size={"4xl"}
+              className="bg-[#1e2a4a] hover:bg-[#2a3a5a] text-white rounded-none"
             >
               <PrismicNextLink field={slice.primary.cta_link} />
             </Button>

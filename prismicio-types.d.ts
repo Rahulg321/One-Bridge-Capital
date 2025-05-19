@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | CoreValuesSlice
   | ColorBackgroundSlice
   | MemberBioSliceSlice
   | FocusSectorsSlice
@@ -204,6 +205,7 @@ export type InsightDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | CoreValuesSlice
   | ColorBackgroundSlice
   | MemberBioSliceSlice
   | FocusSectorsSlice
@@ -676,6 +678,36 @@ export type ContentHeadingSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for CoreValues Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CoreValuesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *CoreValues*
+ */
+type CoreValuesSliceVariation = CoreValuesSliceDefault;
+
+/**
+ * CoreValues Shared Slice
+ *
+ * - **API ID**: `core_values`
+ * - **Description**: CoreValues
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CoreValuesSlice = prismic.SharedSlice<
+  "core_values",
+  CoreValuesSliceVariation
+>;
+
+/**
  * Item in *FaqSlice → Default → Primary → Faq Questions*
  */
 export interface FaqSliceSliceDefaultPrimaryFaqQuestionsItem {
@@ -780,6 +812,26 @@ export interface FeaturedImageSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   main_image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *FeaturedImage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_image.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Content field in *FeaturedImage → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_image.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
 }
 
 /**
@@ -1238,6 +1290,9 @@ declare module "@prismicio/client" {
       ContentHeadingSliceVariation,
       ContentHeadingSliceDefault,
       ContentHeadingSliceContentWithLeftHeading,
+      CoreValuesSlice,
+      CoreValuesSliceVariation,
+      CoreValuesSliceDefault,
       FaqSliceSlice,
       FaqSliceSliceDefaultPrimaryFaqQuestionsItem,
       FaqSliceSliceDefaultPrimary,

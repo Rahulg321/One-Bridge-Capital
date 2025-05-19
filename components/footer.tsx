@@ -91,35 +91,12 @@ export default function Footer() {
         <div className="mt-12 pt-6 border-t border-white/20 flex flex-col lg:flex-row justify-between items-start lg:items-center">
           <div className="max-w-2xl mb-4 lg:mb-0">
             <p>
-              Helping business owners in{" "}
-              <Link href="#" className="text-[#f7941d] hover:underline">
-                Sydney
-              </Link>
-              ,{" "}
-              <Link href="#" className="text-[#f7941d] hover:underline">
-                Melbourne
-              </Link>
-              ,{" "}
-              <Link href="#" className="text-[#f7941d] hover:underline">
-                Brisbane
-              </Link>
-              ,{" "}
-              <Link href="#" className="text-[#f7941d] hover:underline">
-                Canberra
-              </Link>
-              ,{" "}
-              <Link href="#" className="text-[#f7941d] hover:underline">
-                Adelaide
-              </Link>
-              ,{" "}
-              <Link href="#" className="text-[#f7941d] hover:underline">
-                Perth
-              </Link>{" "}
-              and across Australia to maximise their business value.
+              Helping M&A Advisory firms and Investment Banks in accelerating
+              delivery to their clients.
             </p>
           </div>
           <div>
-            <p>Copyright © {currentYear} Morgan Shaw Advisory</p>
+            <p>Copyright © {currentYear} OneBridge Knowledge Partners</p>
           </div>
         </div>
       </div>

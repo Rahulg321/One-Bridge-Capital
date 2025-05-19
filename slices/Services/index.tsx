@@ -44,10 +44,10 @@ const Services: FC<ServicesProps> = ({ slice }) => {
     },
     {
       icon: <TrendingUp className="h-6 w-6 text-white" />,
-      title: "Market and Industry Research",
+      title: "Synergy Assessment",
       description:
-        "Conducting comprehensive market and industry research to provide insights and competitive positioning.",
-      link: "/services/market-and-industry-research",
+        "Our detailed, data-driven analysis helps quantify achievable value, identify integration challenges, and design governance frameworks to track synergy realization-maximizing the combined entity’s success.",
+      link: "/services/synergy-assessment",
     },
     {
       icon: <TrendingUp className="h-6 w-6 text-white" />,

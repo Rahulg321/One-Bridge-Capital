@@ -1,0 +1,16 @@
+{
+  "id": "core_values",
+  "type": "SharedSlice",
+  "name": "CoreValues",
+  "description": "CoreValues",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}
