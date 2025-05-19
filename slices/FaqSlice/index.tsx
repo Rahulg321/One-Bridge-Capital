@@ -43,7 +43,7 @@ const FaqSlice: FC<FaqSliceProps> = ({ slice }) => {
                   <AccordionTrigger className="text-[#1a2d5a] text-left hover:no-underline py-4">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-[#1a2d5a]/80 pb-4">
+                  <AccordionContent className="text-[#1a2d5a]/80 pb-4 prose prose-ul:list-disc prose-ul:marker:text-red-500 text-sm">
                     <PrismicRichText field={faq.answer} />
                   </AccordionContent>
                 </AccordionItem>
