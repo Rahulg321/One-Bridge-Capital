@@ -40,7 +40,7 @@ const FaqSlice: FC<FaqSliceProps> = ({ slice }) => {
                   value={`item-${index + 4}`}
                   className="border-b border-[#1a2d5a]/20"
                 >
-                  <AccordionTrigger className="text-[#1a2d5a] text-left hover:no-underline py-4">
+                  <AccordionTrigger className="text-[#1a2d5a] text-left hover:no-underline py-4 text-sm md:text-lg lg:text-xl">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-[#1a2d5a]/80 pb-4 prose prose-ul:list-disc prose-ul:marker:text-red-500 text-sm">

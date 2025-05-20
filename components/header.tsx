@@ -51,7 +51,7 @@ export default function Header() {
           "bg-slate-900 text-white w-full transition-all duration-300 z-50 fixed top-0"
         )}
       >
-        <div className="px-4">
+        <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-10">
             <div className="flex items-center space-x-4">
               <a
