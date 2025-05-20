@@ -16,7 +16,7 @@ const ColorBackground: FC<ColorBackgroundProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full bg-slate-900 text-white block-space"
+      className="w-full bg-slate-900 text-white py-10"
     >
       <div className="big-container mx-auto">
         <div className="max-w-3xl mx-auto text-center">

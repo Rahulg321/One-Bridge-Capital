@@ -191,7 +191,12 @@ export default function Header() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="block py-2 px-3 text-base font-medium text-slate-700 rounded-md hover:bg-slate-100 transition-colors"
+                    className={cn(
+                      "block py-2 px-3 text-base font-medium text-slate-700 rounded-md hover:bg-slate-100 transition-colors",
+                      {
+                        "bg-blue-50 text-blue-600": pathname === item.href,
+                      }
+                    )}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}

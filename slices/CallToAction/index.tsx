@@ -29,7 +29,7 @@ const CallToAction: FC<CallToActionProps> = ({ slice }) => {
             <Button
               asChild
               size={"3xl"}
-              className="bg-[#1e2a4a] hover:bg-[#2a3a5a] text-white rounded-none"
+              className="bg-[#1e2a4a] hover:bg-[#2a3a5a] text-lg text-white rounded-none"
             >
               <Link href={"/contact"}>Contact Us</Link>
             </Button>

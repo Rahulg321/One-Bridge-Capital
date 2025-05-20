@@ -53,14 +53,12 @@ const CoreValues: FC<CoreValuesProps> = ({ slice }) => {
         {values.map((value, index) => (
           <div
             key={index}
-            className="bg-[#3d6098] p-4  transition-all duration-300 hover:shadow-lg"
+            className="bg-[#3d6098] p-4  transition-all duration-300 hover:shadow-lg rounded-lg"
           >
-            <h3 className="font-bold mb-3 md:text-center border-b-1 border-white pb-2 text-white">
+            <h3 className="font-bold mb-3 border-b-1 border-white pb-2 text-white">
               {value.title}
             </h3>
-            <span className="text-white inline-block md:text-center">
-              {value.description}
-            </span>
+            <span className="text-white inline-block">{value.description}</span>
           </div>
         ))}
       </div>
