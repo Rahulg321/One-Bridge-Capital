@@ -85,10 +85,8 @@ export default function ContactForm() {
             <h2 className="text-sm font-medium">CONTACT US</h2>
           </div>
           <h3 className="text-2xl font-medium text-gray-800">
-            An opportunity for a strategic partnership awaits you.{" "}
-            <span className="italic text-special">
-              Let&apos;s get in touch.
-            </span>
+            We’re here to support your 
+            <span className="italic text-special">next project.</span>
           </h3>
           <p className="mt-4 text-gray-600">
             We’re here to support your next project. Reach out to discuss how we
