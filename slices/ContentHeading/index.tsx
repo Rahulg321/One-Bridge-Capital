@@ -20,28 +20,28 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
     >
       <div className="w-full block-space big-container">
         {slice.variation === "contentWithLeftHeading" ? (
-          <div>
-            <h2 className="">{slice.primary.heading}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 mt-4 md:mt-8 lg:mt-12">
+          <div className="space-y-8">
+            <h2 className="text-3xl font-bold text-gray-900">
+              {slice.primary.heading}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 {slice.primary.tagline && (
-                  <div className="prose prose-lg mx-auto">
+                  <div className="prose">
                     <PrismicRichText field={slice.primary.tagline} />
                   </div>
                 )}
                 <Button
                   asChild
-                  size={"3xl"}
+                  size={"2xl"}
                   className="bg-[#1e2a4a] hover:bg-[#2a3a5a] text-lg text-white rounded-none"
                 >
                   <Link href={"/contact"}>Contact Us</Link>
                 </Button>
               </div>
               {slice.primary.content && (
-                <div>
-                  <article className="prose prose-lg max-w-none">
-                    <PrismicRichText field={slice.primary.content} />
-                  </article>
+                <div className="prose">
+                  <PrismicRichText field={slice.primary.content} />
                 </div>
               )}
             </div>

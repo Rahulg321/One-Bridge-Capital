@@ -644,6 +644,16 @@ export interface ContentHeadingSliceContentWithLeftHeadingPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   tagline: prismic.RichTextField;
+
+  /**
+   * Background Image field in *ContentHeading → Content With Left Heading → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentWithLeftHeading.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
 }
 
 /**
