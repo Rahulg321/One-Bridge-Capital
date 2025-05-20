@@ -2,15 +2,9 @@ import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
-/**
- * Props for `ColorBackground`.
- */
 export type ColorBackgroundProps =
   SliceComponentProps<Content.ColorBackgroundSlice>;
 
-/**
- * Component for "ColorBackground" Slices.
- */
 const ColorBackground: FC<ColorBackgroundProps> = ({ slice }) => {
   return (
     <section
