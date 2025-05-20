@@ -4,9 +4,11 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Linkedin, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   // Navigation items
   const navItems = [
@@ -49,9 +51,8 @@ export default function Header() {
           "bg-slate-900 text-white w-full transition-all duration-300 z-50 fixed top-0"
         )}
       >
-        <div className="container mx-auto px-4">
+        <div className="px-4">
           <div className="flex items-center justify-between h-10">
-            {/* Social Media Icons */}
             <div className="flex items-center space-x-4">
               <a
                 href="https://linkedin.com"
@@ -63,8 +64,6 @@ export default function Header() {
                 <Linkedin className="h-4 w-4" />
               </a>
             </div>
-
-            {/* CTA Buttons */}
             <div className="hidden sm:flex items-center space-x-3">
               <Link
                 href="#"
@@ -106,7 +105,11 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-blue-400"
+                    "text-sm font-medium transition-colors hover:text-blue-400 relative",
+                    {
+                      "text-blue-400 after:absolute after:bottom-[-0.2rem] after:left-0 after:w-full after:h-0.5 after:bg-blue-400":
+                        pathname === item.href,
+                    }
                   )}
                 >
                   {item.name}

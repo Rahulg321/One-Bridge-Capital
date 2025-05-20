@@ -13,11 +13,9 @@ export default function Footer() {
               <div className="bg-white rounded-full h-16 w-16 flex items-center justify-center mr-4">
                 <span className="text-[#1e1e4b] font-bold text-xl">MSA</span>
               </div>
-              <div className="uppercase">
-                <div className="text-xl font-semibold text-special">
-                  OneBridge
-                </div>
-                <div className="text-sm text-special">Knowledge Partners</div>
+              <div className="">
+                <h3 className="font-semibold text-special">OneBridge</h3>
+                <h5 className="text-special">Knowledge Partners</h5>
               </div>
             </div>
             <p>
