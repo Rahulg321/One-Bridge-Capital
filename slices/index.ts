@@ -17,6 +17,7 @@ export const components = {
   insight_index: dynamic(() => import("./InsightIndex")),
   member_bio_slice: dynamic(() => import("./MemberBioSlice")),
   services: dynamic(() => import("./Services")),
+  testimonials: dynamic(() => import("./Testimonials")),
   video_background: dynamic(() => import("./VideoBackground")),
   why_choose_us: dynamic(() => import("./WhyChooseUs")),
 };
