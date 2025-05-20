@@ -81,9 +81,6 @@ export default function ContactForm() {
     <div className="big-container">
       <div className="flex flex-col lg:flex-row items-center lg:gap-12">
         <div className="lg:w-1/2 mb-8 lg:mb-0">
-          <div className="inline-block bg-special text-white px-4 py-1 mb-4">
-            <h2 className="text-sm font-medium">CONTACT US</h2>
-          </div>
           <h3 className="text-2xl font-medium text-gray-800">
             We’re here to support your 
             <span className="italic text-special">next project.</span>

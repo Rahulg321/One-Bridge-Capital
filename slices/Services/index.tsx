@@ -4,7 +4,6 @@ import { SliceComponentProps } from "@prismicio/react";
 import Link from "next/link";
 import {
   FileText,
-  ClipboardList,
   TrendingUp,
   Calculator,
   FolderArchive,
@@ -57,13 +56,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
         "Our detailed, data-driven analysis helps quantify achievable value, identify integration challenges, and design governance frameworks to track synergy realization-maximizing the combined entity's success.",
       link: "/services/synergy-assessment",
     },
-    {
-      icon: <ClipboardList className="h-6 w-6 text-white" />,
-      title: "Program Management",
-      description:
-        "Overseeing the implementation of strategic initiatives, ensuring alignment with business goals and timelines.",
-      link: "/services/program-management",
-    },
+
     {
       icon: <TrendingUp className="h-6 w-6 text-white" />,
       title: "Financial Modelling",
