@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "vision_mission": {
+              "type": "SharedSlice"
+            },
             "team_index": {
               "type": "SharedSlice"
             },

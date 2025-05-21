@@ -206,6 +206,7 @@ export type InsightDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | VisionMissionSlice
   | TeamIndexSlice
   | TestimonialsSlice
   | CoreValuesSlice
@@ -1265,6 +1266,51 @@ export type VideoBackgroundSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *VisionMission → Default → Primary*
+ */
+export interface VisionMissionSliceDefaultPrimary {
+  /**
+   * Background Image field in *VisionMission → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vision_mission.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for VisionMission Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VisionMissionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VisionMissionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *VisionMission*
+ */
+type VisionMissionSliceVariation = VisionMissionSliceDefault;
+
+/**
+ * VisionMission Shared Slice
+ *
+ * - **API ID**: `vision_mission`
+ * - **Description**: VisionMission
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VisionMissionSlice = prismic.SharedSlice<
+  "vision_mission",
+  VisionMissionSliceVariation
+>;
+
+/**
  * Primary content in *WhyChooseUs → Default → Primary*
  */
 export interface WhyChooseUsSliceDefaultPrimary {
@@ -1406,6 +1452,10 @@ declare module "@prismicio/client" {
       VideoBackgroundSliceDefaultPrimary,
       VideoBackgroundSliceVariation,
       VideoBackgroundSliceDefault,
+      VisionMissionSlice,
+      VisionMissionSliceDefaultPrimary,
+      VisionMissionSliceVariation,
+      VisionMissionSliceDefault,
       WhyChooseUsSlice,
       WhyChooseUsSliceDefaultPrimary,
       WhyChooseUsSliceVariation,

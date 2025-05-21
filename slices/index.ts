@@ -20,5 +20,6 @@ export const components = {
   team_index: dynamic(() => import("./TeamIndex")),
   testimonials: dynamic(() => import("./Testimonials")),
   video_background: dynamic(() => import("./VideoBackground")),
+  vision_mission: dynamic(() => import("./VisionMission")),
   why_choose_us: dynamic(() => import("./WhyChooseUs")),
 };
