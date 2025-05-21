@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
+import MainLogo from "@/public/final_ong.png";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,15 +11,14 @@ export default function Footer() {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="mb-4 md:mb-6">
-            <div className="flex items-center mb-4">
-              <div className="bg-white rounded-full h-12 w-12 flex items-center justify-center mr-4">
-                <span className="text-[#1e1e4b] font-bold">OKP</span>
-              </div>
-              <div className="">
-                <h4 className="font-semibold text-special">OneBridge</h4>
-                <h5 className="text-special">Knowledge Partners</h5>
-              </div>
-            </div>
+            <Link href="/" className="flex items-center">
+              <Image
+                src={MainLogo}
+                alt="Meridian Partners Logo"
+                className="h-12 w-auto"
+                priority
+              />
+            </Link>
             <p>
               Helping M&A Advisory firms and Investment Banks in accelerating
               delivery to their clients.

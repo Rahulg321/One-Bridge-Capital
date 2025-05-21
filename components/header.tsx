@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Menu, X, Linkedin, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import MainLogo from "@/public/final_ong.png";
+import Image from "next/image";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -86,17 +88,14 @@ export default function Header() {
       >
         <div className="mx-auto px-4">
           <div className="flex items-center justify-between">
-            {/* Logo and Firm Name */}
-            <div className="flex items-center">
-              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mr-3">
-                <span className="font-bold text-white text-lg">M</span>
-              </div>
-              <div>
-                <h1 className={cn("font-bold text-xl tracking-tight")}>
-                  Meridian Partners
-                </h1>
-              </div>
-            </div>
+            <Link href="/" className="flex items-center">
+              <Image
+                src={MainLogo}
+                alt="Meridian Partners Logo"
+                className="h-12 w-auto"
+                priority
+              />
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
