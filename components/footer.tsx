@@ -11,11 +11,11 @@ export default function Footer() {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="mb-4 md:mb-6">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="">
               <Image
                 src={MainLogo}
                 alt="Meridian Partners Logo"
-                className="h-12 w-auto"
+                className="h-10 w-auto"
                 priority
               />
             </Link>
