@@ -47,7 +47,6 @@ export default function Header() {
 
   return (
     <>
-      {/* Topbar */}
       <div
         className={cn(
           "bg-slate-900 text-white w-full transition-all duration-300 z-50 fixed top-0"
@@ -107,7 +106,10 @@ export default function Header() {
                     "text-sm font-medium transition-colors hover:text-blue-400 relative",
                     {
                       "text-blue-400 after:absolute after:bottom-[-0.2rem] after:left-0 after:w-full after:h-0.5 after:bg-blue-400":
-                        pathname === item.href,
+                        item.href === "/"
+                          ? pathname === "/"
+                          : pathname.startsWith(item.href) ||
+                            pathname === item.href,
                     }
                   )}
                 >

@@ -76,7 +76,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Section */}
         <div className="mt-12 pt-6 border-t border-white/20 flex flex-col lg:flex-row justify-between items-start lg:items-center">
           <div className="max-w-2xl mb-4 lg:mb-0"></div>
           <div>
