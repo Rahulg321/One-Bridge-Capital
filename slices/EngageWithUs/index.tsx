@@ -1,7 +1,9 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import EngagementModels from "@/components/engagement-model";
+import EngagementModels, {
+  EngagementModel,
+} from "@/components/engagement-model";
 
 /**
  * Props for `EngageWithUs`.

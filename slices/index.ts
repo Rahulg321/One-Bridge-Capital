@@ -23,4 +23,5 @@ export const components = {
   video_background: dynamic(() => import("./VideoBackground")),
   vision_mission: dynamic(() => import("./VisionMission")),
   why_choose_us: dynamic(() => import("./WhyChooseUs")),
+  why_us: dynamic(() => import("./WhyUs")),
 };

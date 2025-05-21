@@ -206,6 +206,7 @@ export type InsightDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | WhyUsSlice
   | EngageWithUsSlice
   | VisionMissionSlice
   | TeamIndexSlice
@@ -1386,6 +1387,33 @@ export type WhyChooseUsSlice = prismic.SharedSlice<
   WhyChooseUsSliceVariation
 >;
 
+/**
+ * Default variation for WhyUs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WhyUsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *WhyUs*
+ */
+type WhyUsSliceVariation = WhyUsSliceDefault;
+
+/**
+ * WhyUs Shared Slice
+ *
+ * - **API ID**: `why_us`
+ * - **Description**: WhyUs
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WhyUsSlice = prismic.SharedSlice<"why_us", WhyUsSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -1494,6 +1522,9 @@ declare module "@prismicio/client" {
       WhyChooseUsSliceDefaultPrimary,
       WhyChooseUsSliceVariation,
       WhyChooseUsSliceDefault,
+      WhyUsSlice,
+      WhyUsSliceVariation,
+      WhyUsSliceDefault,
     };
   }
 }
