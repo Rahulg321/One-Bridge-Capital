@@ -73,9 +73,11 @@ const Services: FC<ServicesProps> = ({ slice }) => {
       className="relative w-full py-16 md:py-24 bg-white"
     >
       <div className="container px-4 md:px-6 mx-auto max-w-7xl">
-        <div className="mb-12 md:text-center">
-          <h2 className="">Services</h2>
-        </div>
+        {slice.variation === "servicesWithHeading" && (
+          <div className="mb-12 md:text-center">
+            <h2 className="">{slice.primary.heading}</h2>
+          </div>
+        )}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {services.map((service, index) => (
             <div key={index} className="flex flex-col items-start group">

@@ -1197,9 +1197,49 @@ export type ServicesSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Services → Services With Heading → Primary*
+ */
+export interface ServicesSliceServicesWithHeadingPrimary {
+  /**
+   * Background Image field in *Services → Services With Heading → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.servicesWithHeading.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *Services → Services With Heading → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.servicesWithHeading.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+}
+
+/**
+ * Services With Heading variation for Services Slice
+ *
+ * - **API ID**: `servicesWithHeading`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesSliceServicesWithHeading = prismic.SharedSliceVariation<
+  "servicesWithHeading",
+  Simplify<ServicesSliceServicesWithHeadingPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Services*
  */
-type ServicesSliceVariation = ServicesSliceDefault;
+type ServicesSliceVariation =
+  | ServicesSliceDefault
+  | ServicesSliceServicesWithHeading;
 
 /**
  * Services Shared Slice
@@ -1536,8 +1576,10 @@ declare module "@prismicio/client" {
       MemberBioSliceSliceDefault,
       ServicesSlice,
       ServicesSliceDefaultPrimary,
+      ServicesSliceServicesWithHeadingPrimary,
       ServicesSliceVariation,
       ServicesSliceDefault,
+      ServicesSliceServicesWithHeading,
       TeamIndexSlice,
       TeamIndexSliceVariation,
       TeamIndexSliceDefault,
