@@ -2,13 +2,16 @@ import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import {
-  Heart,
   Monitor,
   ShoppingCart,
-  Lightbulb,
+  Truck,
   DollarSign,
+  Pill,
   Factory,
+  Fuel,
+  Plane,
 } from "lucide-react";
+
 /**
  * Props for `IndustriesOfInterest`.
  */
@@ -21,11 +24,7 @@ export type IndustriesOfInterestProps =
 const IndustriesOfInterest: FC<IndustriesOfInterestProps> = ({ slice }) => {
   const sectors = [
     {
-      name: "Healthcare",
-      icon: Heart,
-    },
-    {
-      name: "Technology",
+      name: "Technology, Media and Entertainment",
       icon: Monitor,
     },
     {
@@ -33,16 +32,28 @@ const IndustriesOfInterest: FC<IndustriesOfInterestProps> = ({ slice }) => {
       icon: ShoppingCart,
     },
     {
-      name: "Services",
-      icon: Lightbulb,
+      name: "Logistics and Distribution",
+      icon: Truck,
     },
     {
       name: "Financial Services",
       icon: DollarSign,
     },
     {
-      name: "Industrial",
+      name: "Pharmaceuticals and Healthcare",
+      icon: Pill,
+    },
+    {
+      name: "Industrials",
       icon: Factory,
+    },
+    {
+      name: "Oil and Gas",
+      icon: Fuel,
+    },
+    {
+      name: "Travel and Entertainment",
+      icon: Plane,
     },
   ];
 
@@ -50,7 +61,7 @@ const IndustriesOfInterest: FC<IndustriesOfInterestProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full  py-16 px-4"
+      className="w-full py-16 px-4"
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="md:text-center mb-2">Sector Expertise</h2>
@@ -61,7 +72,7 @@ const IndustriesOfInterest: FC<IndustriesOfInterestProps> = ({ slice }) => {
           the following sectors:
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {sectors.map((sector) => (
             <div key={sector.name} className="flex flex-col items-center">
               <div className="bg-white rounded-full w-28 h-28 flex items-center justify-center mb-4 relative">
