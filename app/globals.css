@@ -133,7 +133,7 @@ body {
   }
 
   h1 {
-    @apply scroll-m-20 text-5xl font-extrabold tracking-tight lg:text-6xl;
+    @apply scroll-m-20 text-5xl font-extrabold tracking-tight;
   }
 
   h2 {
@@ -142,6 +142,7 @@ body {
   h3 {
     @apply scroll-m-20 text-3xl font-semibold tracking-tight;
   }
+
   h4 {
     @apply scroll-m-20 text-2xl font-semibold tracking-tight;
   }

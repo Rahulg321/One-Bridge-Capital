@@ -55,10 +55,12 @@ const CoreValues: FC<CoreValuesProps> = ({ slice }) => {
             key={index}
             className="bg-[#3d6098] p-4  transition-all duration-300 hover:shadow-lg rounded-lg"
           >
-            <h3 className="font-bold mb-3 border-b-1 border-white pb-2 text-white">
+            <h5 className="font-bold mb-3 border-b-1 border-white pb-2 text-white">
               {value.title}
-            </h3>
-            <span className="text-white inline-block">{value.description}</span>
+            </h5>
+            <span className="text-white inline-block text-xs">
+              {value.description}
+            </span>
           </div>
         ))}
       </div>

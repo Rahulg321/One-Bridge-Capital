@@ -83,11 +83,11 @@ const Services: FC<ServicesProps> = ({ slice }) => {
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#e74c3c] shrink-0 shadow-md transition-transform duration-300 group-hover:scale-110">
                   {service?.icon}
                 </div>
-                <h4 className="font-bold mt-3 transition-colors duration-300 group-hover:text-[#e74c3c]">
+                <h4 className="font-bold text-xl mt-3 transition-colors duration-300 group-hover:text-[#e74c3c]">
                   {service?.title}
                 </h4>
               </div>
-              <p className="mt-4 text-gray-600 leading-relaxed">
+              <p className="mt-4 text-gray-600 text-xs leading-relaxed">
                 {service?.description}
               </p>
               <Link
