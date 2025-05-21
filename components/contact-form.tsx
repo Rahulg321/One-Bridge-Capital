@@ -79,9 +79,9 @@ export default function ContactForm() {
 
   return (
     <div className="big-container">
-      <div className="flex flex-col lg:flex-row items-center lg:gap-12">
-        <div className="lg:w-1/2 mb-8 lg:mb-0">
-          <h3 className="text-2xl font-medium text-gray-800">
+      <div className="flex flex-col lg:flex-row items-start lg:gap-12">
+        <div className="lg:w-1/2 lg:mb-0">
+          <h3 className=" text-gray-800">
             We’re here to support your 
             <span className="italic text-special">next project.</span>
           </h3>
@@ -91,7 +91,7 @@ export default function ContactForm() {
             quick contact form
           </p>
 
-          <div className="mt-12 text-gray-700">
+          <div className="mt-10 text-gray-700">
             <p className="mt-4">info@onebridgekp.com</p>
             <p>+91 8561046369</p>
           </div>
