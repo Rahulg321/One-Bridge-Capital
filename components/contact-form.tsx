@@ -86,9 +86,9 @@ export default function ContactForm() {
             <span className="italic text-special">next project.</span>
           </h3>
           <p className="mt-4 text-gray-600">
-            We’re here to support your next project. Reach out to discuss how we
-            can partner on your next transaction or growth initiative. Please
-            get in touch via the below or complete our quick contact form
+            Reach out to discuss how we can partner on your next transaction or
+            growth initiative. Please get in touch via the below or complete our
+            quick contact form
           </p>
 
           <div className="mt-12 text-gray-700">
