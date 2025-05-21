@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="mb-4 md:mb-6">
             <div className="flex items-center mb-4">
               <div className="bg-white rounded-full h-16 w-16 flex items-center justify-center mr-4">
-                <span className="text-[#1e1e4b] font-bold text-xl">MSA</span>
+                <span className="text-[#1e1e4b] font-bold text-xl">OKP</span>
               </div>
               <div className="">
                 <h3 className="font-semibold text-special">OneBridge</h3>

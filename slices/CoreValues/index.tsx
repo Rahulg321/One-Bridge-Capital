@@ -58,7 +58,7 @@ const CoreValues: FC<CoreValuesProps> = ({ slice }) => {
             <h5 className="font-bold mb-3 border-b-1 border-white pb-2 text-white">
               {value.title}
             </h5>
-            <span className="text-white inline-block text-xs">
+            <span className="text-white inline-block text-sm">
               {value.description}
             </span>
           </div>

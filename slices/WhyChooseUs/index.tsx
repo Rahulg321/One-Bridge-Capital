@@ -86,7 +86,7 @@ const WhyChooseUs: FC<WhyChooseUsProps> = ({ slice }) => {
               <h4 className="text-gray-900 md:text-center text-sm font-bold">
                 {service.title}
               </h4>
-              <span className="text-gray-600 inline-block md:text-center text-xs">
+              <span className="text-gray-600 inline-block md:text-center text-sm">
                 {service.description}
               </span>
             </div>

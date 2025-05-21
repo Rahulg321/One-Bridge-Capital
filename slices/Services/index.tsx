@@ -87,7 +87,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
                   {service?.title}
                 </h4>
               </div>
-              <p className="mt-4 text-gray-600 text-xs leading-relaxed">
+              <p className="mt-4 text-gray-600 leading-relaxed">
                 {service?.description}
               </p>
               <Link

@@ -148,7 +148,7 @@ body {
   }
 
   p {
-    @apply leading-7 [&:not(:first-child)]:mt-6 text-xs;
+    @apply leading-7 [&:not(:first-child)]:mt-6 text-sm;
   }
 
   .lead {
