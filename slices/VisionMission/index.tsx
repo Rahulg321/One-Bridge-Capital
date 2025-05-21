@@ -13,43 +13,6 @@ export type VisionMissionProps =
  * Component for "VisionMission" Slices.
  */
 const VisionMission: FC<VisionMissionProps> = ({ slice }) => {
-  const stats = [
-    {
-      value: "6,000+",
-      description: "Employees and counting",
-    },
-    {
-      value: "650+",
-      description: "Satisfied clients",
-    },
-    {
-      value: "USD5bn",
-      description: "Saved for clients annually",
-    },
-    {
-      value: "16+",
-      description: "Cities presence globally",
-    },
-    {
-      value: "10,000+",
-      description: "Children's education sponsored",
-    },
-    {
-      value: "20+",
-      description:
-        "Working with 20+ NGOs focusing on education, entrepreneurship and the environment",
-    },
-    {
-      value: "5,000+",
-      description: "Volunteering hours spent by employees annually",
-    },
-    {
-      value: "36.5%",
-      description:
-        "Women Employees. We take pride in women's empowerment and skill development.",
-    },
-  ];
-
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -67,17 +30,18 @@ const VisionMission: FC<VisionMissionProps> = ({ slice }) => {
 
       <div className="absolute inset-0 bg-slate-800/80 z-10"></div>
 
-      <div className="container relative z-10 mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-          {stats.map((stat, index) => (
-            <div key={index} className="flex flex-col">
-              <h2 className="text-special mb-2">{stat.value}</h2>
-              <p className="text-white text-sm md:text-base">
-                {stat.description}
-              </p>
-            </div>
-          ))}
-        </div>
+      <div className="big-container md:text-center relative z-10 mx-auto px-4">
+        <h2 className="text-white"> Our Mission and Vision</h2>
+        <p className="text-white">
+          OneBridge is a trusted knowledge partner in the mid-market M&A,
+          providing agile and cost-effective execution support to boutique M&A
+          investment banks and advisory firms.
+        </p>
+        <p className="text-white">
+          Guided by our values, we embed seamlessly into our clients’ deal
+          teams, operating as an offshore extension to enable efficient and
+          high-quality delivery.
+        </p>
       </div>
     </section>
   );
