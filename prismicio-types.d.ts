@@ -206,6 +206,7 @@ export type InsightDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | TeamIndexSlice
   | TestimonialsSlice
   | CoreValuesSlice
   | ColorBackgroundSlice
@@ -1149,6 +1150,36 @@ export type ServicesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for TeamIndex Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TeamIndexSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *TeamIndex*
+ */
+type TeamIndexSliceVariation = TeamIndexSliceDefault;
+
+/**
+ * TeamIndex Shared Slice
+ *
+ * - **API ID**: `team_index`
+ * - **Description**: TeamIndex
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TeamIndexSlice = prismic.SharedSlice<
+  "team_index",
+  TeamIndexSliceVariation
+>;
+
+/**
  * Default variation for Testimonials Slice
  *
  * - **API ID**: `default`
@@ -1365,6 +1396,9 @@ declare module "@prismicio/client" {
       ServicesSliceDefaultPrimary,
       ServicesSliceVariation,
       ServicesSliceDefault,
+      TeamIndexSlice,
+      TeamIndexSliceVariation,
+      TeamIndexSliceDefault,
       TestimonialsSlice,
       TestimonialsSliceVariation,
       TestimonialsSliceDefault,
