@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "industries_of_interest": {
+              "type": "SharedSlice"
+            },
             "why_us": {
               "type": "SharedSlice"
             },

@@ -15,6 +15,7 @@ export const components = {
   focus_sectors: dynamic(() => import("./FocusSectors")),
   hero: dynamic(() => import("./Hero")),
   image_background: dynamic(() => import("./ImageBackground")),
+  industries_of_interest: dynamic(() => import("./IndustriesOfInterest")),
   insight_index: dynamic(() => import("./InsightIndex")),
   member_bio_slice: dynamic(() => import("./MemberBioSlice")),
   services: dynamic(() => import("./Services")),

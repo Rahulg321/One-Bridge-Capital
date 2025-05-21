@@ -206,6 +206,7 @@ export type InsightDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | IndustriesOfInterestSlice
   | WhyUsSlice
   | EngageWithUsSlice
   | VisionMissionSlice
@@ -1033,6 +1034,36 @@ export type ImageBackgroundSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for IndustriesOfInterest Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IndustriesOfInterestSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *IndustriesOfInterest*
+ */
+type IndustriesOfInterestSliceVariation = IndustriesOfInterestSliceDefault;
+
+/**
+ * IndustriesOfInterest Shared Slice
+ *
+ * - **API ID**: `industries_of_interest`
+ * - **Description**: IndustriesOfInterest
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IndustriesOfInterestSlice = prismic.SharedSlice<
+  "industries_of_interest",
+  IndustriesOfInterestSliceVariation
+>;
+
+/**
  * Default variation for InsightIndex Slice
  *
  * - **API ID**: `default`
@@ -1493,6 +1524,9 @@ declare module "@prismicio/client" {
       ImageBackgroundSliceDefaultPrimary,
       ImageBackgroundSliceVariation,
       ImageBackgroundSliceDefault,
+      IndustriesOfInterestSlice,
+      IndustriesOfInterestSliceVariation,
+      IndustriesOfInterestSliceDefault,
       InsightIndexSlice,
       InsightIndexSliceVariation,
       InsightIndexSliceDefault,
