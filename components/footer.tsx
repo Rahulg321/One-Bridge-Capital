@@ -10,11 +10,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="mb-4 md:mb-6">
             <div className="flex items-center mb-4">
-              <div className="bg-white rounded-full h-16 w-16 flex items-center justify-center mr-4">
-                <span className="text-[#1e1e4b] font-bold text-xl">OKP</span>
+              <div className="bg-white rounded-full h-12 w-12 flex items-center justify-center mr-4">
+                <span className="text-[#1e1e4b] font-bold">OKP</span>
               </div>
               <div className="">
-                <h3 className="font-semibold text-special">OneBridge</h3>
+                <h4 className="font-semibold text-special">OneBridge</h4>
                 <h5 className="text-special">Knowledge Partners</h5>
               </div>
             </div>
@@ -25,8 +25,8 @@ export default function Footer() {
           </div>
 
           <div className="col-span-1 md:mx-auto">
-            <h3 className="text-special font-semibold mb-4">Important Links</h3>
-            <ul className="space-y-3">
+            <h4 className="text-special font-semibold mb-4">Important Links</h4>
+            <ul className="space-y-3 text-sm">
               <li>
                 <Link
                   href="/about"
@@ -56,14 +56,14 @@ export default function Footer() {
           </div>
 
           <div className="col-span-1 md:mx-auto">
-            <h3 className="text-special font-semibold mb-4">Contact</h3>
-            <span className="flex items-center mb-2">
+            <h4 className="text-special font-semibold mb-4">Contact</h4>
+            <span className="flex items-center mb-2 text-sm">
               <Phone size={16} className="mr-2" />
               <Link href="tel:+918561046369" className="hover:underline">
                 +91 85610 46369
               </Link>
             </span>
-            <span className="flex items-center">
+            <span className="flex items-center text-sm">
               <Mail size={16} className="mr-2" />
               <Link
                 href="mailto:info@onebridge.com"
