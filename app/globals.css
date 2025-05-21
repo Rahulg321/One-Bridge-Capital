@@ -278,8 +278,8 @@ body {
   content: counter(list-counter) ".";
   position: absolute;
   left: 0;
-  font-weight: 400;
-  color: var(--color-muted-foreground);
+  font-weight: bold;
+  color: var(--color-primary);
 }
 
 .prose ul {
@@ -292,6 +292,19 @@ body {
 .prose ul > li {
   position: relative;
   padding-left: 0.375em;
+}
+
+.prose ul > li::marker {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.prose ul > li > strong:first-child,
+.prose ol > li > strong:first-child {
+  color: var(--color-primary);
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 0.5em;
 }
 
 .prose hr {
