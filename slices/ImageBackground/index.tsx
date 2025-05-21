@@ -21,12 +21,8 @@ const ImageBackground: FC<ImageBackgroundProps> = ({ slice }) => {
       />
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-          {slice.primary.heading}
-        </h1>
-        <p className="text-xl md:text-2xl text-white max-w-2xl">
-          {slice.primary.tagline}
-        </p>
+        <h1 className=" text-white mb-4">{slice.primary.heading}</h1>
+        <p className=" text-white max-w-2xl">{slice.primary.tagline}</p>
       </div>
     </section>
   );
