@@ -23,12 +23,12 @@ const CallToAction: FC<CallToActionProps> = ({ slice }) => {
         <div className="block-space px-4 md:px-8">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mx-auto">
             <div className="max-w-2xl">
-              <h2 className="mb-4">{slice.primary.heading}</h2>
-              <p className=" text-lg">{slice.primary.tagline}</p>
+              <h3 className="mb-4">{slice.primary.heading}</h3>
+              <p className="">{slice.primary.tagline}</p>
             </div>
             <Button
               asChild
-              size={"3xl"}
+              size={"2xl"}
               className="bg-[#1e2a4a] hover:bg-[#2a3a5a] text-lg text-white rounded-none"
             >
               <Link href={"/contact"}>Contact Us</Link>
