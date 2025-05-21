@@ -50,7 +50,7 @@ const IndustriesOfInterest: FC<IndustriesOfInterestProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full bg-[#1e5184] text-white py-16 px-4"
+      className="w-full  py-16 px-4"
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="md:text-center mb-2">Sector Expertise</h2>
