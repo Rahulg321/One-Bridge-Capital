@@ -71,9 +71,7 @@ const VisionMission: FC<VisionMissionProps> = ({ slice }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col">
-              <span className="text-amber-400 text-4xl md:text-5xl font-bold mb-2">
-                {stat.value}
-              </span>
+              <h2 className="text-special mb-2">{stat.value}</h2>
               <p className="text-white text-sm md:text-base">
                 {stat.description}
               </p>
