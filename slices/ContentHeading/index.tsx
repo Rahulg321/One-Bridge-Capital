@@ -50,13 +50,13 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
           <div className="max-w-3xl mx-auto space-y-8">
             <h2 className="md:text-center">{slice.primary.heading}</h2>
             {slice.primary.tagline && (
-              <div className="prose  ">
+              <div className="prose">
                 <PrismicRichText field={slice.primary.tagline} />
               </div>
             )}
             {slice.primary.content && (
               <div>
-                <article className="prose ">
+                <article className="prose">
                   <PrismicRichText field={slice.primary.content} />
                 </article>
               </div>
