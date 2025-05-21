@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu, X, Linkedin, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
-import MainLogo from "@/public/final_ong.png";
+import MainLogo from "@/public/one-bridge-final-logo.png";
 import Image from "next/image";
 
 export default function Header() {
@@ -91,7 +91,7 @@ export default function Header() {
               <Image
                 src={MainLogo}
                 alt="Meridian Partners Logo"
-                className="h-10 md:h-12 w-auto"
+                className="h-12 md:h-16 w-auto"
                 priority
               />
             </Link>

@@ -43,17 +43,23 @@ export default function EngagementModels({
               <h4 className="mb-4 text-[#1e2a4a]">{model.title}</h4>
               <div className="mb-4">
                 <h5 className="">Description:</h5>
-                <p className="text-muted-foreground">{model.description}</p>
+                <span className="text-muted-foreground inline-block mt-2 text-sm">
+                  {model.description}
+                </span>
               </div>
               <div className="mb-4">
                 <h4 className="font-medium text-sm">Suitable for:</h4>
-                <p className="text-muted-foreground">{model.suitableFor}</p>
+                <span className="text-muted-foreground text-sm">
+                  {model.suitableFor}
+                </span>
               </div>
               <div>
                 <h4 className="font-medium text-sm mb-2">Highlight:</h4>
                 <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-2">
                   {model.highlights.map((highlight, i) => (
-                    <li key={i}>{highlight}</li>
+                    <li key={i} className="text-sm">
+                      {highlight}
+                    </li>
                   ))}
                 </ul>
               </div>

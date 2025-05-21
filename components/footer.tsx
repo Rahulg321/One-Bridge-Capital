@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
-import MainLogo from "@/public/final_ong.png";
+import MainLogo from "@/public/one-bridge-final-logo.png";
 import Image from "next/image";
 
 export default function Footer() {
@@ -15,7 +15,7 @@ export default function Footer() {
               <Image
                 src={MainLogo}
                 alt="Meridian Partners Logo"
-                className="h-10 w-auto"
+                className="h-12 md:h-16 w-auto"
                 priority
               />
             </Link>
@@ -26,7 +26,7 @@ export default function Footer() {
           </div>
 
           <div className="col-span-1 md:mx-auto">
-            <h4 className="text-special font-semibold mb-4">Important Links</h4>
+            <h5 className="text-special font-semibold mb-4">Important Links</h5>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
@@ -57,7 +57,7 @@ export default function Footer() {
           </div>
 
           <div className="col-span-1 md:mx-auto">
-            <h4 className="text-special font-semibold mb-4">Contact</h4>
+            <h5 className="text-special font-semibold mb-4">Contact</h5>
             <span className="flex items-center mb-2 text-sm">
               <Phone size={16} className="mr-2" />
               <Link href="tel:+918561046369" className="hover:underline">

@@ -165,19 +165,17 @@ const Testimonials: FC<TestimonialsProps> = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={`bg-slate-800 ${className}`} // Corrected template literal
+      className={`bg-slate-800 ${className}`}
     >
-      <div className="py-12 md:py-16 px-4 max-w-7xl mx-auto">
-        <h2 className="text-center text-white text-2xl sm:text-3xl font-bold mb-10 md:mb-12">
+      <div className="py-10 md:py-14 px-4 max-w-6xl mx-auto">
+        <h2 className="text-center text-white text-xl sm:text-2xl font-bold mb-8 md:mb-10">
           {title}
         </h2>
         <div className="relative">
           <div className="overflow-x-hidden">
-            {" "}
-            {/* Clips the sliding content */}
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
-                key={currentIndex} // Key change triggers enter/exit for the group
+                key={currentIndex}
                 custom={direction}
                 variants={slideVariants}
                 initial="enter"
@@ -187,28 +185,26 @@ const Testimonials: FC<TestimonialsProps> = ({
                   x: { type: "spring", stiffness: 300, damping: 30 },
                   opacity: { duration: 0.2 },
                 }}
-                // Grid columns adapt based on Tailwind breakpoints, aligning with itemsPerPage logic
-                className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+                className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6"
               >
                 {visibleTestimonials.map((testimonial, index) => (
                   <div
-                    // Using a more robust key if possible, e.g., testimonial.id
                     key={`${testimonial.personName}-${currentIndex + index}`}
-                    className="bg-white rounded-lg p-4 sm:p-6 shadow-lg flex flex-col"
+                    className="bg-white rounded-lg p-3 sm:p-5 shadow-lg flex flex-col"
                   >
-                    <h4 className="text-lg sm:text-xl font-semibold text-slate-800 mb-3 sm:mb-4">
+                    <h4 className="text-base sm:text-lg font-semibold text-slate-800 mb-2 sm:mb-3">
                       {testimonial.title}
                     </h4>
-                    <p className="text-slate-600 text-sm sm:text-base mb-5 sm:mb-6 flex-grow">
-                      {testimonial.description}
-                    </p>
-                    <div className="border-t border-slate-200 pt-4">
-                      <p className="font-semibold text-slate-800">
+                    <span className="text-slate-600 text-xs sm:text-sm mb-4 sm:mb-5 flex-grow italic">
+                      &quot;{testimonial.description}&quot;
+                    </span>
+                    <div className="border-t border-slate-200 pt-3">
+                      <span className="font-semibold block text-slate-800 text-sm">
                         {testimonial.personName}
-                      </p>
-                      <p className="text-slate-500 text-xs sm:text-sm">
+                      </span>
+                      <span className="text-slate-500 text-xs block">
                         {testimonial.companyName}
-                      </p>
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -216,25 +212,23 @@ const Testimonials: FC<TestimonialsProps> = ({
             </AnimatePresence>
           </div>
 
-          {/* Navigation Buttons */}
-          {/* Only show buttons if there are more items than can be displayed at once */}
           {testimonials.length > itemsPerPage && (
             <>
               <button
                 onClick={prevTestimonials}
                 disabled={isAtStart}
-                className="absolute z-10 left-0 md:-left-2 lg:-left-3 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:bg-slate-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                className="absolute z-10 left-0 md:-left-2 lg:-left-3 top-1/2 -translate-y-1/2 bg-white rounded-full p-1.5 shadow-lg hover:bg-slate-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 aria-label="Previous testimonials"
               >
-                <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-slate-800" />
+                <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 text-slate-800" />
               </button>
               <button
                 onClick={nextTestimonials}
                 disabled={isAtEnd}
-                className="absolute z-10 right-0 md:-right-2 lg:-right-3 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:bg-slate-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                className="absolute z-10 right-0 md:-right-2 lg:-right-3 top-1/2 -translate-y-1/2 bg-white rounded-full p-1.5 shadow-lg hover:bg-slate-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 aria-label="Next testimonials"
               >
-                <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-slate-800" />
+                <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 text-slate-800" />
               </button>
             </>
           )}

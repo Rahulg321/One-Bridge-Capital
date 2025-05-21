@@ -82,7 +82,7 @@ export default function ContactForm() {
       <div className="flex flex-col lg:flex-row items-start lg:gap-12">
         <div className="lg:w-1/2 lg:mb-0">
           <h3 className=" text-gray-800">
-            We’re here to support your 
+            We&apos;re here to support your 
             <span className="italic text-special">next project.</span>
           </h3>
           <p className="mt-4 text-gray-600">
@@ -91,9 +91,9 @@ export default function ContactForm() {
             quick contact form
           </p>
 
-          <div className="mt-10 text-gray-700">
-            <p className="mt-4">info@onebridgekp.com</p>
-            <p>+91 8561046369</p>
+          <div className="mt-10 text-gray-700 space-y-2">
+            <span className="block">info@onebridgekspan.com</span>
+            <span className="block">+91 8561046369</span>
           </div>
         </div>
 
@@ -124,19 +124,19 @@ export default function ContactForm() {
             className="grid grid-cols-1 md:grid-cols-2 gap-x-6"
           >
             <FormInput
-              label="FIRST NAME"
+              label="First Name"
               {...register("firstName", { required: "First name is required" })}
               error={errors.firstName?.message}
             />
 
             <FormInput
-              label="LAST NAME"
+              label="Last Name"
               {...register("lastName", { required: "Last name is required" })}
               error={errors.lastName?.message}
             />
 
             <FormInput
-              label="EMAIL ADDRESS"
+              label="Email Address"
               type="email"
               {...register("email", {
                 required: "Email is required",
@@ -149,7 +149,7 @@ export default function ContactForm() {
             />
 
             <FormInput
-              label="CONTACT NUMBER"
+              label="Contact Number"
               type="tel"
               {...register("phone", { required: "Phone number is required" })}
               error={errors.phone?.message}
@@ -157,7 +157,7 @@ export default function ContactForm() {
 
             <div className="md:col-span-2">
               <FormSelect
-                label="INTERESTED IN"
+                label="Interested In"
                 options={interestOptions}
                 {...register("interest", {
                   required: "Please select an interest",
@@ -168,7 +168,7 @@ export default function ContactForm() {
 
             <div className="md:col-span-2">
               <FormTextarea
-                label="LEAVE US A MESSAGE"
+                label="Leave us a message"
                 {...register("message", { required: "Message is required" })}
                 error={errors.message?.message}
               />

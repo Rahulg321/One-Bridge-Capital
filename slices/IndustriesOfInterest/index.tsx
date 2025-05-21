@@ -65,8 +65,6 @@ const IndustriesOfInterest: FC<IndustriesOfInterestProps> = ({ slice }) => {
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="md:text-center mb-2">Sector Expertise</h2>
-        <div className="w-48 h-px bg-white/30 mx-auto mb-10"></div>
-
         <p className="md:text-center mb-16 max-w-4xl mx-auto">
           We provide advice across all industries, with specialised expertise in
           the following sectors:
@@ -75,13 +73,11 @@ const IndustriesOfInterest: FC<IndustriesOfInterestProps> = ({ slice }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {sectors.map((sector) => (
             <div key={sector.name} className="flex flex-col items-center">
-              <div className="bg-white rounded-full w-28 h-28 flex items-center justify-center mb-4 relative">
+              <div className="bg-white rounded-full w-24 h-24 flex items-center justify-center mb-4 relative">
                 <div className="absolute inset-0 rounded-full border-2 border-[#1e5184]"></div>
-                <sector.icon className="w-12 h-12 text-[#1e5184] stroke-[1.5px] relative z-10" />
+                <sector.icon className="w-10 h-10 text-[#1e5184] stroke-[1.5px] relative z-10" />
               </div>
-              <span className="text-xl font-light text-center">
-                {sector.name}
-              </span>
+              <span className="font-light text-center">{sector.name}</span>
             </div>
           ))}
         </div>
