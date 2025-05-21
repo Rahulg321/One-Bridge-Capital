@@ -26,45 +26,6 @@ const TeamIndex: FC<TeamIndexProps> = ({ slice }) => {
       title: "Chairman",
       image: "/older-man-headshot.png",
     },
-    {
-      id: "robert-king",
-      name: "Robert King",
-      title: "Chief Executive Officer",
-      image: "/placeholder-gvrky.png",
-    },
-    {
-      id: "ian-mullen",
-      name: "Ian Mullen",
-      title: "Chief Financial Officer",
-      image: "/smiling-older-man-headshot.png",
-    },
-    {
-      id: "jon-odonnell",
-      name: "Jon O'Donnell",
-      title: "Chief Operating Officer",
-      image: "/bald-man-headshot.png",
-    },
-    {
-      id: "sumit-chhabra",
-      name: "Sumit Chhabra",
-      title: "Chief Delivery Officer",
-      image:
-        "/placeholder.svg?height=200&width=200&query=professional%20headshot%20of%20man%20with%20dark%20hair",
-    },
-    {
-      id: "joyce-church",
-      name: "Joyce Church",
-      title: "Chief of Staff",
-      image:
-        "/placeholder.svg?height=200&width=200&query=professional%20headshot%20of%20woman%20with%20glasses",
-    },
-    {
-      id: "narasimhan-sl",
-      name: "Narasimhan S L",
-      title: "Chief Human Resources Officer",
-      image:
-        "/placeholder.svg?height=200&width=200&query=professional%20headshot%20of%20older%20man%20with%20glasses%20and%20gray%20hair",
-    },
   ];
 
   return (

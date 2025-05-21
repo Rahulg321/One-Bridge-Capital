@@ -206,6 +206,7 @@ export type InsightDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | EngageWithUsSlice
   | VisionMissionSlice
   | TeamIndexSlice
   | TestimonialsSlice
@@ -719,6 +720,36 @@ type CoreValuesSliceVariation = CoreValuesSliceDefault;
 export type CoreValuesSlice = prismic.SharedSlice<
   "core_values",
   CoreValuesSliceVariation
+>;
+
+/**
+ * Default variation for EngageWithUs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EngageWithUsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *EngageWithUs*
+ */
+type EngageWithUsSliceVariation = EngageWithUsSliceDefault;
+
+/**
+ * EngageWithUs Shared Slice
+ *
+ * - **API ID**: `engage_with_us`
+ * - **Description**: EngageWithUs
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EngageWithUsSlice = prismic.SharedSlice<
+  "engage_with_us",
+  EngageWithUsSliceVariation
 >;
 
 /**
@@ -1412,6 +1443,9 @@ declare module "@prismicio/client" {
       CoreValuesSlice,
       CoreValuesSliceVariation,
       CoreValuesSliceDefault,
+      EngageWithUsSlice,
+      EngageWithUsSliceVariation,
+      EngageWithUsSliceDefault,
       FaqSliceSlice,
       FaqSliceSliceDefaultPrimaryFaqQuestionsItem,
       FaqSliceSliceDefaultPrimary,
