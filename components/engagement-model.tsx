@@ -1,7 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
-import Link from "next/link";
 
 export interface EngagementModel {
   id: string;
@@ -62,19 +60,6 @@ export default function EngagementModels({
             </CardContent>
           </Card>
         ))}
-      </div>
-
-      <div className="text-center mt-12">
-        <p className="mb-4 text-muted-foreground">
-          Looking for a custom engagement model that suits your business needs?
-        </p>
-        <Button
-          asChild
-          size={"2xl"}
-          className="bg-[#1e2a4a] hover:bg-[#2a3a5a] text-lg text-white rounded-none"
-        >
-          <Link href={"/contact"}>Contact Us</Link>
-        </Button>
       </div>
     </div>
   );
