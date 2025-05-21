@@ -21,10 +21,10 @@ type TeamMember = {
 const TeamIndex: FC<TeamIndexProps> = ({ slice }) => {
   const teamMembers: TeamMember[] = [
     {
-      id: "philip-gore-randall",
-      name: "Philip Gore-Randall",
-      title: "Chairman",
-      image: "/older-man-headshot.png",
+      id: "pragya",
+      name: "Pragya",
+      title: "Managing Partner",
+      image: "/pragya.png",
     },
   ];
 
@@ -36,7 +36,7 @@ const TeamIndex: FC<TeamIndexProps> = ({ slice }) => {
     >
       <h2 className="md:text-center">Meet the Team</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-4 md:mt-6 lg:mt-12">
+      <div className="mt-4 md:mt-6 lg:mt-12">
         {teamMembers.map((member) => (
           <div key={member.id} className="flex flex-col items-center">
             <div className="relative mb-2">
