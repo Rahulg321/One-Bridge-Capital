@@ -11,7 +11,7 @@ const ImageBackground: FC<ImageBackgroundProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative min-h-[55vh] w-full overflow-hidden"
+      className="relative min-h-[45vh] w-full overflow-hidden"
     >
       <PrismicNextImage
         field={slice.primary.background_image}
