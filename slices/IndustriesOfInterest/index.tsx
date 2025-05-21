@@ -64,8 +64,9 @@ const IndustriesOfInterest: FC<IndustriesOfInterestProps> = ({ slice }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {sectors.map((sector) => (
             <div key={sector.name} className="flex flex-col items-center">
-              <div className="bg-white rounded-full w-28 h-28 flex items-center justify-center mb-4">
-                <sector.icon className="w-12 h-12 text-[#1e5184] stroke-[1.5px]" />
+              <div className="bg-white rounded-full w-28 h-28 flex items-center justify-center mb-4 relative">
+                <div className="absolute inset-0 rounded-full border-2 border-[#1e5184]"></div>
+                <sector.icon className="w-12 h-12 text-[#1e5184] stroke-[1.5px] relative z-10" />
               </div>
               <span className="text-xl font-light text-center">
                 {sector.name}

@@ -84,7 +84,7 @@ export default function Header() {
           "bg-gradient-to-r from-slate-900 to-slate-800 text-white py-5"
         )}
       >
-        <div className="container mx-auto px-4">
+        <div className="mx-auto px-4">
           <div className="flex items-center justify-between">
             {/* Logo and Firm Name */}
             <div className="flex items-center">
