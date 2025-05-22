@@ -61,21 +61,21 @@ const IndustriesOfInterest: FC<IndustriesOfInterestProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full py-16 px-4"
+      className="w-full block-space"
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="md:text-center mb-2">Sector Expertise</h2>
-        <p className="md:text-center mb-16 max-w-4xl mx-auto">
+        <span className="md:text-center block text-sm mt-4 mb-12 max-w-4xl mx-auto">
           We provide advice across all industries, with specialised expertise in
           the following sectors:
-        </p>
+        </span>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {sectors.map((sector) => (
             <div key={sector.name} className="flex flex-col items-center">
-              <div className="bg-white rounded-full w-24 h-24 flex items-center justify-center mb-4 relative">
+              <div className="bg-white rounded-full w-22 h-22 flex items-center justify-center mb-4 relative">
                 <div className="absolute inset-0 rounded-full border-2 border-[#1e5184]"></div>
-                <sector.icon className="w-10 h-10 text-[#1e5184] stroke-[1.5px] relative z-10" />
+                <sector.icon className="w-8 h-8 text-[#1e5184] stroke-[1.5px] relative z-10" />
               </div>
               <span className="font-light text-center">{sector.name}</span>
             </div>
