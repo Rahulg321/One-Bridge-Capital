@@ -62,7 +62,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
       title: "Financial Modelling",
       description:
         "Overseeing the implementation of strategic initiatives, ensuring alignment with business goals and timelines.",
-      link: "/services/program-management",
+      link: "/services/financial-modelling",
     },
   ];
 

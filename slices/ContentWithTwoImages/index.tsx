@@ -24,8 +24,22 @@ const ContentWithTwoImages: FC<ContentWithTwoImagesProps> = ({ slice }) => {
           <PrismicRichText field={slice.primary.content} />
         </article>
         <div className="space-y-8">
-          <PrismicNextImage field={slice.primary.first_image} />
-          <PrismicNextImage field={slice.primary.second_image} />
+          <div className="">
+            <PrismicNextImage
+              field={slice.primary.first_image}
+              width={400}
+              height={300}
+              className="object-cover"
+            />
+          </div>
+          <div className="">
+            <PrismicNextImage
+              field={slice.primary.second_image}
+              width={400}
+              height={300}
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>
