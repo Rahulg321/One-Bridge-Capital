@@ -41,20 +41,18 @@ const CoreValues: FC<CoreValuesProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="py-10 sm:py-16 px-2 sm:px-4 max-w-7xl mx-auto"
     >
-      <h2 className="text-center text-special mb-12">Our Core Values</h2>
+      <h2 className="md:text-center mb-12">Our Core Values</h2>
 
       <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
         {values.map((value, index) => (
           <div
             key={index}
-            className="bg-[#3d6098] w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] p-4 transition-all duration-300 hover:shadow-lg rounded-lg"
+            className=" w-full md:w-[calc(50%-1.5rem)] border-4 lg:w-[calc(33.333%-1.5rem)] p-4 transition-all duration-300 hover:shadow-lg rounded-lg"
           >
-            <h5 className="font-bold mb-3 border-b-1 border-white pb-2 text-white">
+            <h5 className="font-bold mb-3 border-b-2 text-special">
               {value.title}
             </h5>
-            <span className="text-white inline-block text-sm">
-              {value.description}
-            </span>
+            <span className=" inline-block text-sm">{value.description}</span>
           </div>
         ))}
       </div>
