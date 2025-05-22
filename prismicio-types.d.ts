@@ -1076,6 +1076,17 @@ export interface ImageBackgroundSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   tagline: prismic.KeyTextField;
+
+  /**
+   * PositionTop field in *ImageBackground → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: image_background.default.primary.positiontop
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  positiontop: prismic.BooleanField;
 }
 
 /**
@@ -1092,60 +1103,9 @@ export type ImageBackgroundSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *ImageBackground → ImageBackgroundWithButton → Primary*
- */
-export interface ImageBackgroundSliceImageBackgroundWithButtonPrimary {
-  /**
-   * Background Image field in *ImageBackground → ImageBackgroundWithButton → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_background.imageBackgroundWithButton.primary.background_image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  background_image: prismic.ImageField<never>;
-
-  /**
-   * Heading field in *ImageBackground → ImageBackgroundWithButton → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_background.imageBackgroundWithButton.primary.heading
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  heading: prismic.KeyTextField;
-
-  /**
-   * Tagline field in *ImageBackground → ImageBackgroundWithButton → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_background.imageBackgroundWithButton.primary.tagline
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  tagline: prismic.KeyTextField;
-}
-
-/**
- * ImageBackgroundWithButton variation for ImageBackground Slice
- *
- * - **API ID**: `imageBackgroundWithButton`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ImageBackgroundSliceImageBackgroundWithButton =
-  prismic.SharedSliceVariation<
-    "imageBackgroundWithButton",
-    Simplify<ImageBackgroundSliceImageBackgroundWithButtonPrimary>,
-    never
-  >;
-
-/**
  * Slice variation for *ImageBackground*
  */
-type ImageBackgroundSliceVariation =
-  | ImageBackgroundSliceDefault
-  | ImageBackgroundSliceImageBackgroundWithButton;
+type ImageBackgroundSliceVariation = ImageBackgroundSliceDefault;
 
 /**
  * ImageBackground Shared Slice
@@ -1722,10 +1682,8 @@ declare module "@prismicio/client" {
       HeroSliceDefault,
       ImageBackgroundSlice,
       ImageBackgroundSliceDefaultPrimary,
-      ImageBackgroundSliceImageBackgroundWithButtonPrimary,
       ImageBackgroundSliceVariation,
       ImageBackgroundSliceDefault,
-      ImageBackgroundSliceImageBackgroundWithButton,
       IndustriesOfInterestSlice,
       IndustriesOfInterestSliceVariation,
       IndustriesOfInterestSliceDefault,
