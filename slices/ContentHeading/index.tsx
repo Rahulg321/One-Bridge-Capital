@@ -18,7 +18,7 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="w-full block-space ">
+      <div className="w-full block-space">
         {slice.variation === "contentWithLeftHeading" ? (
           <div className="space-y-8 big-container">
             <h2 className="text-3xl font-bold text-gray-900">
@@ -48,7 +48,9 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
           </div>
         ) : (
           <div className="max-w-7xl w-full mx-auto space-y-4">
-            <h2 className="md:text-center">{slice.primary.heading}</h2>
+            {slice.primary.heading && (
+              <h2 className="md:text-center">{slice.primary.heading}</h2>
+            )}
             {slice.primary.tagline && (
               <div className="prose max-w-none">
                 <PrismicRichText field={slice.primary.tagline} />

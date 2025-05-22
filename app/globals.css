@@ -177,7 +177,7 @@ body {
 }
 
 .block-space {
-  padding-block: min(12vh, 17rem);
+  padding-block: min(10vh, 15rem);
 }
 
 .block-space-large {
