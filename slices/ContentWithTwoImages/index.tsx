@@ -17,7 +17,7 @@ const ContentWithTwoImages: FC<ContentWithTwoImagesProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space px-4 md:px-4 max-w-7xl mx-auto"
+      className="block-space-mini px-4 md:px-4 max-w-7xl mx-auto"
     >
       <div className="flex flex-col-reverse md:flex-row gap-8">
         <article className="prose basis-2/3">
