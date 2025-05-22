@@ -63,7 +63,7 @@ const IndustriesOfInterest: FC<IndustriesOfInterestProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="w-full block-space"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl px-2 sm:px-4 mx-auto">
         <h2 className="md:text-center mb-2">Sector Expertise</h2>
         <span className="md:text-center block text-sm mt-4 mb-12 max-w-4xl mx-auto">
           We provide advice across all industries, with specialised expertise in

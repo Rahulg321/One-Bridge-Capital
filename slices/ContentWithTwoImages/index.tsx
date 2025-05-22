@@ -23,7 +23,7 @@ const ContentWithTwoImages: FC<ContentWithTwoImagesProps> = ({ slice }) => {
         <article className="prose">
           <PrismicRichText field={slice.primary.content} />
         </article>
-        <div className="space-y-8">
+        <div className="space-y-8 content-center">
           <div className="">
             <PrismicNextImage
               field={slice.primary.first_image}
