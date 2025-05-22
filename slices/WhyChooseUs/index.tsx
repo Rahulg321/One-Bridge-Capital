@@ -42,7 +42,7 @@ const WhyChooseUs: FC<WhyChooseUsProps> = ({ slice }) => {
       icon: <DollarSign className="h-6 w-6 text-white" />,
       title: "Cost Efficiency",
       description:
-        "Premium execution support at optimized offshore rates, reducing costs without compromising quality.",
+        "Premium execution at offshore rates, cutting costs without compromising quality",
     },
   ];
 

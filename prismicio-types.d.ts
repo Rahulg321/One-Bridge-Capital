@@ -206,6 +206,7 @@ export type InsightDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ContentWithTwoImagesSlice
   | IndustriesOfInterestSlice
   | WhyUsSlice
   | EngageWithUsSlice
@@ -289,6 +290,13 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type ServiceDocumentDataSlicesSlice =
+  | TeamIndexSlice
+  | TestimonialsSlice
+  | MemberBioSliceSlice
+  | IndustriesOfInterestSlice
+  | ColorBackgroundSlice
+  | ContentWithTwoImagesSlice
+  | CoreValuesSlice
   | FocusSectorsSlice
   | ImageBackgroundSlice
   | InsightIndexSlice
@@ -692,6 +700,71 @@ type ContentHeadingSliceVariation =
 export type ContentHeadingSlice = prismic.SharedSlice<
   "content_heading",
   ContentHeadingSliceVariation
+>;
+
+/**
+ * Primary content in *ContentWithTwoImages → Default → Primary*
+ */
+export interface ContentWithTwoImagesSliceDefaultPrimary {
+  /**
+   * Content field in *ContentWithTwoImages → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_with_two_images.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * First Image field in *ContentWithTwoImages → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_with_two_images.default.primary.first_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  first_image: prismic.ImageField<never>;
+
+  /**
+   * Second Image field in *ContentWithTwoImages → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_with_two_images.default.primary.second_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  second_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ContentWithTwoImages Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentWithTwoImagesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContentWithTwoImagesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContentWithTwoImages*
+ */
+type ContentWithTwoImagesSliceVariation = ContentWithTwoImagesSliceDefault;
+
+/**
+ * ContentWithTwoImages Shared Slice
+ *
+ * - **API ID**: `content_with_two_images`
+ * - **Description**: ContentWithTwoImages
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentWithTwoImagesSlice = prismic.SharedSlice<
+  "content_with_two_images",
+  ContentWithTwoImagesSliceVariation
 >;
 
 /**
@@ -1590,6 +1663,10 @@ declare module "@prismicio/client" {
       ContentHeadingSliceVariation,
       ContentHeadingSliceDefault,
       ContentHeadingSliceContentWithLeftHeading,
+      ContentWithTwoImagesSlice,
+      ContentWithTwoImagesSliceDefaultPrimary,
+      ContentWithTwoImagesSliceVariation,
+      ContentWithTwoImagesSliceDefault,
       CoreValuesSlice,
       CoreValuesSliceVariation,
       CoreValuesSliceDefault,

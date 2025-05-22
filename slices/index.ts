@@ -8,6 +8,7 @@ export const components = {
   contact_form: dynamic(() => import("./ContactForm")),
   contact_hero: dynamic(() => import("./ContactHero")),
   content_heading: dynamic(() => import("./ContentHeading")),
+  content_with_two_images: dynamic(() => import("./ContentWithTwoImages")),
   core_values: dynamic(() => import("./CoreValues")),
   engage_with_us: dynamic(() => import("./EngageWithUs")),
   faq_slice: dynamic(() => import("./FaqSlice")),

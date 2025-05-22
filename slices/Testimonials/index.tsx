@@ -167,7 +167,7 @@ const Testimonials: FC<TestimonialsProps> = ({
       data-slice-variation={slice.variation}
       className={`bg-slate-800 ${className}`}
     >
-      <div className="py-10 md:py-14 px-4 max-w-6xl mx-auto">
+      <div className="py-10 md:py-14 px-4 max-w-7xl mx-auto">
         <h2 className="text-center text-white text-xl sm:text-2xl font-bold mb-8 md:mb-10">
           {title}
         </h2>

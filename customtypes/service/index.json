@@ -17,6 +17,27 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "team_index": {
+              "type": "SharedSlice"
+            },
+            "testimonials": {
+              "type": "SharedSlice"
+            },
+            "member_bio_slice": {
+              "type": "SharedSlice"
+            },
+            "industries_of_interest": {
+              "type": "SharedSlice"
+            },
+            "color_background": {
+              "type": "SharedSlice"
+            },
+            "content_with_two_images": {
+              "type": "SharedSlice"
+            },
+            "core_values": {
+              "type": "SharedSlice"
+            },
             "focus_sectors": {
               "type": "SharedSlice"
             },

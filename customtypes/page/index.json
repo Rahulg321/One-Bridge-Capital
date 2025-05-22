@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "content_with_two_images": {
+              "type": "SharedSlice"
+            },
             "industries_of_interest": {
               "type": "SharedSlice"
             },

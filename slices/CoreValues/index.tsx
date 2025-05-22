@@ -4,14 +4,8 @@ import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
-/**
- * Props for `CoreValues`.
- */
 export type CoreValuesProps = SliceComponentProps<Content.CoreValuesSlice>;
 
-/**
- * Component for "CoreValues" Slices.
- */
 const CoreValues: FC<CoreValuesProps> = ({ slice }) => {
   const values = [
     {
@@ -49,11 +43,11 @@ const CoreValues: FC<CoreValuesProps> = ({ slice }) => {
     >
       <h2 className="text-center text-black mb-12">Our Core Values</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
         {values.map((value, index) => (
           <div
             key={index}
-            className="bg-[#3d6098] p-4  transition-all duration-300 hover:shadow-lg rounded-lg"
+            className="bg-[#3d6098] w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] p-4 transition-all duration-300 hover:shadow-lg rounded-lg"
           >
             <h5 className="font-bold mb-3 border-b-1 border-white pb-2 text-white">
               {value.title}
