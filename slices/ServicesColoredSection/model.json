@@ -1,0 +1,16 @@
+{
+  "id": "services_colored_section",
+  "type": "SharedSlice",
+  "name": "ServicesColoredSection",
+  "description": "ServicesColoredSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

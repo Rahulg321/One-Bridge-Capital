@@ -20,6 +20,7 @@ export const components = {
   insight_index: dynamic(() => import("./InsightIndex")),
   member_bio_slice: dynamic(() => import("./MemberBioSlice")),
   services: dynamic(() => import("./Services")),
+  services_colored_section: dynamic(() => import("./ServicesColoredSection")),
   team_index: dynamic(() => import("./TeamIndex")),
   testimonials: dynamic(() => import("./Testimonials")),
   video_background: dynamic(() => import("./VideoBackground")),

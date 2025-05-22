@@ -17,6 +17,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "services_colored_section": {
+              "type": "SharedSlice"
+            },
+            "engage_with_us": {
+              "type": "SharedSlice"
+            },
             "team_index": {
               "type": "SharedSlice"
             },

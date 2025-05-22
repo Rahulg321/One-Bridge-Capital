@@ -290,6 +290,8 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type ServiceDocumentDataSlicesSlice =
+  | ServicesColoredSectionSlice
+  | EngageWithUsSlice
   | TeamIndexSlice
   | TestimonialsSlice
   | MemberBioSliceSlice
@@ -1378,6 +1380,36 @@ export type ServicesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for ServicesColoredSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesColoredSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *ServicesColoredSection*
+ */
+type ServicesColoredSectionSliceVariation = ServicesColoredSectionSliceDefault;
+
+/**
+ * ServicesColoredSection Shared Slice
+ *
+ * - **API ID**: `services_colored_section`
+ * - **Description**: ServicesColoredSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesColoredSectionSlice = prismic.SharedSlice<
+  "services_colored_section",
+  ServicesColoredSectionSliceVariation
+>;
+
+/**
  * Default variation for TeamIndex Slice
  *
  * - **API ID**: `default`
@@ -1710,6 +1742,9 @@ declare module "@prismicio/client" {
       ServicesSliceVariation,
       ServicesSliceDefault,
       ServicesSliceServicesWithHeading,
+      ServicesColoredSectionSlice,
+      ServicesColoredSectionSliceVariation,
+      ServicesColoredSectionSliceDefault,
       TeamIndexSlice,
       TeamIndexSliceVariation,
       TeamIndexSliceDefault,

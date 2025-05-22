@@ -41,7 +41,7 @@ const CoreValues: FC<CoreValuesProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="py-10 sm:py-16 px-2 sm:px-4 max-w-7xl mx-auto"
     >
-      <h2 className="text-center text-black mb-12">Our Core Values</h2>
+      <h2 className="text-center text-special mb-12">Our Core Values</h2>
 
       <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
         {values.map((value, index) => (
