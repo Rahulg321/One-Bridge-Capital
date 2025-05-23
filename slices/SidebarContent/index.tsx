@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import Link from "next/link";
+import SidebarNav from "./SidebarNav";
 
 /**
  * Props for `SidebarContent`.
@@ -24,38 +24,7 @@ const SidebarContent: FC<SidebarContentProps> = ({ slice }) => {
           {/* Sidebar Navigation */}
           <div className="md:col-span-1">
             <h3 className=" text-gray-700 mb-4">WHO WE ARE</h3>
-            <nav className="flex flex-col space-y-4">
-              <Link
-                href="/about"
-                className="text-gray-600 hover:text-gray-900 py-2 border-b border-gray-200"
-              >
-                About One Horizon Capital
-              </Link>
-              <Link
-                href="/mission-vision"
-                className="text-gray-600 hover:text-gray-900 py-2 border-b border-gray-200"
-              >
-                Mission & Vision
-              </Link>
-              <Link
-                href="/why-choose-us"
-                className="text-gray-600 hover:text-gray-900 py-2 border-b border-gray-200"
-              >
-                Why Choose Us
-              </Link>
-              <Link
-                href="/core-values"
-                className="text-gray-600 hover:text-gray-900 py-2 border-b border-gray-200"
-              >
-                Our Core Values
-              </Link>
-              <Link
-                href="/sector-expertise"
-                className="text-gray-600 hover:text-gray-900 py-2 border-b border-gray-200"
-              >
-                Sector Expertise
-              </Link>
-            </nav>
+            <SidebarNav />
           </div>
 
           {/* Main Content */}
