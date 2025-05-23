@@ -214,6 +214,9 @@ export type InsightDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | SlideShowSlice
+  | OneImageBackgroundSlice
+  | ServicesColoredSectionSlice
   | ContentWithTwoImagesSlice
   | IndustriesOfInterestSlice
   | WhyUsSlice

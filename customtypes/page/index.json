@@ -17,6 +17,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "slide_show": {
+              "type": "SharedSlice"
+            },
+            "one_image_background": {
+              "type": "SharedSlice"
+            },
+            "services_colored_section": {
+              "type": "SharedSlice"
+            },
             "content_with_two_images": {
               "type": "SharedSlice"
             },
