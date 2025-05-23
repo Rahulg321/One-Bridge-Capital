@@ -26,6 +26,8 @@ const OneImageBackground: FC<OneImageBackgroundProps> = ({ slice }) => {
         className={cn("object-cover")}
       />
 
+      <div className="bg-blue-400/50 absolute inset-0"></div>
+
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
         <h1 className="text-white mb-4">{slice.primary.heading}</h1>
       </div>

@@ -214,6 +214,7 @@ export type InsightDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | SidebarContentSlice
   | SlideShowSlice
   | OneImageBackgroundSlice
   | ServicesColoredSectionSlice
@@ -301,6 +302,7 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type ServiceDocumentDataSlicesSlice =
+  | SidebarContentSlice
   | ServicesColoredSectionSlice
   | EngageWithUsSlice
   | TeamIndexSlice
@@ -1436,6 +1438,51 @@ export type ServicesColoredSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *SidebarContent → Default → Primary*
+ */
+export interface SidebarContentSliceDefaultPrimary {
+  /**
+   * Main Content field in *SidebarContent → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sidebar_content.default.primary.main_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  main_content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for SidebarContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SidebarContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SidebarContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SidebarContent*
+ */
+type SidebarContentSliceVariation = SidebarContentSliceDefault;
+
+/**
+ * SidebarContent Shared Slice
+ *
+ * - **API ID**: `sidebar_content`
+ * - **Description**: SidebarContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SidebarContentSlice = prismic.SharedSlice<
+  "sidebar_content",
+  SidebarContentSliceVariation
+>;
+
+/**
  * Default variation for SlideShow Slice
  *
  * - **API ID**: `default`
@@ -1803,6 +1850,10 @@ declare module "@prismicio/client" {
       ServicesColoredSectionSlice,
       ServicesColoredSectionSliceVariation,
       ServicesColoredSectionSliceDefault,
+      SidebarContentSlice,
+      SidebarContentSliceDefaultPrimary,
+      SidebarContentSliceVariation,
+      SidebarContentSliceDefault,
       SlideShowSlice,
       SlideShowSliceVariation,
       SlideShowSliceDefault,
