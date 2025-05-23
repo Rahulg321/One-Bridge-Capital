@@ -87,7 +87,6 @@ export function RequestCallback() {
           "cursor-pointer rotate-270 z-100 bg-special hover:bg-special/80 text-[10px] font-semibold fixed bottom-1/2 right-[-5rem] uppercase py-2 px-3",
           isOpen ? "hidden" : "flex"
         )}
-        size={"xs"}
       >
         <Phone className="mr-2 h-3 w-3" />
         Request a Callback

@@ -43,7 +43,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space big-container"
+      className="block-space-mini extra-big-container"
     >
       <Carousel
         plugins={[

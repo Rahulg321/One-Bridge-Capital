@@ -171,6 +171,11 @@ body {
   width: min(90%, 75.5rem);
 }
 
+.extra-big-container {
+  margin-inline: auto;
+  width: min(90%, 80.5rem);
+}
+
 .narrow-container {
   margin-inline: auto;
   width: min(90%, 42.5rem);
