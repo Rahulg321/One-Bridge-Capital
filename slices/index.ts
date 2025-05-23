@@ -19,6 +19,7 @@ export const components = {
   industries_of_interest: dynamic(() => import("./IndustriesOfInterest")),
   insight_index: dynamic(() => import("./InsightIndex")),
   member_bio_slice: dynamic(() => import("./MemberBioSlice")),
+  one_image_background: dynamic(() => import("./OneImageBackground")),
   services: dynamic(() => import("./Services")),
   services_colored_section: dynamic(() => import("./ServicesColoredSection")),
   slide_show: dynamic(() => import("./SlideShow")),

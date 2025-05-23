@@ -1263,6 +1263,61 @@ export type MemberBioSliceSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *OneImageBackground → Default → Primary*
+ */
+export interface OneImageBackgroundSliceDefaultPrimary {
+  /**
+   * Background Image field in *OneImageBackground → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one_image_background.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *OneImageBackground → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one_image_background.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for OneImageBackground Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OneImageBackgroundSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<OneImageBackgroundSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *OneImageBackground*
+ */
+type OneImageBackgroundSliceVariation = OneImageBackgroundSliceDefault;
+
+/**
+ * OneImageBackground Shared Slice
+ *
+ * - **API ID**: `one_image_background`
+ * - **Description**: OneImageBackground
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OneImageBackgroundSlice = prismic.SharedSlice<
+  "one_image_background",
+  OneImageBackgroundSliceVariation
+>;
+
+/**
  * Primary content in *Services → Default → Primary*
  */
 export interface ServicesSliceDefaultPrimary {
@@ -1732,6 +1787,10 @@ declare module "@prismicio/client" {
       MemberBioSliceSliceDefaultPrimary,
       MemberBioSliceSliceVariation,
       MemberBioSliceSliceDefault,
+      OneImageBackgroundSlice,
+      OneImageBackgroundSliceDefaultPrimary,
+      OneImageBackgroundSliceVariation,
+      OneImageBackgroundSliceDefault,
       ServicesSlice,
       ServicesSliceDefaultPrimary,
       ServicesSliceServicesWithHeadingPrimary,
