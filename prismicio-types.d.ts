@@ -95,6 +95,12 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type InsightDocumentDataSlicesSlice =
+  | ContactFormSlice
+  | EngageWithUsSlice
+  | ServicesSidebarContentSlice
+  | OneImageBackgroundSlice
+  | IndustriesOfInterestSlice
+  | CoreValuesSlice
   | ImageBackgroundSlice
   | VideoBackgroundSlice
   | WhyChooseUsSlice

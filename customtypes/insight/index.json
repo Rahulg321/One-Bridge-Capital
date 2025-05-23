@@ -46,6 +46,24 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "contact_form": {
+              "type": "SharedSlice"
+            },
+            "engage_with_us": {
+              "type": "SharedSlice"
+            },
+            "services_sidebar_content": {
+              "type": "SharedSlice"
+            },
+            "one_image_background": {
+              "type": "SharedSlice"
+            },
+            "industries_of_interest": {
+              "type": "SharedSlice"
+            },
+            "core_values": {
+              "type": "SharedSlice"
+            },
             "image_background": {
               "type": "SharedSlice"
             },

@@ -2,6 +2,8 @@ import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Image from "next/image";
+import { FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
 
 /**
  * Props for `TeamIndex`.
@@ -13,6 +15,7 @@ type TeamMember = {
   name: string;
   title: string;
   image: string;
+  linkedin: string;
 };
 
 /**
@@ -25,6 +28,21 @@ const TeamIndex: FC<TeamIndexProps> = ({ slice }) => {
       name: "Pragya",
       title: "Managing Partner",
       image: "/pragya.png",
+      linkedin: "https://www.linkedin.com/in/pragya-placeholder/",
+    },
+    {
+      id: "john",
+      name: "John Doe",
+      title: "Managing Partner",
+      image: "/john-doe.png",
+      linkedin: "https://www.linkedin.com/in/john-doe-placeholder/",
+    },
+    {
+      id: "jane",
+      name: "Jane Doe",
+      title: "Managing Partner",
+      image: "/jane-doe.png",
+      linkedin: "https://www.linkedin.com/in/jane-doe-placeholder/",
     },
   ];
 
@@ -36,7 +54,7 @@ const TeamIndex: FC<TeamIndexProps> = ({ slice }) => {
     >
       <h2 className="md:text-center">Meet the Team</h2>
 
-      <div className="mt-4 md:mt-6 lg:mt-12">
+      <div className="mt-4 md:mt-6 lg:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {teamMembers.map((member) => (
           <div key={member.id} className="flex flex-col items-center">
             <div className="relative mb-2">
@@ -53,6 +71,13 @@ const TeamIndex: FC<TeamIndexProps> = ({ slice }) => {
             <span className="text-sm text-center text-[#ff5722]">
               {member.title}
             </span>
+            <Link
+              href={member.linkedin}
+              target="_blank"
+              className="mt-2 flex items-center justify-center"
+            >
+              <FaLinkedin />
+            </Link>
           </div>
         ))}
       </div>
