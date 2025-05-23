@@ -22,6 +22,7 @@ export const components = {
   one_image_background: dynamic(() => import("./OneImageBackground")),
   services: dynamic(() => import("./Services")),
   services_colored_section: dynamic(() => import("./ServicesColoredSection")),
+  services_sidebar_content: dynamic(() => import("./ServicesSidebarContent")),
   sidebar_content: dynamic(() => import("./SidebarContent")),
   slide_show: dynamic(() => import("./SlideShow")),
   team_index: dynamic(() => import("./TeamIndex")),

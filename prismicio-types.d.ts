@@ -214,6 +214,7 @@ export type InsightDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ServicesSidebarContentSlice
   | SidebarContentSlice
   | SlideShowSlice
   | OneImageBackgroundSlice
@@ -302,6 +303,9 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type ServiceDocumentDataSlicesSlice =
+  | OneImageBackgroundSlice
+  | ServicesSidebarContentSlice
+  | SlideShowSlice
   | SidebarContentSlice
   | ServicesColoredSectionSlice
   | EngageWithUsSlice
@@ -1438,6 +1442,51 @@ export type ServicesColoredSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ServicesSidebarContent → Default → Primary*
+ */
+export interface ServicesSidebarContentSliceDefaultPrimary {
+  /**
+   * Main Content field in *ServicesSidebarContent → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_sidebar_content.default.primary.main_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  main_content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ServicesSidebarContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesSidebarContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServicesSidebarContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ServicesSidebarContent*
+ */
+type ServicesSidebarContentSliceVariation = ServicesSidebarContentSliceDefault;
+
+/**
+ * ServicesSidebarContent Shared Slice
+ *
+ * - **API ID**: `services_sidebar_content`
+ * - **Description**: ServicesSidebarContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesSidebarContentSlice = prismic.SharedSlice<
+  "services_sidebar_content",
+  ServicesSidebarContentSliceVariation
+>;
+
+/**
  * Primary content in *SidebarContent → Default → Primary*
  */
 export interface SidebarContentSliceDefaultPrimary {
@@ -1850,6 +1899,10 @@ declare module "@prismicio/client" {
       ServicesColoredSectionSlice,
       ServicesColoredSectionSliceVariation,
       ServicesColoredSectionSliceDefault,
+      ServicesSidebarContentSlice,
+      ServicesSidebarContentSliceDefaultPrimary,
+      ServicesSidebarContentSliceVariation,
+      ServicesSidebarContentSliceDefault,
       SidebarContentSlice,
       SidebarContentSliceDefaultPrimary,
       SidebarContentSliceVariation,

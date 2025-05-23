@@ -17,6 +17,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "one_image_background": {
+              "type": "SharedSlice"
+            },
+            "services_sidebar_content": {
+              "type": "SharedSlice"
+            },
+            "slide_show": {
+              "type": "SharedSlice"
+            },
             "sidebar_content": {
               "type": "SharedSlice"
             },

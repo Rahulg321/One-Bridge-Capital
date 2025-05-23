@@ -20,7 +20,7 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
     >
       <div className="w-full block-space">
         {slice.variation === "contentWithLeftHeading" ? (
-          <div className="space-y-8 big-container">
+          <div className="space-y-8 extra-big-container">
             <h2 className="text-3xl font-bold text-gray-900">
               {slice.primary.heading}
             </h2>
@@ -46,7 +46,7 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
             </div>
           </div>
         ) : (
-          <div className="max-w-7xl w-full mx-auto space-y-4">
+          <div className="extra-big-container space-y-4">
             {slice.primary.heading && (
               <h2 className="md:text-center">{slice.primary.heading}</h2>
             )}

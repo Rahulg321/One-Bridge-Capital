@@ -1,18 +1,19 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import Link from "next/link";
+import { PrismicRichText } from "@prismicio/react";
 
 /**
- * Props for `SidebarContent`.
+ * Props for `ServicesSidebarContent`.
  */
-export type SidebarContentProps =
-  SliceComponentProps<Content.SidebarContentSlice>;
+export type ServicesSidebarContentProps =
+  SliceComponentProps<Content.ServicesSidebarContentSlice>;
 
 /**
- * Component for "SidebarContent" Slices.
+ * Component for "ServicesSidebarContent" Slices.
  */
-const SidebarContent: FC<SidebarContentProps> = ({ slice }) => {
+const ServicesSidebarContent: FC<ServicesSidebarContentProps> = ({ slice }) => {
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -23,37 +24,43 @@ const SidebarContent: FC<SidebarContentProps> = ({ slice }) => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Sidebar Navigation */}
           <div className="md:col-span-1">
-            <h3 className=" text-gray-700 mb-4">WHO WE ARE</h3>
+            <h3 className="t text-gray-700 mb-4">OUR SERVICES</h3>
             <nav className="flex flex-col space-y-4">
               <Link
-                href="/about"
+                href="/services/financial-due-diligence"
                 className="text-gray-600 hover:text-gray-900 py-2 border-b border-gray-200"
               >
-                About One Horizon Capital
+                Financial Due Diligence
               </Link>
               <Link
-                href="/mission-vision"
+                href="/services/operational-due-diligence"
                 className="text-gray-600 hover:text-gray-900 py-2 border-b border-gray-200"
               >
-                Mission & Vision
+                Operational Due Diligence
               </Link>
               <Link
-                href="/why-choose-us"
+                href="/services/information-memorandum-drafting"
                 className="text-gray-600 hover:text-gray-900 py-2 border-b border-gray-200"
               >
-                Why Choose Us
+                Information Memorandum Drafting
               </Link>
               <Link
-                href="/core-values"
+                href="/services/data-room-assistance"
                 className="text-gray-600 hover:text-gray-900 py-2 border-b border-gray-200"
               >
-                Our Core Values
+                Data Rooom Assistance
               </Link>
               <Link
-                href="/sector-expertise"
+                href="/services/synergy-assessment"
                 className="text-gray-600 hover:text-gray-900 py-2 border-b border-gray-200"
               >
-                Sector Expertise
+                Synergy Assessment
+              </Link>
+              <Link
+                href="/services/financial-modelling"
+                className="text-gray-600 hover:text-gray-900 py-2 border-b border-gray-200"
+              >
+                Financial Modelling
               </Link>
             </nav>
           </div>
@@ -70,4 +77,4 @@ const SidebarContent: FC<SidebarContentProps> = ({ slice }) => {
   );
 };
 
-export default SidebarContent;
+export default ServicesSidebarContent;

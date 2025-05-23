@@ -53,7 +53,7 @@ export default function Header() {
           "bg-white py-5"
         )}
       >
-        <div className="mx-auto px-4">
+        <div className="mx-auto extra-big-container">
           <div className="flex items-center justify-between">
             <Link href="/" className="">
               <Image
