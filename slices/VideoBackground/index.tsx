@@ -2,15 +2,9 @@ import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
-/**
- * Props for `VideoBackground`.
- */
 export type VideoBackgroundProps =
   SliceComponentProps<Content.VideoBackgroundSlice>;
 
-/**
- * Component for "VideoBackground" Slices.
- */
 const VideoBackground: FC<VideoBackgroundProps> = ({ slice }) => {
   return (
     <section

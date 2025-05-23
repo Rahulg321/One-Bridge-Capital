@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-
+import { PrismicRichText } from "@prismicio/react";
 export type ColorBackgroundProps =
   SliceComponentProps<Content.ColorBackgroundSlice>;
 
@@ -15,12 +15,11 @@ const ColorBackground: FC<ColorBackgroundProps> = ({ slice }) => {
       <div className="big-container mx-auto">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="mb-6">{slice.primary.title}</h2>
-          <p>
-            We empower our clients to stay active in the market, focusing on
-            selling and winning more transactions, while we manage all the
-            execution and due diligence behind the scenes. We enable our clients
-            to transform their operating model and cost base.
-          </p>
+          {slice.primary.content && (
+            <div className="prose text-white">
+              <PrismicRichText field={slice.primary.content} />
+            </div>
+          )}
         </div>
       </div>
     </section>

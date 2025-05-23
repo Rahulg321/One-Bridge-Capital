@@ -13,15 +13,12 @@ const InsightCardSkeleton = () => {
       <Skeleton className="h-48 w-full rounded-none" />
 
       <CardHeader className="p-4 pb-2 space-y-2">
-        {/* Category badge skeleton */}
         <Skeleton className="h-6 w-24" />
 
-        {/* Title skeleton */}
         <Skeleton className="h-7 w-full" />
       </CardHeader>
 
       <CardContent className="p-4 pt-0 space-y-2">
-        {/* Description skeleton lines */}
         <Skeleton className="h-4 w-full" />
         <Skeleton className="h-4 w-full" />
         <Skeleton className="h-4 w-3/4" />
