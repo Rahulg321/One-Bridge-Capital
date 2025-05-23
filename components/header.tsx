@@ -66,24 +66,37 @@ export default function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={cn(
-                    "text-sm font-medium text-black transition-colors hover:text-blue-400 relative",
-                    {
-                      "text-blue-400 after:absolute after:bottom-[-0.2rem] after:left-0 after:w-full after:h-0.5 after:bg-blue-400":
-                        item.href === "/"
-                          ? pathname === "/"
-                          : pathname.startsWith(item.href) ||
-                            pathname === item.href,
-                    }
-                  )}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const isAboutRoute = item.href === "/about";
+                const aboutSubRoutes = [
+                  "/core-values",
+                  "/why-choose-us",
+                  "/mission-vision",
+                  "/sector-expertise",
+                ];
+
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={cn(
+                      "text-sm font-medium text-black transition-colors hover:text-blue-400 relative",
+                      {
+                        "text-blue-400 after:absolute after:bottom-[-0.2rem] after:left-0 after:w-full after:h-0.5 after:bg-blue-400":
+                          item.href === "/"
+                            ? pathname === "/"
+                            : isAboutRoute
+                              ? aboutSubRoutes.includes(pathname) ||
+                                pathname === "/about"
+                              : pathname.startsWith(item.href) ||
+                                pathname === item.href,
+                      }
+                    )}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Mobile Menu Button */}
