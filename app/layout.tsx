@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
-import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
-import { RequestCallback } from "@/components/request-callback";
+import SimpleFooter from "@/components/simple-footer";
 
 const libreBaskerville = Libre_Baskerville({
   variable: "--font-libre-baskerville",
@@ -27,8 +26,7 @@ export default function RootLayout({
       <body className={`${libreBaskerville.variable} antialiased`}>
         <Header />
         {children}
-        <RequestCallback />
-        <Footer />
+        <SimpleFooter />
         <Toaster />
       </body>
     </html>

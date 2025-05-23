@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu, X, Linkedin, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
-import MainLogo from "@/public/one-bridge-final-logo.png";
+import MainLogo from "@/public/lightTheme.png";
 import Image from "next/image";
 
 export default function Header() {
@@ -47,42 +47,10 @@ export default function Header() {
 
   return (
     <>
-      <div
-        className={cn(
-          "bg-slate-900 text-white w-full transition-all duration-300 z-50 fixed top-0"
-        )}
-      >
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-10">
-            <div className="flex items-center space-x-4">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-blue-400 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
-            </div>
-            <div className="hidden sm:flex items-center space-x-3">
-              <Link
-                href="/contact"
-                className="bg-slate-800 hover:bg-slate-700 text-white text-xs font-medium py-1 px-3 rounded flex items-center transition-colors"
-              >
-                <Calendar className="h-3 w-3 mr-1" />
-                <span>SET AN APPOINTMENT</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Header */}
       <header
         className={cn(
-          "w-full transition-all duration-300 z-40 fixed top-10",
-          "bg-gradient-to-r from-slate-900 to-slate-800 text-white py-5"
+          "w-full transition-all duration-300 z-40 fixed top-0",
+          "bg-white py-5"
         )}
       >
         <div className="mx-auto px-4">
@@ -103,7 +71,7 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-blue-400 relative",
+                    "text-sm font-medium text-black transition-colors hover:text-blue-400 relative",
                     {
                       "text-blue-400 after:absolute after:bottom-[-0.2rem] after:left-0 after:w-full after:h-0.5 after:bg-blue-400":
                         item.href === "/"
@@ -121,7 +89,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className={cn("lg:hidden p-2 rounded-md")}
+              className={cn("lg:hidden p-2 rounded-md text-black")}
               aria-label="Open menu"
               aria-expanded={isMobileMenuOpen}
             >
@@ -129,20 +97,10 @@ export default function Header() {
             </button>
           </div>
         </div>
-
-        {/* Decorative element - subtle pattern overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-5"
-          style={{
-            backgroundImage: "url('/abstract-geometric-pattern.png')",
-            backgroundSize: "100px",
-          }}
-          aria-hidden="true"
-        ></div>
       </header>
 
       {/* Add padding to body to account for fixed header */}
-      <div className="h-[120px]"></div>
+      <div className="h-[80px]"></div>
 
       {/* Slide-in Mobile Navigation */}
       <div

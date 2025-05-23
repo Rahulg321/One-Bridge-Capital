@@ -5,6 +5,14 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | WhyUsSlice
+  | VisionMissionSlice
+  | ServicesColoredSectionSlice
+  | ContentWithTwoImagesSlice
+  | EngageWithUsSlice
+  | IndustriesOfInterestSlice
+  | TeamIndexSlice
+  | SlideShowSlice
   | TestimonialsSlice
   | CoreValuesSlice
   | ColorBackgroundSlice
@@ -1370,6 +1378,36 @@ export type ServicesColoredSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for SlideShow Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideShowSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *SlideShow*
+ */
+type SlideShowSliceVariation = SlideShowSliceDefault;
+
+/**
+ * SlideShow Shared Slice
+ *
+ * - **API ID**: `slide_show`
+ * - **Description**: SlideShow
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideShowSlice = prismic.SharedSlice<
+  "slide_show",
+  SlideShowSliceVariation
+>;
+
+/**
  * Default variation for TeamIndex Slice
  *
  * - **API ID**: `default`
@@ -1703,6 +1741,9 @@ declare module "@prismicio/client" {
       ServicesColoredSectionSlice,
       ServicesColoredSectionSliceVariation,
       ServicesColoredSectionSliceDefault,
+      SlideShowSlice,
+      SlideShowSliceVariation,
+      SlideShowSliceDefault,
       TeamIndexSlice,
       TeamIndexSliceVariation,
       TeamIndexSliceDefault,

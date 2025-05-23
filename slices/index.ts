@@ -21,6 +21,7 @@ export const components = {
   member_bio_slice: dynamic(() => import("./MemberBioSlice")),
   services: dynamic(() => import("./Services")),
   services_colored_section: dynamic(() => import("./ServicesColoredSection")),
+  slide_show: dynamic(() => import("./SlideShow")),
   team_index: dynamic(() => import("./TeamIndex")),
   testimonials: dynamic(() => import("./Testimonials")),
   video_background: dynamic(() => import("./VideoBackground")),

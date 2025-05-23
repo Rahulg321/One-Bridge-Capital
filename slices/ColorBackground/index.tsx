@@ -15,6 +15,7 @@ const ColorBackground: FC<ColorBackgroundProps> = ({ slice }) => {
       <div className="big-container mx-auto">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="mb-6">{slice.primary.title}</h2>
+
           {slice.primary.content && (
             <div className="prose text-white">
               <PrismicRichText field={slice.primary.content} />
