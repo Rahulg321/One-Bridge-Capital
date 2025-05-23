@@ -3,7 +3,7 @@
 import { FC, useState, useRef, useEffect } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion"; // Import AnimatePresence
 import type { EmblaCarouselType } from "embla-carousel";
 
 import {
@@ -41,23 +41,24 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
     },
   ];
 
+  const [emblaApi, setEmblaApi] = useState<EmblaCarouselType | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const emblaApiRef = useRef<EmblaCarouselType | null>(null);
 
-  // Handler to update active index
   useEffect(() => {
-    const emblaApi = emblaApiRef.current;
     if (!emblaApi) return;
-    const onSelect = () => {
-      setActiveIndex(emblaApi.selectedScrollSnap());
+
+    const onSelect = (api: EmblaCarouselType) => {
+      setActiveIndex(api.selectedScrollSnap());
     };
+
     emblaApi.on("select", onSelect);
     // Set initial index
-    setActiveIndex(emblaApi.selectedScrollSnap());
+    onSelect(emblaApi);
+
     return () => {
       emblaApi.off("select", onSelect);
     };
-  }, [emblaApiRef.current]);
+  }, [emblaApi]);
 
   return (
     <section
@@ -66,6 +67,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
       className="block-space extra-big-container"
     >
       <Carousel
+        setApi={(api) => setEmblaApi(api ?? null)} // Use setApi instead of ref for better state handling
         plugins={[
           Autoplay({
             delay: 2000,
@@ -78,67 +80,65 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
           align: "start",
           loop: true,
         }}
-        setApi={(api) => {
-          emblaApiRef.current = api ?? null;
-        }}
       >
-        <CarouselContent className="min-h-[60dvh] ">
-          {items.map((item, idx) => {
-            const isActive = idx === activeIndex;
-            return (
-              <CarouselItem
-                key={item.id}
-                className="relative flex flex-row items-center w-full overflow-hidden"
-              >
-                <div className="absolute inset-0 h-full w-full bg-blue-700/40 z-0">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="h-full w-full object-cover"
-                    aria-hidden="true"
-                  >
-                    <source src={item.video} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-                <div className="relative z-10 flex items-center justify-center flex-col w-full bg-slate-800/60 px-4 text-white min-h-screen md:text-center">
-                  <motion.h1
-                    className="mb-4"
-                    key={
-                      isActive
-                        ? `active-title-${item.id}`
-                        : `inactive-title-${item.id}`
-                    }
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={
-                      isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
-                    }
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                  >
-                    {item.title}
-                  </motion.h1>
-                  <motion.p
-                    className="mb-8"
-                    key={
-                      isActive
-                        ? `active-text-${item.id}`
-                        : `inactive-text-${item.id}`
-                    }
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={
-                      isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
-                    }
-                    transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-                  >
-                    {item.text}
-                  </motion.p>
-                </div>
-                <div className="hidden md:block relative h-full w-full"></div>
-              </CarouselItem>
-            );
-          })}
+        <CarouselContent className="min-h-[60dvh]">
+          {items.map((item, idx) => (
+            <CarouselItem
+              key={item.id}
+              className="relative flex flex-row items-center w-full overflow-hidden"
+            >
+              <div className="absolute inset-0 h-full w-full bg-blue-700/40 z-0">
+                <video
+                  key={item.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-full w-full object-cover"
+                  aria-hidden="true"
+                >
+                  <source src={item.video} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="relative z-10 flex items-center justify-center flex-col w-full bg-slate-800/60 px-4 text-white min-h-screen md:text-center">
+                <AnimatePresence>
+                  {activeIndex === idx && (
+                    <motion.div
+                      key={item.id}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      // "display: contents" makes this wrapper invisible to the flex layout, preserving your styles.
+                      className="contents"
+                    >
+                      <motion.h1
+                        className="mb-4" // Original class
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, ease: "easeOut" }}
+                      >
+                        {item.title}
+                      </motion.h1>
+                      <motion.p
+                        className="mb-8" // Original class
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                          duration: 0.7,
+                          ease: "easeOut",
+                          delay: 0.2,
+                        }}
+                      >
+                        {item.text}
+                      </motion.p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+              <div className="hidden md:block relative h-full w-full"></div>
+            </CarouselItem>
+          ))}
         </CarouselContent>
       </Carousel>
     </section>
