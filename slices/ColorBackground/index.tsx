@@ -12,16 +12,14 @@ const ColorBackground: FC<ColorBackgroundProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="w-full bg-slate-900 text-white py-10"
     >
-      <div className="big-container mx-auto">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="mb-6">{slice.primary.title}</h2>
+      <div className="extra-big-container md:text-center">
+        <h2 className="mb-6">{slice.primary.title}</h2>
 
-          {slice.primary.content && (
-            <div className="prose text-white">
-              <PrismicRichText field={slice.primary.content} />
-            </div>
-          )}
-        </div>
+        {slice.primary.content && (
+          <div className="prose text-white max-w-none">
+            <PrismicRichText field={slice.primary.content} />
+          </div>
+        )}
       </div>
     </section>
   );

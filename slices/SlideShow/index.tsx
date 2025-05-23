@@ -79,7 +79,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                     Your browser does not support the video tag.
                   </video>
                 </div>
-                <div className="relative z-10 flex items-center justify-center flex-col w-full bg-slate-800/60 px-4 text-white min-h-screen">
+                <div className="relative z-10 flex items-center justify-center flex-col w-full bg-slate-800/60 px-4 text-white min-h-screen md:text-center">
                   <h1 className="mb-4">{item.title}</h1>
                   <p className="mb-8">{item.text}</p>
                 </div>

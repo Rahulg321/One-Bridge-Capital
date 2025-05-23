@@ -19,8 +19,8 @@ const ServicesColoredSection: FC<ServicesColoredSectionProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="w-full bg-[#edf4f7]  py-10"
     >
-      <div className="big-container mx-auto">
-        <div className="max-w-3xl mx-auto text-center">
+      <div className="extra-big-container mx-auto">
+        <div className="mx-auto text-center">
           <h4>
             Reach out for a friendly conversation on your interests,
             requirements, or career aspirations if you’re looking
