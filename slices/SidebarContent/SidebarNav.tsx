@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/why-choose-us", label: "Why Choose Us" },
   { href: "/core-values", label: "Our Core Values" },
   { href: "/sector-expertise", label: "Sector Expertise" },
+  { href: "/frequently-asked-questions", label: "Frequently Asked Questions" },
 ];
 
 const SidebarNav: React.FC = () => {
