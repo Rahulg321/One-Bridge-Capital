@@ -6,10 +6,10 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/about", label: "About One Horizon Capital" },
-  { href: "/mission-vision", label: "Mission & Vision" },
   { href: "/why-choose-us", label: "Why Choose Us" },
   { href: "/core-values", label: "Our Core Values" },
   { href: "/sector-expertise", label: "Sector Expertise" },
+  { href: "/engage-with-us", label: "Engage With Us" },
   { href: "/frequently-asked-questions", label: "Frequently Asked Questions" },
 ];
 
@@ -24,7 +24,7 @@ const SidebarNav: React.FC = () => {
           <Link
             key={link.href}
             href={link.href}
-            className={`py-2 border-b border-gray-200 ${
+            className={`py-2 border-b border-gray-200 text-sm ${
               isActive
                 ? "text-blue-900 font-semibold border-blue-900"
                 : "text-gray-600 hover:text-gray-900"

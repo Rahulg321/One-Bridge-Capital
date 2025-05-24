@@ -88,7 +88,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
           loop: true,
         }}
       >
-        <CarouselContent className="min-h-[75vh]">
+        <CarouselContent className="min-h-[60vh] md:min-h-[75vh]">
           {items.map((item, idx) => (
             <CarouselItem
               key={item.id}

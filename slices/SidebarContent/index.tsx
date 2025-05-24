@@ -20,16 +20,16 @@ const SidebarContent: FC<SidebarContentProps> = ({ slice }) => {
       className="block-space-mini extra-big-container"
     >
       <div className="py-12 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
           {/* Sidebar Navigation */}
           <div className="md:col-span-1">
-            <h3 className=" text-gray-700 mb-4">WHO WE ARE</h3>
+            <h4 className=" text-gray-700 mb-4">Who We Are</h4>
             <SidebarNav />
           </div>
 
           {/* Main Content */}
           <div className="md:col-span-3">
-            <div className="prose">
+            <div className="prose max-w-none break-words">
               <PrismicRichText field={slice.primary.main_content} />
             </div>
           </div>

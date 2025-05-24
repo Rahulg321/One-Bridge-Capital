@@ -133,7 +133,6 @@ export default function Header() {
           onClick={() => setIsMobileMenuOpen(false)}
         />
 
-        {/* Slide-in panel */}
         <div
           className={cn(
             "fixed inset-y-0 left-0 w-full sm:w-3/4 md:w-2/3 lg:w-1/2 max-w-md bg-white shadow-xl transform transition-transform duration-300 ease-in-out",
@@ -196,7 +195,6 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Contact info in mobile menu */}
             <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-slate-200">
               <p className="text-xs sm:text-sm font-medium text-slate-500 mb-2 sm:mb-3">
                 Contact Us
@@ -213,8 +211,6 @@ export default function Header() {
               >
                 info@onebridgekp.com
               </Link>
-
-              {/* Social media in mobile menu */}
               <div className="flex space-x-3 sm:space-x-4 mt-3 sm:mt-4">
                 <Link
                   href="https://linkedin.com"

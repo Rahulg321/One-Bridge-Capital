@@ -3,6 +3,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { cn } from "@/lib/utils";
 import { PrismicNextImage } from "@prismicio/next";
+import AnimatedHeading from "@/components/animated-heading";
 /**
  * Props for `OneImageBackground`.
  */
@@ -29,7 +30,7 @@ const OneImageBackground: FC<OneImageBackgroundProps> = ({ slice }) => {
       <div className="bg-slate-800/60 absolute inset-0"></div>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-white mb-4">{slice.primary.heading}</h1>
+        <AnimatedHeading heading={slice.primary.heading} />
       </div>
     </section>
   );
