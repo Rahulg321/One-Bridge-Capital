@@ -5,7 +5,7 @@ import React from "react";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { href: "/about", label: "About One Horizon Capital" },
+  { href: "/about", label: "Who We Are" },
   { href: "/why-choose-us", label: "Why Choose Us" },
   { href: "/core-values", label: "Our Core Values" },
   { href: "/sector-expertise", label: "Sector Expertise" },
