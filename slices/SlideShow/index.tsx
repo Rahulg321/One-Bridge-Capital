@@ -22,8 +22,8 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
       id: 1,
       title: "OneBridge is a leading M&A Knoweldge Partner",
       video:
-        "https://videos.pexels.com/video-files/2282013/2282013-uhd_2732_1440_24fps.mp4",
-      text: "OneBridge is a trusted knowledge partner in the mid-market M&A, providing agile and cost-effective execution support to boutique M&A investment banks and advisory firms.",
+        "https://videos.pexels.com/video-files/19315789/19315789-uhd_2560_1440_30fps.mp4",
+      text: "OneBrige provides agile and cost-effective execution support to boutique M&A investment banks and advisory firms focused on the mid-market M&A.",
     },
     {
       id: 2,
@@ -36,14 +36,21 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
       id: 3,
       title: "Trusted By Industry Leaders",
       video:
-        "https://videos.pexels.com/video-files/6774646/6774646-uhd_2560_1440_30fps.mp4",
-      text: "Client Testimonials",
+        "https://videos.pexels.com/video-files/7691553/7691553-hd_1920_1080_25fps.mp4",
+      text: "From managing confidential information memorandums (CIMs), teasers, and data rooms to conducting in-depth financial modeling, valuation, and due diligence, we handle critical execution tasks that help our clients to focus 100% on client relationships and deal strategy.",
     },
     {
       id: 4,
       title: "Interested in learning more?",
       video:
         "https://videos.pexels.com/video-files/5562047/5562047-hd_1920_1080_30fps.mp4",
+      text: "Our approach helps boutique firms maintain lean operations while accessing expert execution capabilities typically available only to larger firms.",
+    },
+    {
+      id: 5,
+      title: "We’re here to support your next project.",
+      video:
+        "https://videos.pexels.com/video-files/7692776/7692776-hd_1920_1080_25fps.mp4",
       text: "We’re here to support your next project. Reach out to discuss how we can partner on your next  transaction or growth initiative.",
     },
   ];

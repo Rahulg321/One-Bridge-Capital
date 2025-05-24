@@ -15,7 +15,7 @@ const SimpleFooter = () => {
         </div>
         <div className="flex items-center space-x-4">
           <Link
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/company/onebridgeknowledgepartners"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"

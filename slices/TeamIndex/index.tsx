@@ -28,21 +28,21 @@ const TeamIndex: FC<TeamIndexProps> = ({ slice }) => {
       name: "Pragya",
       title: "Managing Partner",
       image: "/pragya.png",
-      linkedin: "https://www.linkedin.com/in/pragya-placeholder/",
+      linkedin: "https://www.linkedin.com/in/pragyachoudhary1996/",
     },
     {
       id: "john",
-      name: "John Doe",
+      name: "Vivek",
       title: "Managing Partner",
       image: "/john-doe.png",
-      linkedin: "https://www.linkedin.com/in/john-doe-placeholder/",
+      linkedin: "https://www.linkedin.com/in/vivek-vira-7433a1193/",
     },
     {
       id: "jane",
-      name: "Jane Doe",
+      name: "Sanjeevni",
       title: "Managing Partner",
       image: "/jane-doe.png",
-      linkedin: "https://www.linkedin.com/in/jane-doe-placeholder/",
+      linkedin: "https://www.linkedin.com/in/sanjeevnibhardwaj/",
     },
   ];
 
