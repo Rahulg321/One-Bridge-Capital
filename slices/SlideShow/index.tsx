@@ -128,7 +128,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                         {item.title}
                       </motion.h1>
                       <motion.p
-                        className="mb-8" // Original class
+                        className="mb-8 text-base" // Original class
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{
