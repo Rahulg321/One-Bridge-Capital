@@ -108,7 +108,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <div className="relative z-10 flex items-center justify-center flex-col w-full bg-slate-800/60 px-4 text-white min-h-full">
+              <div className="relative z-10 flex justify-center flex-col w-full bg-slate-800/60 px-4 text-white min-h-full">
                 <AnimatePresence>
                   {activeIndex === idx && (
                     <motion.div

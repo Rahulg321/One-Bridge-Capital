@@ -73,7 +73,7 @@ export default function Header() {
                   "/why-choose-us",
                   "/mission-vision",
                   "/sector-expertise",
-                  "/frequently-asked-questions",
+                  "/sector-expertise",
                 ];
 
                 return (
@@ -81,9 +81,9 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     className={cn(
-                      "text-sm font-medium text-black transition-colors hover:text-blue-400 relative",
+                      "text-sm font-medium text-black transition-colors hover:text-blue-900 relative",
                       {
-                        "text-blue-400 after:absolute after:bottom-[-0.2rem] after:left-0 after:w-full after:h-0.5 after:bg-blue-400":
+                        "text-blue-900 after:absolute after:bottom-[-0.2rem] after:left-0 after:w-full after:h-0.5 after:bg-blue-900":
                           item.href === "/"
                             ? pathname === "/"
                             : isAboutRoute
