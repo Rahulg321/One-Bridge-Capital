@@ -27,7 +27,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
     },
     {
       id: 2,
-      title: "Welcome to one bridge",
+      title: "Welcome to OneBridge",
       video:
         "https://videos.pexels.com/video-files/14084677/14084677-uhd_2560_1440_60fps.mp4",
       text: "We empower our clients to stay active in the market, focusing on selling and winning more transactions, while we manage all the execution and due diligence behind the scenes. We enable our clients to transform their operating model and cost base.",
@@ -37,7 +37,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
       title: "Trusted By Industry Leaders",
       video:
         "https://videos.pexels.com/video-files/6774646/6774646-uhd_2560_1440_30fps.mp4",
-      text: "Gain an edge with our expert analysis; discover investment opportunities others have missed",
+      text: "Client Testimonials",
     },
     {
       id: 4,
@@ -71,7 +71,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space extra-big-container"
+      className="block-space-mini extra-big-container"
     >
       <Carousel
         setApi={(api) => setEmblaApi(api ?? null)} // Use setApi instead of ref for better state handling
@@ -88,7 +88,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
           loop: true,
         }}
       >
-        <CarouselContent className="min-h-[60dvh]">
+        <CarouselContent className="min-h-[75vh]">
           {items.map((item, idx) => (
             <CarouselItem
               key={item.id}
@@ -108,7 +108,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <div className="relative z-10 flex items-center justify-center flex-col w-full bg-slate-800/60 px-4 text-white min-h-screen md:text-center">
+              <div className="relative z-10 flex items-center justify-center flex-col w-full bg-slate-800/60 px-4 text-white min-h-full">
                 <AnimatePresence>
                   {activeIndex === idx && (
                     <motion.div
