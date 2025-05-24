@@ -3,7 +3,7 @@
 import { FC, useState, useRef, useEffect } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { motion, AnimatePresence } from "framer-motion"; // Import AnimatePresence
+import { motion, AnimatePresence, transform } from "framer-motion"; // Import AnimatePresence
 import type { EmblaCarouselType } from "embla-carousel";
 
 import {
@@ -20,24 +20,31 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
   const items = [
     {
       id: 1,
-      title: "One Bridge Capital",
+      title: "OneBridge is a leading M&A Knoweldge Partner",
       video:
-        "https://videos.pexels.com/video-files/4620480/4620480-uhd_2732_1440_25fps.mp4",
-      text: "We are in the business of making money",
+        "https://videos.pexels.com/video-files/2282013/2282013-uhd_2732_1440_24fps.mp4",
+      text: "OneBridge is a trusted knowledge partner in the mid-market M&A, providing agile and cost-effective execution support to boutique M&A investment banks and advisory firms.",
     },
     {
       id: 2,
-      title: "Get Something",
+      title: "Welcome to one bridge",
       video:
-        "https://videos.pexels.com/video-files/3917742/3917742-uhd_2732_1440_25fps.mp4",
-      text: "We are in the business of making money",
+        "https://videos.pexels.com/video-files/14084677/14084677-uhd_2560_1440_60fps.mp4",
+      text: "We empower our clients to stay active in the market, focusing on selling and winning more transactions, while we manage all the execution and due diligence behind the scenes. We enable our clients to transform their operating model and cost base.",
     },
     {
       id: 3,
-      title: "Master the Markets",
+      title: "Trusted By Industry Leaders",
       video:
-        "https://videos.pexels.com/video-files/3917525/3917525-uhd_2732_1440_25fps.mp4",
+        "https://videos.pexels.com/video-files/6774646/6774646-uhd_2560_1440_30fps.mp4",
       text: "Gain an edge with our expert analysis; discover investment opportunities others have missed",
+    },
+    {
+      id: 4,
+      title: "Interested in learning more?",
+      video:
+        "https://videos.pexels.com/video-files/5562047/5562047-hd_1920_1080_30fps.mp4",
+      text: "We’re here to support your next project. Reach out to discuss how we can partner on your next  transaction or growth initiative.",
     },
   ];
 
@@ -70,7 +77,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
         setApi={(api) => setEmblaApi(api ?? null)} // Use setApi instead of ref for better state handling
         plugins={[
           Autoplay({
-            delay: 2000,
+            delay: 2500,
           }),
           fade({
             active: true,

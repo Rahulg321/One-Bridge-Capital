@@ -73,6 +73,7 @@ export default function Header() {
                   "/why-choose-us",
                   "/mission-vision",
                   "/sector-expertise",
+                  "/frequently-asked-questions",
                 ];
 
                 return (
