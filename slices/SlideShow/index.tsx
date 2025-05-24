@@ -120,17 +120,17 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                       className="contents"
                     >
                       <motion.h1
-                        className="mb-4" // Original class
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        className="mb-4"
+                        initial={{ opacity: 0, x: -40 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.7, ease: "easeOut" }}
                       >
                         {item.title}
                       </motion.h1>
                       <motion.p
-                        className="mb-8 text-base" // Original class
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        className="mb-8 text-base"
+                        initial={{ opacity: 0, x: -40 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{
                           duration: 0.7,
                           ease: "easeOut",

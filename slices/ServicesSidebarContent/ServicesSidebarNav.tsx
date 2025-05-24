@@ -33,7 +33,7 @@ const ServicesSidebarNav: React.FC = () => {
           <Link
             key={link.href}
             href={link.href}
-            className={`py-2 border-b border-gray-200 text-sm ${
+            className={`  py-2 border-b border-gray-200 text-sm ${
               isActive
                 ? "text-blue-900 font-semibold border-blue-900"
                 : "text-gray-600 hover:text-gray-900"
