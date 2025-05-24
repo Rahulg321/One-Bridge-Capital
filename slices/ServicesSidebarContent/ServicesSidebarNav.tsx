@@ -26,14 +26,14 @@ const ServicesSidebarNav: React.FC = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-col space-y-4">
+    <nav className="flex flex-col space-y-2">
       {navLinks.map((link) => {
         const isActive = pathname && pathname.includes(link.href);
         return (
           <Link
             key={link.href}
             href={link.href}
-            className={`py-2 border-b border-gray-200 ${
+            className={`py-2 border-b border-gray-200 text-sm ${
               isActive
                 ? "text-blue-900 font-semibold border-blue-900"
                 : "text-gray-600 hover:text-gray-900"
