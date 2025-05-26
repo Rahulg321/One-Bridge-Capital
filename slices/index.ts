@@ -15,6 +15,7 @@ export const components = {
   ),
   engage_sidebar_content: dynamic(() => import("./EngageSidebarContent")),
   engage_with_us: dynamic(() => import("./EngageWithUs")),
+  faq_sidebar_content: dynamic(() => import("./FaqSidebarContent")),
   faq_slice: dynamic(() => import("./FaqSlice")),
   featured_image: dynamic(() => import("./FeaturedImage")),
   focus_sectors: dynamic(() => import("./FocusSectors")),

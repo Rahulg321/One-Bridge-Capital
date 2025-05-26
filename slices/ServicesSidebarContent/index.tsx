@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicRichText } from "@prismicio/react";
@@ -9,6 +9,43 @@ import ServicesSidebarNav from "./ServicesSidebarNav";
  */
 export type ServicesSidebarContentProps =
   SliceComponentProps<Content.ServicesSidebarContentSlice>;
+
+// Helper to recursively highlight 'OneBridge' in any text node
+function highlightOneBridge(node: React.ReactNode): React.ReactNode {
+  if (typeof node === "string") {
+    const parts = node.split(/(OneBridge)/g);
+    return parts.map((part, i) =>
+      part === "OneBridge" ? (
+        <span key={i} style={{ color: "red" }}>
+          OneBridge
+        </span>
+      ) : (
+        part
+      )
+    );
+  }
+  if (Array.isArray(node)) {
+    return node.map((child, i) => (
+      <React.Fragment key={i}>{highlightOneBridge(child)}</React.Fragment>
+    ));
+  }
+  if (
+    React.isValidElement(node) &&
+    (node as React.ReactElement<{ children: React.ReactNode }>).props &&
+    (node as React.ReactElement<{ children: React.ReactNode }>).props.children
+  ) {
+    return React.cloneElement(
+      node as React.ReactElement<{ children: React.ReactNode }>,
+      {
+        children: highlightOneBridge(
+          (node as React.ReactElement<{ children: React.ReactNode }>).props
+            .children
+        ),
+      }
+    );
+  }
+  return node;
+}
 
 /**
  * Component for "ServicesSidebarContent" Slices.
@@ -32,7 +69,14 @@ const ServicesSidebarContent: FC<ServicesSidebarContentProps> = ({ slice }) => {
           {/* Main Content */}
           <div className="md:col-span-3">
             <div className="prose">
-              <PrismicRichText field={slice.primary.main_content} />
+              <PrismicRichText
+                field={slice.primary.main_content}
+                components={{
+                  paragraph: ({ children }) => (
+                    <p>{highlightOneBridge(children)}</p>
+                  ),
+                }}
+              />
             </div>
           </div>
         </div>

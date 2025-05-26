@@ -220,6 +220,7 @@ export type InsightDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | FaqSidebarContentSlice
   | CoreValuesSidebarContentSlice
   | EngageSidebarContentSlice
   | ServicesSidebarContentSlice
@@ -913,6 +914,36 @@ type EngageWithUsSliceVariation = EngageWithUsSliceDefault;
 export type EngageWithUsSlice = prismic.SharedSlice<
   "engage_with_us",
   EngageWithUsSliceVariation
+>;
+
+/**
+ * Default variation for FaqSidebarContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSidebarContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *FaqSidebarContent*
+ */
+type FaqSidebarContentSliceVariation = FaqSidebarContentSliceDefault;
+
+/**
+ * FaqSidebarContent Shared Slice
+ *
+ * - **API ID**: `faq_sidebar_content`
+ * - **Description**: FaqSidebarContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSidebarContentSlice = prismic.SharedSlice<
+  "faq_sidebar_content",
+  FaqSidebarContentSliceVariation
 >;
 
 /**
@@ -2010,6 +2041,9 @@ declare module "@prismicio/client" {
       EngageWithUsSlice,
       EngageWithUsSliceVariation,
       EngageWithUsSliceDefault,
+      FaqSidebarContentSlice,
+      FaqSidebarContentSliceVariation,
+      FaqSidebarContentSliceDefault,
       FaqSliceSlice,
       FaqSliceSliceDefaultPrimaryFaqQuestionsItem,
       FaqSliceSliceDefaultPrimary,

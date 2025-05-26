@@ -1,0 +1,16 @@
+{
+  "id": "faq_sidebar_content",
+  "type": "SharedSlice",
+  "name": "FaqSidebarContent",
+  "description": "FaqSidebarContent",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

@@ -3,15 +3,9 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import SidebarNav from "../SidebarContent/SidebarNav";
 
-/**
- * Props for `CoreValuesSidebarContent`.
- */
 export type CoreValuesSidebarContentProps =
   SliceComponentProps<Content.CoreValuesSidebarContentSlice>;
 
-/**
- * Component for "CoreValuesSidebarContent" Slices.
- */
 const CoreValuesSidebarContent: FC<CoreValuesSidebarContentProps> = ({
   slice,
 }) => {
@@ -36,27 +30,25 @@ const CoreValuesSidebarContent: FC<CoreValuesSidebarContentProps> = ({
 
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-2">
-                <span className="font-semibold text-special">Partnership:</span>
+                <span className="font-semibold ">Partnership:</span>
                 Working as a true extension of our clients&apos; internal teams.
               </li>
               <li className="flex items-start gap-2">
-                <span className="font-semibold text-special">Trust:</span>
+                <span className="font-semibold ">Trust:</span>
                 Building lasting relationships through transparency and
                 reliability.
               </li>
               <li className="flex items-start gap-2">
-                <span className="font-semibold text-special">Excellence:</span>
+                <span className="font-semibold ">Excellence:</span>
                 Seamlessly combining global execution discipline with deep
                 domain expertise.
               </li>
               <li className="flex items-start gap-2">
-                <span className="font-semibold text-special">Speed:</span>
+                <span className="font-semibold ">Speed:</span>
                 Delivering timely, high-quality services under tight timelines.
               </li>
               <li className="flex items-start gap-2">
-                <span className="font-semibold text-special">
-                  Accountability:
-                </span>
+                <span className="font-semibold ">Accountability:</span>
                 Embracing ownership of our commitments to drive results that
                 exceed expectations.
               </li>
