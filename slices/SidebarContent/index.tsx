@@ -28,7 +28,7 @@ const SidebarContent: FC<SidebarContentProps> = ({ slice }) => {
 
           {/* Main Content */}
           <div className="md:col-span-3">
-            <h2 className="mb-4">
+            <h2 className="mb-4 md:mb-6 lg:mb-8">
               {(() => {
                 const title = slice.primary.title || "";
                 const words = title.split(" ");

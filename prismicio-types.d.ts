@@ -1578,6 +1578,74 @@ export type SlideShowSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *TeamIndex → Default → Primary → Team Members*
+ */
+export interface TeamIndexSliceDefaultPrimaryTeamMembersItem {
+  /**
+   * Member Name field in *TeamIndex → Default → Primary → Team Members*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_index.default.primary.team_members[].member_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  member_name: prismic.KeyTextField;
+
+  /**
+   * Member Image field in *TeamIndex → Default → Primary → Team Members*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_index.default.primary.team_members[].member_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  member_image: prismic.ImageField<never>;
+
+  /**
+   * Linkedin Link field in *TeamIndex → Default → Primary → Team Members*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_index.default.primary.team_members[].linkedin_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkedin_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Member Designation field in *TeamIndex → Default → Primary → Team Members*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_index.default.primary.team_members[].member_designation
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  member_designation: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *TeamIndex → Default → Primary*
+ */
+export interface TeamIndexSliceDefaultPrimary {
+  /**
+   * Team Members field in *TeamIndex → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_index.default.primary.team_members[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  team_members: prismic.GroupField<
+    Simplify<TeamIndexSliceDefaultPrimaryTeamMembersItem>
+  >;
+}
+
+/**
  * Default variation for TeamIndex Slice
  *
  * - **API ID**: `default`
@@ -1586,7 +1654,7 @@ export type SlideShowSlice = prismic.SharedSlice<
  */
 export type TeamIndexSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<TeamIndexSliceDefaultPrimary>,
   never
 >;
 
@@ -1927,6 +1995,8 @@ declare module "@prismicio/client" {
       SlideShowSliceVariation,
       SlideShowSliceDefault,
       TeamIndexSlice,
+      TeamIndexSliceDefaultPrimaryTeamMembersItem,
+      TeamIndexSliceDefaultPrimary,
       TeamIndexSliceVariation,
       TeamIndexSliceDefault,
       TestimonialsSlice,

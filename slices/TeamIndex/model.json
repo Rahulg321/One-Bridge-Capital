@@ -10,7 +10,52 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "team_members": {
+          "type": "Group",
+          "config": {
+            "label": "Team Members",
+            "repeat": true,
+            "fields": {
+              "member_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Member Name",
+                  "placeholder": ""
+                }
+              },
+              "member_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Member Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "linkedin_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Linkedin Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              },
+              "member_designation": {
+                "type": "Text",
+                "config": {
+                  "label": "Member Designation",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

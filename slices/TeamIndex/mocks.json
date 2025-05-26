@@ -2,7 +2,71 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"team_members": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"member_name",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "brave",
+									"type": "Text"
+								}
+							],
+							[
+								"member_image",
+								{
+									"__TYPE__": "ImageContent",
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+										"width": 6000,
+										"height": 4000
+									},
+									"url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+									"width": 6000,
+									"height": 4000,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "lips",
+									"thumbnails": {}
+								}
+							],
+							[
+								"linkedin_link",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "21d38c1d-0ef0-47da-a102-f6217a349b51",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "chosen"
+									}
+								}
+							],
+							[
+								"member_designation",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "try",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
 		"items": []
 	}
 ]

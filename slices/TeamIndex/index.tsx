@@ -4,6 +4,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
 /**
  * Props for `TeamIndex`.
@@ -22,62 +23,42 @@ type TeamMember = {
  * Component for "TeamIndex" Slices.
  */
 const TeamIndex: FC<TeamIndexProps> = ({ slice }) => {
-  const teamMembers: TeamMember[] = [
-    {
-      id: "pragya",
-      name: "Pragya",
-      title: "Managing Partner",
-      image: "/pragya.png",
-      linkedin: "https://www.linkedin.com/in/pragyachoudhary1996/",
-    },
-    {
-      id: "john",
-      name: "Vivek",
-      title: "Managing Partner",
-      image: "/john-doe.png",
-      linkedin: "https://www.linkedin.com/in/vivek-vira-7433a1193/",
-    },
-    {
-      id: "jane",
-      name: "Sanjeevni",
-      title: "Managing Partner",
-      image: "/jane-doe.png",
-      linkedin: "https://www.linkedin.com/in/sanjeevnibhardwaj/",
-    },
-  ];
-
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="container mx-auto px-4 py-12 max-w-6xl"
+      className="extra-big-container block-space-large"
     >
       <h2 className="md:text-center">Meet the Team</h2>
 
-      <div className="mt-4 md:mt-6 lg:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {teamMembers.map((member) => (
-          <div key={member.id} className="flex flex-col items-center">
-            <div className="relative mb-2">
-              <div className="rounded-full border-4 border-[#0d3b49] overflow-hidden w-[160px] h-[160px] relative">
-                <Image
-                  src={member.image || "/placeholder.svg"}
-                  alt={member.name}
+      <div className="mt-4 md:mt-6 lg:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        {slice.primary.team_members.map((member, index) => (
+          <div
+            key={`${member.member_name}-${index}`}
+            className="flex flex-col items-center"
+          >
+            <div className="relative mb-4">
+              <div className="rounded-full border-4 border-[#0d3b49] overflow-hidden w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 relative">
+                <PrismicNextImage
+                  field={member.member_image}
                   fill
                   className="object-cover"
                 />
               </div>
             </div>
-            <h3 className="font-bold text-lg text-center">{member.name}</h3>
+            <h3 className="font-bold text-lg text-center">
+              {member.member_name}
+            </h3>
             <span className="text-sm text-center text-[#ff5722]">
-              {member.title}
+              {member.member_designation}
             </span>
-            <Link
-              href={member.linkedin}
+            <PrismicNextLink
+              field={member.linkedin_link}
               target="_blank"
-              className="mt-2 flex items-center justify-center"
+              className="mt-4 flex items-center justify-center"
             >
               <FaLinkedin />
-            </Link>
+            </PrismicNextLink>
           </div>
         ))}
       </div>
