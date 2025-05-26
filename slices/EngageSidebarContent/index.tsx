@@ -17,7 +17,7 @@ export type EngageSidebarContentProps =
 const EngageSidebarContent: FC<EngageSidebarContentProps> = ({ slice }) => {
   const pricingModels = [
     {
-      title: "Block of Hours Model",
+      title: "Model 1",
       description:
         "Client purchases a block of hours that can be used any time during the month",
       suitable: "Clients with variable workflow; support during peak cycles",
@@ -28,7 +28,7 @@ const EngageSidebarContent: FC<EngageSidebarContentProps> = ({ slice }) => {
       ],
     },
     {
-      title: "Dedicated Staff Model",
+      title: "Model 2",
       description:
         "Team is solely dedicated to the client and works as an extension of the client's onshore team",
       suitable:
@@ -40,7 +40,7 @@ const EngageSidebarContent: FC<EngageSidebarContentProps> = ({ slice }) => {
       ],
     },
     {
-      title: "Ad-hoc Project Model",
+      title: "Model 3",
       description:
         "Support on a standalone project basis, with no long-term commitment",
       suitable: "Standalone tasks and smaller engagements",
