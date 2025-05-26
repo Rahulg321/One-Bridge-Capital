@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import fade from "embla-carousel-fade";
+import { RedButton } from "@/components/ui/button";
 
 export type SlideShowProps = SliceComponentProps<Content.SlideShowSlice>;
 
@@ -56,7 +57,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
           loop: true,
         }}
       >
-        <CarouselContent className="min-h-[60vh] md:min-h-[75vh]">
+        <CarouselContent className="min-h-[75vh]">
           {/* Slide 1 */}
           <CarouselItem
             key={1}
@@ -113,6 +114,19 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                       banks and advisory firms across the Globe focused on the
                       mid-market M&A.
                     </motion.p>
+                    <motion.div
+                      initial={{ opacity: 0, x: -40 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0 }}
+                      transition={{
+                        duration: 0.7,
+                        ease: "easeOut",
+                        delay: 0.4,
+                      }}
+                      className="flex justify-start items-start"
+                    >
+                      <RedButton href="/about">Know More About Us</RedButton>
+                    </motion.div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -174,6 +188,21 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                       and winning more transactions, while we manage all the
                       execution and due diligence behind the scenes
                     </motion.p>
+                    <motion.div
+                      initial={{ opacity: 0, x: -40 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0 }}
+                      transition={{
+                        duration: 0.7,
+                        ease: "easeOut",
+                        delay: 0.4,
+                      }}
+                      className="flex justify-start items-start"
+                    >
+                      <RedButton href="/testimonials">
+                        Know What Our Clients Say
+                      </RedButton>
+                    </motion.div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -236,6 +265,19 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                       critical execution tasks that help our clients to focus
                       100% on client relationships and deal strategy
                     </motion.p>
+                    <motion.div
+                      initial={{ opacity: 0, x: -40 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0 }}
+                      transition={{
+                        duration: 0.7,
+                        ease: "easeOut",
+                        delay: 0.4,
+                      }}
+                      className="flex justify-start items-start"
+                    >
+                      <RedButton href="/about">Learn More</RedButton>
+                    </motion.div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -299,6 +341,21 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                       transform their operating model and cut cost without
                       compromising on quality.
                     </motion.p>
+                    <motion.div
+                      initial={{ opacity: 0, x: -40 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0 }}
+                      transition={{
+                        duration: 0.7,
+                        ease: "easeOut",
+                        delay: 0.4,
+                      }}
+                      className="flex justify-start items-start"
+                    >
+                      <RedButton href="/engage-with-us">
+                        Know How to Engage With Us
+                      </RedButton>
+                    </motion.div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -343,7 +400,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.7, ease: "easeOut" }}
                     >
-                      We’re here to support your{" "}
+                      We&apos;re here to support your{" "}
                       <span className="text-special">next project!</span>{" "}
                     </motion.h1>
                     <motion.p
@@ -356,9 +413,22 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                         delay: 0.2,
                       }}
                     >
-                      Reach out to discuss how we can partner on your
-                      next transaction!
+                      Reach out to discuss how we can partner on your next
+                      transaction!
                     </motion.p>
+                    <motion.div
+                      initial={{ opacity: 0, x: -40 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0 }}
+                      transition={{
+                        duration: 0.7,
+                        ease: "easeOut",
+                        delay: 0.4,
+                      }}
+                      className="flex justify-start items-start"
+                    >
+                      <RedButton href="/about">Learn More</RedButton>
+                    </motion.div>
                   </motion.div>
                 )}
               </AnimatePresence>
