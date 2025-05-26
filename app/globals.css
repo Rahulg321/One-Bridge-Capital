@@ -267,27 +267,21 @@ body {
 }
 
 .prose ol {
-  counter-reset: list-counter;
   margin-top: 1.25em;
   margin-bottom: 1.25em;
   padding-left: 1.625em;
-  list-style: none;
+  list-style-type: decimal;
+  list-style-position: outside;
 }
 
 .prose ol > li {
   position: relative;
-  counter-increment: list-counter;
-  padding-left: 1.75em;
-  display: flex;
-  align-items: center;
+  padding-left: 0.375em;
 }
 
-.prose ol > li::before {
-  content: counter(list-counter) ".";
-  position: absolute;
-  left: 0;
-  font-weight: bold;
+.prose ol > li::marker {
   color: var(--color-primary);
+  font-weight: bold;
 }
 
 .prose ul {
@@ -295,6 +289,7 @@ body {
   margin-bottom: 1.25em;
   padding-left: 1.625em;
   list-style-type: disc;
+  list-style-position: outside;
 }
 
 .prose ul > li {
