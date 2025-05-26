@@ -28,7 +28,7 @@ const SidebarContent: FC<SidebarContentProps> = ({ slice }) => {
 
           {/* Main Content */}
           <div className="md:col-span-3">
-            <h2 className="mb-4 md:mb-6 lg:mb-8">
+            <h3 className="mb-4 md:mb-6 lg:mb-8">
               {(() => {
                 const title = slice.primary.title || "";
                 const words = title.split(" ");
@@ -47,7 +47,7 @@ const SidebarContent: FC<SidebarContentProps> = ({ slice }) => {
                   </>
                 );
               })()}
-            </h2>
+            </h3>
 
             <div className="prose max-w-none break-words w-full">
               <PrismicRichText field={slice.primary.main_content} />

@@ -72,6 +72,7 @@ export default function Header() {
                   "/sector-expertise",
                   "/engage-with-us",
                   "/sector-expertise",
+                  "/frequently-asked-questions",
                 ];
 
                 return (
