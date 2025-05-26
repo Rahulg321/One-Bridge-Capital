@@ -68,14 +68,8 @@ export const RedButton: React.FC<RedButtonProps> = ({
   children,
   ...props
 }) => (
-  <Link href={href} passHref legacyBehavior>
-    <Button
-      asChild
-      {...props}
-      className="bg-special text-white hover:bg-special/90"
-    >
-      <a>{children}</a>
-    </Button>
+  <Link href={href} className="text-special hover:underline">
+    {children}
   </Link>
 );
 
