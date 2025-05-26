@@ -271,12 +271,15 @@ body {
   margin-top: 1.25em;
   margin-bottom: 1.25em;
   padding-left: 1.625em;
+  list-style: none;
 }
 
 .prose ol > li {
   position: relative;
   counter-increment: list-counter;
   padding-left: 1.75em;
+  display: flex;
+  align-items: center;
 }
 
 .prose ol > li::before {
@@ -309,7 +312,6 @@ body {
   color: var(--color-primary);
   font-weight: bold;
   display: inline-block;
-  margin-bottom: 0.5em;
 }
 
 .prose hr {

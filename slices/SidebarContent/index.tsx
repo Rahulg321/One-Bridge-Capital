@@ -23,7 +23,6 @@ const SidebarContent: FC<SidebarContentProps> = ({ slice }) => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
           {/* Sidebar Navigation */}
           <div className="md:col-span-1">
-            <h4 className=" text-gray-700 mb-4">We are OneBridge</h4>
             <SidebarNav />
           </div>
 
