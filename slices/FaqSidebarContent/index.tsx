@@ -36,7 +36,7 @@ const FaqSidebarContent: FC<FaqSidebarContentProps> = ({ slice }) => {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <div className="">
-                    1. What sets <span className="text-special">OneBridge</span>{" "}
+                    What sets <span className="text-special">OneBridge</span>{" "}
                     apart in the industry?
                   </div>
                 </AccordionTrigger>
@@ -51,7 +51,7 @@ const FaqSidebarContent: FC<FaqSidebarContentProps> = ({ slice }) => {
               </AccordionItem>
               <AccordionItem value="item-2">
                 <AccordionTrigger>
-                  2. Who typically engages with our services?
+                  Who typically engages with our services?
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="mb-3">We work closely with:</div>
@@ -71,8 +71,7 @@ const FaqSidebarContent: FC<FaqSidebarContentProps> = ({ slice }) => {
               </AccordionItem>
               <AccordionItem value="item-3">
                 <AccordionTrigger>
-                  3. What kind of support do we provide across the M&A
-                  lifecycle?
+                  What kind of support do we provide across the M&A lifecycle?
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="mb-3">
@@ -101,7 +100,7 @@ const FaqSidebarContent: FC<FaqSidebarContentProps> = ({ slice }) => {
               </AccordionItem>
               <AccordionItem value="item-4">
                 <AccordionTrigger>
-                  4. How is our pricing structured for client engagements?
+                  How is our pricing structured for client engagements?
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="mb-3">
@@ -122,7 +121,7 @@ const FaqSidebarContent: FC<FaqSidebarContentProps> = ({ slice }) => {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-5">
-                <AccordionTrigger>5. How can you reach us?</AccordionTrigger>
+                <AccordionTrigger>How can you reach us?</AccordionTrigger>
                 <AccordionContent>
                   <div className="mb-3">
                     Engagement can be initiated via our website contact form,

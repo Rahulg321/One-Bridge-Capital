@@ -57,8 +57,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
           loop: true,
         }}
       >
-        <CarouselContent className="min-h-[75vh]">
-          {/* Slide 1 */}
+        <CarouselContent className="min-h-[70vh] md:min-h-[75vh]">
           <CarouselItem
             key={1}
             className="relative flex flex-row items-center w-full overflow-hidden"
@@ -429,7 +428,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                       }}
                       className="flex justify-start items-start"
                     >
-                      <RedButton href="/contact">Contact Us Here</RedButton>
+                      <RedButton href="/contac">Contact Us Here</RedButton>
                     </motion.div>
                   </motion.div>
                 )}
