@@ -86,21 +86,23 @@ const ServicesSidebarContent: FC<ServicesSidebarContentProps> = ({ slice }) => {
               />
             </div>
 
-            <div>
-              <h3 className="mt-4 md:mt-6 lg:mt-12">Our Approaches</h3>
-              <Accordion type="single" collapsible className="space-y-4 mt-6">
-                {slice.primary.approaches.map((approach, index) => (
-                  <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger>
-                      <div className="text-left">{approach.heading}</div>
-                    </AccordionTrigger>
-                    <AccordionContent className="prose">
-                      <PrismicRichText field={approach.content} />
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
+            {slice.primary.approaches.length > 0 && (
+              <div>
+                <h3 className="mt-4 md:mt-6 lg:mt-12">Our Approaches</h3>
+                <Accordion type="single" collapsible className="space-y-4 mt-6">
+                  {slice.primary.approaches.map((approach, index) => (
+                    <AccordionItem key={index} value={`item-${index}`}>
+                      <AccordionTrigger>
+                        <div className="text-left">{approach.heading}</div>
+                      </AccordionTrigger>
+                      <AccordionContent className="prose">
+                        <PrismicRichText field={approach.content} />
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            )}
           </div>
         </div>
       </div>
