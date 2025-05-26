@@ -20,7 +20,7 @@ const SidebarContent: FC<SidebarContentProps> = ({ slice }) => {
       className="block-space-mini extra-big-container"
     >
       <div className="py-12 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16 lg:gap-24">
           {/* Sidebar Navigation */}
           <div className="md:col-span-1">
             <SidebarNav />

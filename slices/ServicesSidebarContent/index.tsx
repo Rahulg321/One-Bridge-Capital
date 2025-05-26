@@ -21,7 +21,7 @@ const ServicesSidebarContent: FC<ServicesSidebarContentProps> = ({ slice }) => {
       className="block-space-mini extra-big-container"
     >
       <div className="py-12 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16 lg:gap-24">
           <div className="md:col-span-1">
             <h4 className="t text-gray-700 mb-4">Our Services</h4>
             <ServicesSidebarNav />
