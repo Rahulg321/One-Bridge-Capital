@@ -43,15 +43,8 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
       id: 4,
       title: "Interested in learning more?",
       video:
-        "https://videos.pexels.com/video-files/5562047/5562047-hd_1920_1080_30fps.mp4",
-      text: "Our approach helps boutique firms maintain lean operations while accessing expert execution capabilities typically available only to larger firms.",
-    },
-    {
-      id: 5,
-      title: "We’re here to support your next project.",
-      video:
         "https://videos.pexels.com/video-files/7692776/7692776-hd_1920_1080_25fps.mp4",
-      text: "We’re here to support your next project. Reach out to discuss how we can partner on your next  transaction or growth initiative.",
+      text: "Our approach helps boutique firms maintain lean operations while accessing expert execution capabilities typically available only to larger firms.",
     },
   ];
 
@@ -115,7 +108,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <div className="relative z-10 flex justify-center flex-col w-full bg-slate-800/60 px-4 text-white min-h-full">
+              <div className="relative z-10 flex justify-center flex-col w-full bg-slate-800/90 px-4 text-white min-h-full">
                 <AnimatePresence>
                   {activeIndex === idx && (
                     <motion.div
