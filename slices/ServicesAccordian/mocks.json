@@ -3,16 +3,10 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"main_content": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Velit fugiat excepteur quis esse culpa mollit cillum minim in occaecat. Lorem anim do labore anim nostrud sint."
-						}
-					}
-				]
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "begun",
+				"type": "Text"
 			},
 			"approaches": {
 				"__TYPE__": "GroupContentType",
@@ -24,7 +18,7 @@
 								"heading",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "negative",
+									"value": "last",
 									"type": "Text"
 								}
 							],
@@ -36,7 +30,7 @@
 										{
 											"type": "paragraph",
 											"content": {
-												"text": "Fugiat in est officia veniam exercitation occaecat ipsum eu commodo amet laboris reprehenderit. Enim et sint esse. Minim sit nostrud consequat ad eiusmod."
+												"text": "Sunt ipsum sit adipisicing sunt ipsum."
 											}
 										}
 									]

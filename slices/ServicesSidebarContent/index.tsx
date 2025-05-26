@@ -3,6 +3,13 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicRichText } from "@prismicio/react";
 import ServicesSidebarNav from "./ServicesSidebarNav";
+import ServicesAccordian from "../ServicesAccordian";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 /**
  * Props for `ServicesSidebarContent`.
@@ -77,6 +84,22 @@ const ServicesSidebarContent: FC<ServicesSidebarContentProps> = ({ slice }) => {
                   ),
                 }}
               />
+            </div>
+
+            <div>
+              <h3 className="mt-4 md:mt-6 lg:mt-12">Our Approaches</h3>
+              <Accordion type="single" collapsible className="space-y-4 mt-6">
+                {slice.primary.approaches.map((approach, index) => (
+                  <AccordionItem key={index} value={`item-${index}`}>
+                    <AccordionTrigger>
+                      <div className="text-left">{approach.heading}</div>
+                    </AccordionTrigger>
+                    <AccordionContent className="prose">
+                      <PrismicRichText field={approach.content} />
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </div>
         </div>

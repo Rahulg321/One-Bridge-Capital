@@ -26,6 +26,7 @@ export const components = {
   member_bio_slice: dynamic(() => import("./MemberBioSlice")),
   one_image_background: dynamic(() => import("./OneImageBackground")),
   services: dynamic(() => import("./Services")),
+  services_accordian: dynamic(() => import("./ServicesAccordian")),
   services_colored_section: dynamic(() => import("./ServicesColoredSection")),
   services_sidebar_content: dynamic(() => import("./ServicesSidebarContent")),
   sidebar_content: dynamic(() => import("./SidebarContent")),

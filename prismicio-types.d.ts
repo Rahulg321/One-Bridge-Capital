@@ -313,6 +313,7 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type ServiceDocumentDataSlicesSlice =
+  | ServicesAccordianSlice
   | OneImageBackgroundSlice
   | ServicesSidebarContentSlice
   | SlideShowSlice
@@ -1513,6 +1514,88 @@ export type ServicesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *ServicesAccordian → Default → Primary → Approaches*
+ */
+export interface ServicesAccordianSliceDefaultPrimaryApproachesItem {
+  /**
+   * Heading field in *ServicesAccordian → Default → Primary → Approaches*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_accordian.default.primary.approaches[].heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content field in *ServicesAccordian → Default → Primary → Approaches*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_accordian.default.primary.approaches[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *ServicesAccordian → Default → Primary*
+ */
+export interface ServicesAccordianSliceDefaultPrimary {
+  /**
+   * Heading field in *ServicesAccordian → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_accordian.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Approaches field in *ServicesAccordian → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_accordian.default.primary.approaches[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  approaches: prismic.GroupField<
+    Simplify<ServicesAccordianSliceDefaultPrimaryApproachesItem>
+  >;
+}
+
+/**
+ * Default variation for ServicesAccordian Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesAccordianSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServicesAccordianSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ServicesAccordian*
+ */
+type ServicesAccordianSliceVariation = ServicesAccordianSliceDefault;
+
+/**
+ * ServicesAccordian Shared Slice
+ *
+ * - **API ID**: `services_accordian`
+ * - **Description**: ServicesAccordian
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesAccordianSlice = prismic.SharedSlice<
+  "services_accordian",
+  ServicesAccordianSliceVariation
+>;
+
+/**
  * Default variation for ServicesColoredSection Slice
  *
  * - **API ID**: `default`
@@ -1543,6 +1626,31 @@ export type ServicesColoredSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *ServicesSidebarContent → Default → Primary → Approaches*
+ */
+export interface ServicesSidebarContentSliceDefaultPrimaryApproachesItem {
+  /**
+   * Heading field in *ServicesSidebarContent → Default → Primary → Approaches*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_sidebar_content.default.primary.approaches[].heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content field in *ServicesSidebarContent → Default → Primary → Approaches*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_sidebar_content.default.primary.approaches[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
  * Primary content in *ServicesSidebarContent → Default → Primary*
  */
 export interface ServicesSidebarContentSliceDefaultPrimary {
@@ -1555,6 +1663,18 @@ export interface ServicesSidebarContentSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   main_content: prismic.RichTextField;
+
+  /**
+   * Approaches field in *ServicesSidebarContent → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_sidebar_content.default.primary.approaches[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  approaches: prismic.GroupField<
+    Simplify<ServicesSidebarContentSliceDefaultPrimaryApproachesItem>
+  >;
 }
 
 /**
@@ -2112,10 +2232,16 @@ declare module "@prismicio/client" {
       ServicesSliceVariation,
       ServicesSliceDefault,
       ServicesSliceServicesWithHeading,
+      ServicesAccordianSlice,
+      ServicesAccordianSliceDefaultPrimaryApproachesItem,
+      ServicesAccordianSliceDefaultPrimary,
+      ServicesAccordianSliceVariation,
+      ServicesAccordianSliceDefault,
       ServicesColoredSectionSlice,
       ServicesColoredSectionSliceVariation,
       ServicesColoredSectionSliceDefault,
       ServicesSidebarContentSlice,
+      ServicesSidebarContentSliceDefaultPrimaryApproachesItem,
       ServicesSidebarContentSliceDefaultPrimary,
       ServicesSidebarContentSliceVariation,
       ServicesSidebarContentSliceDefault,
