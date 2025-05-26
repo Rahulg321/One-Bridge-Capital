@@ -27,8 +27,8 @@ const FaqSidebarContent: FC<FaqSidebarContentProps> = ({ slice }) => {
 
           <div className="md:col-span-3">
             <h3 className="mb-3">
-              What sets <span className="text-special">OneBridge</span> apart in
-              the industry?
+              1. What sets <span className="text-special">OneBridge</span> apart
+              in the industry?
             </h3>
             <p className="mb-6">
               <span className="text-special">OneBridge</span> is a financial
@@ -38,7 +38,9 @@ const FaqSidebarContent: FC<FaqSidebarContentProps> = ({ slice }) => {
               seamless collaboration with client deal teams.
             </p>
 
-            <h3 className="mb-3">Who typically engages with our services?</h3>
+            <h3 className="mb-3">
+              2. Who typically engages with our services?
+            </h3>
             <p className="mb-2">We work closely with:</p>
             <ul className="list-disc pl-5 mb-6 text-sm">
               <li className="mb-1">Global and boutique M&A advisory firms</li>
@@ -50,7 +52,7 @@ const FaqSidebarContent: FC<FaqSidebarContentProps> = ({ slice }) => {
             </ul>
 
             <h3 className="mb-3">
-              What kind of support do we provide across the M&A lifecycle?
+              3. What kind of support do we provide across the M&A lifecycle?
             </h3>
             <p className="mb-2">
               Our services span a broad range of execution needs, including:
@@ -75,7 +77,7 @@ const FaqSidebarContent: FC<FaqSidebarContentProps> = ({ slice }) => {
             </ul>
 
             <h3 className="mb-3">
-              How is our pricing structured for client engagements?
+              4. How is our pricing structured for client engagements?
             </h3>
             <p className="mb-2">
               We offer two flexible pricing models to suit different scopes of
@@ -92,7 +94,7 @@ const FaqSidebarContent: FC<FaqSidebarContentProps> = ({ slice }) => {
               </li>
             </ul>
 
-            <h3 className="mb-3">How can you reach us?</h3>
+            <h3 className="mb-3">5. How can you reach us?</h3>
             <p className="mb-6">
               Engagement can be initiated via our website contact form, email,
               or LinkedIn. We typically respond within 24 hours and remain
