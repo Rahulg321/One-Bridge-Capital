@@ -44,7 +44,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
       title: "Interested in learning more?",
       video:
         "https://videos.pexels.com/video-files/7692776/7692776-hd_1920_1080_25fps.mp4",
-      text: "Our approach helps boutique firms maintain lean operations while accessing expert execution capabilities typically available only to larger firms.",
+      text: "We’re here to support your next project. Reach out to discuss how we can partner on your next  transaction or growth initiative.",
     },
   ];
 
