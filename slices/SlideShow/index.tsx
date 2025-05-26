@@ -321,7 +321,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                 aria-hidden="true"
               >
                 <source
-                  src="https://videos.pexels.com/video-files/7580434/7580434-uhd_2732_1440_25fps.mp4"
+                  src="https://videos.pexels.com/video-files/7692776/7692776-hd_1920_1080_25fps.mp4"
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.
