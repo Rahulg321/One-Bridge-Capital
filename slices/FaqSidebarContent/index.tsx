@@ -23,9 +23,9 @@ const FaqSidebarContent: FC<FaqSidebarContentProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space-mini extra-big-container"
+      className="block-space extra-big-container"
     >
-      <div className="py-8 px-4">
+      <div className="px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
           <div className="md:col-span-1 md:sticky md:top-26 h-fit">
             <SidebarNav />

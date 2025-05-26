@@ -55,10 +55,10 @@ const ServicesSidebarContent: FC<ServicesSidebarContentProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space-mini extra-big-container"
+      className="block-space extra-big-container"
     >
-      <div className="py-12 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16 lg:gap-24">
+      <div className="px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-16 lg:gap-24">
           <div className="md:col-span-1">
             <div className="md:col-span-1 md:sticky md:top-32 h-fit">
               <h4 className="t text-gray-700 mb-4">Our Services</h4>
