@@ -32,6 +32,9 @@ export const components = {
   slide_show: dynamic(() => import("./SlideShow")),
   team_index: dynamic(() => import("./TeamIndex")),
   testimonials: dynamic(() => import("./Testimonials")),
+  testimonials_sidebar_content: dynamic(
+    () => import("./TestimonialsSidebarContent"),
+  ),
   video_background: dynamic(() => import("./VideoBackground")),
   vision_mission: dynamic(() => import("./VisionMission")),
   why_choose_us: dynamic(() => import("./WhyChooseUs")),

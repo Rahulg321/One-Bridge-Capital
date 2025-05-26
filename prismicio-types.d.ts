@@ -220,6 +220,7 @@ export type InsightDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | TestimonialsSidebarContentSlice
   | FaqSidebarContentSlice
   | CoreValuesSidebarContentSlice
   | EngageSidebarContentSlice
@@ -1800,6 +1801,34 @@ export type TestimonialsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for TestimonialsSidebarContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimonialsSidebarContentSliceDefault =
+  prismic.SharedSliceVariation<"default", Record<string, never>, never>;
+
+/**
+ * Slice variation for *TestimonialsSidebarContent*
+ */
+type TestimonialsSidebarContentSliceVariation =
+  TestimonialsSidebarContentSliceDefault;
+
+/**
+ * TestimonialsSidebarContent Shared Slice
+ *
+ * - **API ID**: `testimonials_sidebar_content`
+ * - **Description**: TestimonialsSidebarContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimonialsSidebarContentSlice = prismic.SharedSlice<
+  "testimonials_sidebar_content",
+  TestimonialsSidebarContentSliceVariation
+>;
+
+/**
  * Primary content in *VideoBackground → Default → Primary*
  */
 export interface VideoBackgroundSliceDefaultPrimary {
@@ -2105,6 +2134,9 @@ declare module "@prismicio/client" {
       TestimonialsSlice,
       TestimonialsSliceVariation,
       TestimonialsSliceDefault,
+      TestimonialsSidebarContentSlice,
+      TestimonialsSidebarContentSliceVariation,
+      TestimonialsSidebarContentSliceDefault,
       VideoBackgroundSlice,
       VideoBackgroundSliceDefaultPrimary,
       VideoBackgroundSliceVariation,

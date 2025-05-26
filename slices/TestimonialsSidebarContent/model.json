@@ -1,0 +1,16 @@
+{
+  "id": "testimonials_sidebar_content",
+  "type": "SharedSlice",
+  "name": "TestimonialsSidebarContent",
+  "description": "TestimonialsSidebarContent",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

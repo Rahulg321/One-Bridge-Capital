@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/core-values", label: "Our Core Values" },
   { href: "/sector-expertise", label: "Sector Expertise" },
   { href: "/engage-with-us", label: "Engage With Us" },
+  { href: "/testimonials", label: "Testimonials" },
   { href: "/frequently-asked-questions", label: "Frequently Asked Questions" },
 ];
 

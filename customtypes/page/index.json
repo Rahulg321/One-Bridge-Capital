@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "testimonials_sidebar_content": {
+              "type": "SharedSlice"
+            },
             "faq_sidebar_content": {
               "type": "SharedSlice"
             },

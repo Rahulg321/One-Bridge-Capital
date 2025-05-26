@@ -68,10 +68,10 @@ export default function Header() {
                 const aboutSubRoutes = [
                   "/core-values",
                   "/why-choose-us",
+                  "/testimonials",
                   "/mission-vision",
                   "/sector-expertise",
                   "/engage-with-us",
-                  "/sector-expertise",
                   "/frequently-asked-questions",
                 ];
 
