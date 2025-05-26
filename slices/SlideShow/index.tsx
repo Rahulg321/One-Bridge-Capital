@@ -276,7 +276,9 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                       }}
                       className="flex justify-start items-start"
                     >
-                      <RedButton href="/about">Learn More</RedButton>
+                      <RedButton href="/services">
+                        Know About Our Services
+                      </RedButton>
                     </motion.div>
                   </motion.div>
                 )}
@@ -427,7 +429,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                       }}
                       className="flex justify-start items-start"
                     >
-                      <RedButton href="/about">Learn More</RedButton>
+                      <RedButton href="/contact">Contact Us Here</RedButton>
                     </motion.div>
                   </motion.div>
                 )}
