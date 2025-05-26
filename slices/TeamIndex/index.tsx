@@ -6,9 +6,6 @@ import { FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
-/**
- * Props for `TeamIndex`.
- */
 export type TeamIndexProps = SliceComponentProps<Content.TeamIndexSlice>;
 
 type TeamMember = {
@@ -19,9 +16,6 @@ type TeamMember = {
   linkedin: string;
 };
 
-/**
- * Component for "TeamIndex" Slices.
- */
 const TeamIndex: FC<TeamIndexProps> = ({ slice }) => {
   return (
     <section
