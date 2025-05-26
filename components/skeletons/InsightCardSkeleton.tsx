@@ -9,7 +9,6 @@ import {
 const InsightCardSkeleton = () => {
   return (
     <Card className="overflow-hidden max-w-md">
-      {/* Image skeleton */}
       <Skeleton className="h-48 w-full rounded-none" />
 
       <CardHeader className="p-4 pb-2 space-y-2">

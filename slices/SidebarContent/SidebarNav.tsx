@@ -23,6 +23,7 @@ const SidebarNav: React.FC = () => {
       <nav className="flex flex-col space-y-2">
         {navLinks.map((link) => {
           const isActive = pathname && pathname.includes(link.href);
+
           return (
             <Link
               key={link.href}

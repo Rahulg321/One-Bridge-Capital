@@ -23,8 +23,10 @@ const ServicesSidebarContent: FC<ServicesSidebarContentProps> = ({ slice }) => {
       <div className="py-12 px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16 lg:gap-24">
           <div className="md:col-span-1">
-            <h4 className="t text-gray-700 mb-4">Our Services</h4>
-            <ServicesSidebarNav />
+            <div className="md:col-span-1 md:sticky md:top-32 h-fit">
+              <h4 className="t text-gray-700 mb-4">Our Services</h4>
+              <ServicesSidebarNav />
+            </div>
           </div>
 
           {/* Main Content */}
