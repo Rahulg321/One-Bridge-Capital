@@ -17,7 +17,7 @@ const MemberBioSlice: FC<MemberBioSliceProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-[#edf4f7] p-8 md:p-12 my-12 mx-4 md:mx-8 lg:mx-12 rounded-lg shadow-sm"
+      className="bg-[#edf4f7] p-8 md:p-12  rounded-lg shadow-sm block-space-mini extra-big-container"
     >
       <div className="container mx-auto max-w-6xl flex flex-col md:flex-row gap-8 py-4">
         <div className="flex flex-col items-center md:w-1/4">
