@@ -219,7 +219,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                       transition={{ duration: 0.7, ease: "easeOut" }}
                     >
                       We are your{" "}
-                      <span className="text-special">extended team</span>!
+                      <span className="text-special">extended team!</span>
                     </motion.h1>
                     <motion.p
                       className="mb-8 text-base"
@@ -277,12 +277,13 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                     className="contents"
                   >
                     <motion.h1
-                      className="mb-4 text-special"
+                      className="mb-4 "
                       initial={{ opacity: 0, x: -40 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.7, ease: "easeOut" }}
                     >
-                      We help you cut cost!
+                      We help you{" "}
+                      <span className="text-special">cut cost!</span>
                     </motion.h1>
                     <motion.p
                       className="mb-8 text-base"
@@ -338,12 +339,13 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                     className="contents"
                   >
                     <motion.h1
-                      className="mb-4 text-special"
+                      className="mb-4"
                       initial={{ opacity: 0, x: -40 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.7, ease: "easeOut" }}
                     >
-                      We’re here to support your next project!
+                      We’re here to support your{" "}
+                      <span className="text-special">next project!</span>{" "}
                     </motion.h1>
                     <motion.p
                       className="mb-8 text-base"
