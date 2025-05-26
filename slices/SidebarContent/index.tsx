@@ -28,6 +28,27 @@ const SidebarContent: FC<SidebarContentProps> = ({ slice }) => {
 
           {/* Main Content */}
           <div className="md:col-span-3">
+            <h2 className="mb-4">
+              {(() => {
+                const title = slice.primary.title || "";
+                const words = title.split(" ");
+                if (words.length === 0) return null;
+                if (words.length === 1) {
+                  return (
+                    <span className="text-special italic">{words[0]}</span>
+                  );
+                }
+                return (
+                  <>
+                    {words.slice(0, -1).join(" ") + " "}
+                    <span className="text-special italic">
+                      {words[words.length - 1]}
+                    </span>
+                  </>
+                );
+              })()}
+            </h2>
+
             <div className="prose max-w-none break-words w-full">
               <PrismicRichText field={slice.primary.main_content} />
             </div>
