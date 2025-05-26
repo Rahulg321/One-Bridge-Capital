@@ -502,20 +502,24 @@ body {
   font-size: 0.875em;
 }
 
-.prose ul > li > *:first-child {
-  margin-top: 1.25em;
+.prose ul > li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
-.prose ul > li > *:last-child {
-  margin-bottom: 1.25em;
+.prose ol > li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
+.prose ul > li > *:first-child,
 .prose ol > li > *:first-child {
-  margin-top: 1.25em;
+  margin-top: 0;
 }
 
+.prose ul > li > *:last-child,
 .prose ol > li > *:last-child {
-  margin-bottom: 1.25em;
+  margin-bottom: 0;
 }
 
 .prose ul ul,
