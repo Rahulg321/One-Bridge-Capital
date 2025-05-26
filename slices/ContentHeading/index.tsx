@@ -1,8 +1,46 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
+// Helper to recursively highlight 'OneBridge' in any text node
+function highlightOneBridge(node: React.ReactNode): React.ReactNode {
+  if (typeof node === "string") {
+    const parts = node.split(/(OneBridge)/g);
+    return parts.map((part, i) =>
+      part === "OneBridge" ? (
+        <span key={i} style={{ color: "red" }}>
+          OneBridge
+        </span>
+      ) : (
+        part
+      )
+    );
+  }
+  if (Array.isArray(node)) {
+    return node.map((child, i) => (
+      <React.Fragment key={i}>{highlightOneBridge(child)}</React.Fragment>
+    ));
+  }
+  if (
+    React.isValidElement(node) &&
+    (node as React.ReactElement<{ children: React.ReactNode }>).props &&
+    (node as React.ReactElement<{ children: React.ReactNode }>).props.children
+  ) {
+    return React.cloneElement(
+      node as React.ReactElement<{ children: React.ReactNode }>,
+      {
+        children: highlightOneBridge(
+          (node as React.ReactElement<{ children: React.ReactNode }>).props
+            .children
+        ),
+      }
+    );
+  }
+  return node;
+}
+
 /**
  * Props for `ContentHeading`.
  */
@@ -52,13 +90,27 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
             )}
             {slice.primary.tagline && (
               <div className="prose max-w-none">
-                <PrismicRichText field={slice.primary.tagline} />
+                <PrismicRichText
+                  field={slice.primary.tagline}
+                  components={{
+                    paragraph: ({ children }) => (
+                      <p>{highlightOneBridge(children)}</p>
+                    ),
+                  }}
+                />
               </div>
             )}
             {slice.primary.content && (
               <div>
                 <article className="prose max-w-none">
-                  <PrismicRichText field={slice.primary.content} />
+                  <PrismicRichText
+                    field={slice.primary.content}
+                    components={{
+                      paragraph: ({ children }) => (
+                        <p>{highlightOneBridge(children)}</p>
+                      ),
+                    }}
+                  />
                 </article>
               </div>
             )}
