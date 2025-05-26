@@ -83,7 +83,7 @@ export default function ContactForm() {
         <div className="lg:w-1/2 lg:mb-0">
           <h3 className="text-gray-800">
             We&apos;re here to support your{" "}
-            <span className="">next project.</span>
+            <span className="text-special italic">next project.</span>
           </h3>
           <p className="mt-4 text-gray-600">
             Reach out to discuss how we can partner on your next transaction or
