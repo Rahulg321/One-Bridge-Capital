@@ -79,11 +79,11 @@ export default function ContactForm() {
 
   return (
     <div className="big-container">
-      <div className="flex flex-col lg:flex-row items-start lg:gap-12">
+      <div className="flex flex-col gap-8 md:gap-12 lg:flex-row items-start lg:gap-20">
         <div className="lg:w-1/2 lg:mb-0">
-          <h3 className=" text-gray-800">
-            We&apos;re here to support your 
-            <span className="italic text-special">next project.</span>
+          <h3 className="text-gray-800">
+            We&apos;re here to support your{" "}
+            <span className="italic text-special">next project.</span>
           </h3>
           <p className="mt-4 text-gray-600">
             Reach out to discuss how we can partner on your next transaction or

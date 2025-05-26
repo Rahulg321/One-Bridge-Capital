@@ -60,8 +60,7 @@ const EngageSidebarContent: FC<EngageSidebarContentProps> = ({ slice }) => {
     >
       <div className="py-12 px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16 lg:gap-24">
-          {/* Sidebar Navigation */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 md:sticky md:top-26 h-fit">
             <SidebarNav />
           </div>
 
