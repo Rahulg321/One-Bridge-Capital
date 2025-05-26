@@ -44,6 +44,7 @@ const EngageSidebarContent: FC<EngageSidebarContentProps> = ({ slice }) => {
       description:
         "Support on a standalone project basis, with no long-term commitment",
       suitable: "Standalone tasks and smaller engagements",
+
       highlights: [
         "Ability to staff any team size at short notice for any time period",
         "Teams are staffed with relevant subject-matter experts as per project requirements",

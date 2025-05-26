@@ -10,6 +10,9 @@ export const components = {
   content_heading: dynamic(() => import("./ContentHeading")),
   content_with_two_images: dynamic(() => import("./ContentWithTwoImages")),
   core_values: dynamic(() => import("./CoreValues")),
+  core_values_sidebar_content: dynamic(
+    () => import("./CoreValuesSidebarContent"),
+  ),
   engage_sidebar_content: dynamic(() => import("./EngageSidebarContent")),
   engage_with_us: dynamic(() => import("./EngageWithUs")),
   faq_slice: dynamic(() => import("./FaqSlice")),

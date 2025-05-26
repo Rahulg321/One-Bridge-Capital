@@ -28,7 +28,6 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
     };
 
     emblaApi.on("select", onSelect);
-    // Set initial index
     onSelect(emblaApi);
 
     return () => {

@@ -24,7 +24,6 @@ const InsightCardSkeleton = () => {
       </CardContent>
 
       <CardFooter className="p-4 pt-0">
-        {/* Read more link skeleton */}
         <Skeleton className="h-4 w-24" />
       </CardFooter>
     </Card>

@@ -1,0 +1,71 @@
+import { FC } from "react";
+import { Content } from "@prismicio/client";
+import { SliceComponentProps } from "@prismicio/react";
+import SidebarNav from "../SidebarContent/SidebarNav";
+
+/**
+ * Props for `CoreValuesSidebarContent`.
+ */
+export type CoreValuesSidebarContentProps =
+  SliceComponentProps<Content.CoreValuesSidebarContentSlice>;
+
+/**
+ * Component for "CoreValuesSidebarContent" Slices.
+ */
+const CoreValuesSidebarContent: FC<CoreValuesSidebarContentProps> = ({
+  slice,
+}) => {
+  return (
+    <section
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+      className="block-space-mini extra-big-container"
+    >
+      <div className="py-12 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16 lg:gap-24">
+          <div className="md:col-span-1 md:sticky md:top-26 h-fit">
+            <SidebarNav />
+          </div>
+
+          <div className="md:col-span-3">
+            <p className="mb-8">
+              Our core values are the foundation of how we operate, guiding our
+              agile and hands-on approach in every engagement across the broader
+              dealmaking and advisory ecosystem.
+            </p>
+
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-start gap-2">
+                <span className="font-semibold text-special">Partnership:</span>
+                Working as a true extension of our clients&apos; internal teams.
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="font-semibold text-special">Trust:</span>
+                Building lasting relationships through transparency and
+                reliability.
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="font-semibold text-special">Excellence:</span>
+                Seamlessly combining global execution discipline with deep
+                domain expertise.
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="font-semibold text-special">Speed:</span>
+                Delivering timely, high-quality services under tight timelines.
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="font-semibold text-special">
+                  Accountability:
+                </span>
+                Embracing ownership of our commitments to drive results that
+                exceed expectations.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CoreValuesSidebarContent;
