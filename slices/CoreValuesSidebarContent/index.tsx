@@ -27,30 +27,28 @@ const CoreValuesSidebarContent: FC<CoreValuesSidebarContentProps> = ({
               agile and hands-on approach in every engagement across the broader
               dealmaking and advisory ecosystem.
             </p>
-
-            <ul className="space-y-4 text-sm">
-              <li className="flex items-start gap-2">
-                <span className="font-semibold ">Partnership:</span>
-                Working as a true extension of our clients&apos; internal teams.
+            <ul className="space-y-6 text-sm">
+              <li>
+                <span className="font-semibold">Partnership:</span> Working as a
+                true extension of our clients&apos; internal teams.
               </li>
-              <li className="flex items-start gap-2">
-                <span className="font-semibold ">Trust:</span>
-                Building lasting relationships through transparency and
-                reliability.
+              <li>
+                <span className="font-semibold">Trust:</span> Building lasting
+                relationships through transparency and reliability.
               </li>
-              <li className="flex items-start gap-2">
-                <span className="font-semibold ">Excellence:</span>
-                Seamlessly combining global execution discipline with deep
-                domain expertise.
+              <li>
+                <span className="font-semibold">Excellence:</span> Seamlessly
+                combining global execution discipline with deep domain
+                expertise.
               </li>
-              <li className="flex items-start gap-2">
-                <span className="font-semibold ">Speed:</span>
-                Delivering timely, high-quality services under tight timelines.
+              <li>
+                <span className="font-semibold">Speed:</span> Delivering timely,
+                high-quality services under tight timelines.
               </li>
-              <li className="flex items-start gap-2">
-                <span className="font-semibold ">Accountability:</span>
-                Embracing ownership of our commitments to drive results that
-                exceed expectations.
+              <li>
+                <span className="font-semibold">Accountability:</span> Embracing
+                ownership of our commitments to drive results that exceed
+                expectations.
               </li>
             </ul>
           </div>
