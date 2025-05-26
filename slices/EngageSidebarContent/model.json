@@ -1,0 +1,16 @@
+{
+  "id": "engage_sidebar_content",
+  "type": "SharedSlice",
+  "name": "EngageSidebarContent",
+  "description": "EngageSidebarContent",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

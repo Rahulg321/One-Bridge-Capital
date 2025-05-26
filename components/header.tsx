@@ -99,7 +99,6 @@ export default function Header() {
               })}
             </nav>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(true)}
               className={cn("lg:hidden p-2 rounded-md text-black")}
@@ -112,10 +111,8 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Add padding to body to account for fixed header */}
       <div className="h-[80px]"></div>
 
-      {/* Slide-in Mobile Navigation */}
       <div
         className={cn(
           "fixed inset-0 z-50 lg:hidden",

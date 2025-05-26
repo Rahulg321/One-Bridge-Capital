@@ -220,6 +220,7 @@ export type InsightDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | EngageSidebarContentSlice
   | ServicesSidebarContentSlice
   | SidebarContentSlice
   | SlideShowSlice
@@ -820,6 +821,36 @@ type CoreValuesSliceVariation = CoreValuesSliceDefault;
 export type CoreValuesSlice = prismic.SharedSlice<
   "core_values",
   CoreValuesSliceVariation
+>;
+
+/**
+ * Default variation for EngageSidebarContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EngageSidebarContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *EngageSidebarContent*
+ */
+type EngageSidebarContentSliceVariation = EngageSidebarContentSliceDefault;
+
+/**
+ * EngageSidebarContent Shared Slice
+ *
+ * - **API ID**: `engage_sidebar_content`
+ * - **Description**: EngageSidebarContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EngageSidebarContentSlice = prismic.SharedSlice<
+  "engage_sidebar_content",
+  EngageSidebarContentSliceVariation
 >;
 
 /**
@@ -1938,6 +1969,9 @@ declare module "@prismicio/client" {
       CoreValuesSlice,
       CoreValuesSliceVariation,
       CoreValuesSliceDefault,
+      EngageSidebarContentSlice,
+      EngageSidebarContentSliceVariation,
+      EngageSidebarContentSliceDefault,
       EngageWithUsSlice,
       EngageWithUsSliceVariation,
       EngageWithUsSliceDefault,

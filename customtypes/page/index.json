@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "engage_sidebar_content": {
+              "type": "SharedSlice"
+            },
             "services_sidebar_content": {
               "type": "SharedSlice"
             },
