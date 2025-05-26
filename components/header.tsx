@@ -187,6 +187,7 @@ export default function Header() {
               <Link
                 href="/contact"
                 className="flex items-center py-1.5 sm:py-2 px-2 sm:px-3 text-xs sm:text-sm font-medium text-white bg-slate-800 rounded-md hover:bg-slate-700 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
                 Set an Appointment
