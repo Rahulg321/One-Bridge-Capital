@@ -57,7 +57,7 @@ const EngageSidebarContent: FC<EngageSidebarContentProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space extra-big-container"
+      className="block-space extra-big-container text-sm"
     >
       <div className="px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16 lg:gap-24">
@@ -69,16 +69,18 @@ const EngageSidebarContent: FC<EngageSidebarContentProps> = ({ slice }) => {
             {pricingModels.map((model, idx) => (
               <Card className="border" key={model.title}>
                 <CardContent>
-                  <h4 className="mb-4 md:mb-6 lg:mb-8">{model.title}</h4>
-                  <div className="mb-4 md:mb-4 lg:mb-6">
+                  <h4 className="text-base mb-4 md:mb-6 lg:mb-8">
+                    {model.title}
+                  </h4>
+                  <span className="mb-4 md:mb-4 block lg:mb-6 text-xs">
                     <strong>Description:</strong> {model.description}
-                  </div>
-                  <div className="mb-4 md:mb-4 lg:mb-6">
+                  </span>
+                  <span className="mb-4 md:mb-4 block lg:mb-6 text-xs">
                     <strong>Suitable for:</strong> {model.suitable}
-                  </div>
-                  <div>
+                  </span>
+                  <div className="block">
                     <strong>Highlight:</strong>
-                    <ul className="list-disc pl-5 mt-1 space-y-2">
+                    <ul className="list-disc pl-5 mt-1 space-y-2 text-xs">
                       {model.highlights.map((highlight, i) => (
                         <li key={i}>{highlight}</li>
                       ))}
