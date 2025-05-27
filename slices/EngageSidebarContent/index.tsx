@@ -69,7 +69,7 @@ const EngageSidebarContent: FC<EngageSidebarContentProps> = ({ slice }) => {
             {pricingModels.map((model, idx) => (
               <Card className="border" key={model.title}>
                 <CardContent>
-                  <h3 className="mb-4 md:mb-6 lg:mb-8">{model.title}</h3>
+                  <h4 className="mb-4 md:mb-6 lg:mb-8">{model.title}</h4>
                   <div className="mb-4 md:mb-4 lg:mb-6">
                     <strong>Description:</strong> {model.description}
                   </div>

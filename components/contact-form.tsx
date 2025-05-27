@@ -46,17 +46,7 @@ export default function ContactForm() {
     setIsSubmitting(true);
     setFormStatus({ type: null, message: "" });
 
-    console.log(data);
-
     try {
-      // In a real application, you would send this data to your API
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(data),
-      // })
-
-      // Simulating API call with timeout
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       // if (!response.ok) throw new Error('Failed to submit form')
@@ -68,6 +58,7 @@ export default function ContactForm() {
       reset();
     } catch (error) {
       console.log(error);
+
       setFormStatus({
         type: "error",
         message: "There was an error submitting your form. Please try again.",
@@ -86,9 +77,8 @@ export default function ContactForm() {
             <span className="text-special italic">next project.</span>
           </h3>
           <p className="mt-4 text-gray-600">
-            Reach out to discuss how we can partner on your next transaction or
-            growth initiative. Please get in touch via the below or complete our
-            quick contact form
+            Reach out to discuss how we can partner on your next transaction.
+            Please get in touch via the below or complete our quick contact form
           </p>
 
           <div className="mt-10 text-gray-700 space-y-2">
