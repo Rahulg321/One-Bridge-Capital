@@ -9,9 +9,9 @@ const navLinks = [
   { href: "/about", label: "Who We Are" },
   { href: "/why-choose-us", label: "Why Choose Us" },
   { href: "/core-values", label: "Our Core Values" },
-  { href: "/sector-expertise", label: "Sector Expertise" },
-  { href: "/engage-with-us", label: "Engage With Us" },
-  { href: "/testimonials", label: "Testimonials" },
+  { href: "/sector-expertise", label: "Our Sector Expertise" },
+  { href: "/engage-with-us", label: "How to Engage With Us" },
+  { href: "/testimonials", label: "Hear from our Clients" },
   { href: "/frequently-asked-questions", label: "Frequently Asked Questions" },
 ];
 
