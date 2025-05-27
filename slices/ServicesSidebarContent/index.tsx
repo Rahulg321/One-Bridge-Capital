@@ -94,7 +94,7 @@ const ServicesSidebarContent: FC<ServicesSidebarContentProps> = ({ slice }) => {
                     <AccordionItem key={index} value={`item-${index}`}>
                       <AccordionTrigger>
                         <div className="text-left">
-                          <span className="font-bold mr-2">{index + 1}</span>
+                          <span className="font-bold mr-2">{index + 1}.</span>
                           {approach.heading}
                         </div>
                       </AccordionTrigger>
