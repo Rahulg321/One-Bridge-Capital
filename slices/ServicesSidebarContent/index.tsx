@@ -88,7 +88,7 @@ const ServicesSidebarContent: FC<ServicesSidebarContentProps> = ({ slice }) => {
 
             {slice.primary.approaches.length > 0 && (
               <div>
-                <h3 className="mt-4 md:mt-6 lg:mt-12">Our Approaches</h3>
+                <h3 className="mt-4 md:mt-6 lg:mt-12">Our Approach</h3>
                 <Accordion type="single" collapsible className="space-y-4 mt-6">
                   {slice.primary.approaches.map((approach, index) => (
                     <AccordionItem key={index} value={`item-${index}`}>
