@@ -23,7 +23,7 @@ function highlightOneBridge(node: React.ReactNode): React.ReactNode {
     const parts = node.split(/(OneBridge)/g);
     return parts.map((part, i) =>
       part === "OneBridge" ? (
-        <span key={i} style={{ color: "red" }}>
+        <span key={i} className="text-blue-900">
           OneBridge
         </span>
       ) : (
