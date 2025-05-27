@@ -46,7 +46,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
         setApi={(api) => setEmblaApi(api ?? null)}
         plugins={[
           Autoplay({
-            delay: 4500,
+            delay: 3200,
           }),
           fade({
             active: true,
