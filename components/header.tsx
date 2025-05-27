@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu, X, Linkedin, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
-import MainLogo from "@/public/lightTheme.png";
+import MainLogo from "@/public/one-bridge-logo.png";
 import Image from "next/image";
 
 export default function Header() {
@@ -57,7 +57,7 @@ export default function Header() {
               <Image
                 src={MainLogo}
                 alt="Meridian Partners Logo"
-                className="h-12 md:h-16 w-auto"
+                className="h-12 w-auto"
                 priority
               />
             </Link>
@@ -208,7 +208,7 @@ export default function Header() {
                 href="mailto:info@onebridgekp.com"
                 className="block py-1.5 sm:py-2 text-xs sm:text-sm text-slate-700 hover:text-blue-600"
               >
-                info@onebridgekp.com
+                pragya@onebridgeknowledgepartners.com
               </Link>
               <div className="flex space-x-3 sm:space-x-4 mt-3 sm:mt-4">
                 <Link
