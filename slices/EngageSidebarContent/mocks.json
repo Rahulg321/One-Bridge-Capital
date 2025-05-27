@@ -2,7 +2,56 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"models": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"heading",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "newspaper",
+									"type": "Text"
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "behind",
+									"type": "Text"
+								}
+							],
+							[
+								"suitable_for",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "cat",
+									"type": "Text"
+								}
+							],
+							[
+								"highlight",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Laborum aute ut deserunt sint laborum et Lorem sunt amet dolore. Incididunt do veniam nisi cupidatat amet. Nulla reprehenderit Lorem esse amet veniam eiusmod cupidatat ex veniam."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
 		"items": []
 	}
 ]

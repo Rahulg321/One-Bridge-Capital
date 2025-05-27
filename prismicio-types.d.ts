@@ -859,6 +859,68 @@ export type CoreValuesSidebarContentSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *EngageSidebarContent → Default → Primary → Models*
+ */
+export interface EngageSidebarContentSliceDefaultPrimaryModelsItem {
+  /**
+   * Heading field in *EngageSidebarContent → Default → Primary → Models*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: engage_sidebar_content.default.primary.models[].heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Description field in *EngageSidebarContent → Default → Primary → Models*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: engage_sidebar_content.default.primary.models[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Suitable For field in *EngageSidebarContent → Default → Primary → Models*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: engage_sidebar_content.default.primary.models[].suitable_for
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  suitable_for: prismic.KeyTextField;
+
+  /**
+   * Highlight field in *EngageSidebarContent → Default → Primary → Models*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: engage_sidebar_content.default.primary.models[].highlight
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  highlight: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *EngageSidebarContent → Default → Primary*
+ */
+export interface EngageSidebarContentSliceDefaultPrimary {
+  /**
+   * Models field in *EngageSidebarContent → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: engage_sidebar_content.default.primary.models[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  models: prismic.GroupField<
+    Simplify<EngageSidebarContentSliceDefaultPrimaryModelsItem>
+  >;
+}
+
+/**
  * Default variation for EngageSidebarContent Slice
  *
  * - **API ID**: `default`
@@ -867,7 +929,7 @@ export type CoreValuesSidebarContentSlice = prismic.SharedSlice<
  */
 export type EngageSidebarContentSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<EngageSidebarContentSliceDefaultPrimary>,
   never
 >;
 
@@ -2257,6 +2319,8 @@ declare module "@prismicio/client" {
       CoreValuesSidebarContentSliceVariation,
       CoreValuesSidebarContentSliceDefault,
       EngageSidebarContentSlice,
+      EngageSidebarContentSliceDefaultPrimaryModelsItem,
+      EngageSidebarContentSliceDefaultPrimary,
       EngageSidebarContentSliceVariation,
       EngageSidebarContentSliceDefault,
       EngageWithUsSlice,

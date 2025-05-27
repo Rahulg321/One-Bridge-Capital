@@ -4,7 +4,6 @@ import { SliceComponentProps } from "@prismicio/react";
 import SidebarNav from "../SidebarContent/SidebarNav";
 import { Card, CardContent } from "@/components/ui/card";
 import { FaLinkedin } from "react-icons/fa";
-import Link from "next/link";
 import { PrismicNextLink } from "@prismicio/next";
 
 /**
