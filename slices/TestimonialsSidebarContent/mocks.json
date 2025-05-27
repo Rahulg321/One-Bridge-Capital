@@ -2,7 +2,54 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"testimonials": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"person_name",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "toy",
+									"type": "Text"
+								}
+							],
+							[
+								"linkedin_url",
+								{
+									"key": "a58be227-98e4-441c-8a2b-b76f7c3fd89e",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "baby"
+									}
+								}
+							],
+							[
+								"designation",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "poetry",
+									"type": "Text"
+								}
+							],
+							[
+								"quote",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "gently",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
 		"items": []
 	}
 ]

@@ -3,6 +3,9 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import SidebarNav from "../SidebarContent/SidebarNav";
 import { Card, CardContent } from "@/components/ui/card";
+import { FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
+import { PrismicNextLink } from "@prismicio/next";
 
 /**
  * Props for `TestimonialsSidebarContent`.
@@ -16,27 +19,6 @@ export type TestimonialsSidebarContentProps =
 const TestimonialsSidebarContent: FC<TestimonialsSidebarContentProps> = ({
   slice,
 }) => {
-  const testimonials = [
-    {
-      name: "John Doe",
-      title: "CEO, ExampleCorp",
-      message:
-        "OneBridge Capital provided exceptional support throughout our M&A process. Their expertise and dedication were invaluable.",
-    },
-    {
-      name: "Jane Smith",
-      title: "Managing Director, Acme Advisors",
-      message:
-        "The team at OneBridge was proactive, knowledgeable, and always available. We couldn't have asked for a better partner.",
-    },
-    {
-      name: "Michael Lee",
-      title: "Partner, FinGrowth Partners",
-      message:
-        "Their attention to detail and client-first approach made a real difference in our project. Highly recommended!",
-    },
-  ];
-
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -50,17 +32,28 @@ const TestimonialsSidebarContent: FC<TestimonialsSidebarContentProps> = ({
           </div>
 
           <div className="md:col-span-3 flex flex-col gap-6">
-            {testimonials.map((testimonial, idx) => (
+            {slice.primary.testimonials.map((testimonial, idx) => (
               <Card className="border" key={idx}>
                 <CardContent>
-                  <h3 className="mb-2 font-semibold text-lg">
-                    {testimonial.name}
+                  <h3 className="mb-2 font-semibold text-lg flex items-center gap-2">
+                    {testimonial.person_name}
+                    {testimonial.linkedin_url && (
+                      <PrismicNextLink
+                        field={testimonial.linkedin_url}
+                        className="text-blue-600 hover:text-blue-800 transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit ${testimonial.person_name}'s LinkedIn profile`}
+                      >
+                        <FaLinkedin size={20} />
+                      </PrismicNextLink>
+                    )}
                   </h3>
                   <div className="mb-2 text-sm text-gray-500">
-                    {testimonial.title}
+                    {testimonial.designation}
                   </div>
                   <blockquote className="text-base italic text-gray-800 border-l-4 border-red-500 pl-4">
-                    &ldquo;{testimonial.message}&rdquo;
+                    &ldquo;{testimonial.quote}&rdquo;
                   </blockquote>
                 </CardContent>
               </Card>

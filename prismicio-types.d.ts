@@ -1921,6 +1921,74 @@ export type TestimonialsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *TestimonialsSidebarContent → Default → Primary → Testimonials*
+ */
+export interface TestimonialsSidebarContentSliceDefaultPrimaryTestimonialsItem {
+  /**
+   * Person Name field in *TestimonialsSidebarContent → Default → Primary → Testimonials*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials_sidebar_content.default.primary.testimonials[].person_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  person_name: prismic.KeyTextField;
+
+  /**
+   * Linkedin Url field in *TestimonialsSidebarContent → Default → Primary → Testimonials*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials_sidebar_content.default.primary.testimonials[].linkedin_url
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkedin_url: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Designation field in *TestimonialsSidebarContent → Default → Primary → Testimonials*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials_sidebar_content.default.primary.testimonials[].designation
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  designation: prismic.KeyTextField;
+
+  /**
+   * Quote field in *TestimonialsSidebarContent → Default → Primary → Testimonials*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials_sidebar_content.default.primary.testimonials[].quote
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  quote: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *TestimonialsSidebarContent → Default → Primary*
+ */
+export interface TestimonialsSidebarContentSliceDefaultPrimary {
+  /**
+   * Testimonials field in *TestimonialsSidebarContent → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials_sidebar_content.default.primary.testimonials[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  testimonials: prismic.GroupField<
+    Simplify<TestimonialsSidebarContentSliceDefaultPrimaryTestimonialsItem>
+  >;
+}
+
+/**
  * Default variation for TestimonialsSidebarContent Slice
  *
  * - **API ID**: `default`
@@ -1928,7 +1996,11 @@ export type TestimonialsSlice = prismic.SharedSlice<
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type TestimonialsSidebarContentSliceDefault =
-  prismic.SharedSliceVariation<"default", Record<string, never>, never>;
+  prismic.SharedSliceVariation<
+    "default",
+    Simplify<TestimonialsSidebarContentSliceDefaultPrimary>,
+    never
+  >;
 
 /**
  * Slice variation for *TestimonialsSidebarContent*
@@ -2261,6 +2333,8 @@ declare module "@prismicio/client" {
       TestimonialsSliceVariation,
       TestimonialsSliceDefault,
       TestimonialsSidebarContentSlice,
+      TestimonialsSidebarContentSliceDefaultPrimaryTestimonialsItem,
+      TestimonialsSidebarContentSliceDefaultPrimary,
       TestimonialsSidebarContentSliceVariation,
       TestimonialsSidebarContentSliceDefault,
       VideoBackgroundSlice,
