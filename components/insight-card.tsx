@@ -37,9 +37,9 @@ export default function InsightCard({ className, insight }: InsightCardProps) {
           {insight.data.title}
         </h3>
 
-        <p className="text-sm text-gray-600 line-clamp-3">
+        <span className="text-sm text-gray-600 line-clamp-3">
           {insight.data.description}
-        </p>
+        </span>
       </div>
     </Link>
   );
