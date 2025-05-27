@@ -27,7 +27,7 @@ const CoreValuesSidebarContent: FC<CoreValuesSidebarContentProps> = ({
               agile and hands-on approach in every engagement across the broader
               dealmaking and advisory ecosystem.
             </p>
-            <ul className="space-y-6 text-sm list-disc pl-5">
+            <ul className="space-y-2 text-sm list-disc pl-5">
               <li>
                 <span className="font-semibold">Partnership:</span> Working as a
                 true extension of our clients&apos; internal teams.
