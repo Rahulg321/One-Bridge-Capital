@@ -70,7 +70,7 @@ export const RedButton: React.FC<RedButtonProps> = ({
 }) => (
   <Link
     href={href}
-    className="text-special hover:underline flex items-center gap-2"
+    className="text-special relative hover:after:absolute hover:after:bottom-[-0.2rem] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-red-500 flex items-center gap-2"
   >
     {children}
     <span className="text-special">&gt;</span>
