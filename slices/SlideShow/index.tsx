@@ -262,7 +262,7 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                       teasers, and data rooms to conducting in-depth financial
                       modeling, valuation, and due diligence, we handle all
                       critical execution tasks that help our clients to focus
-                      100% on client relationships and deal strategy
+                      100% on client relationships and deal strategy.
                     </motion.p>
                     <motion.div
                       initial={{ opacity: 0, x: -40 }}
