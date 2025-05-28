@@ -20,17 +20,15 @@ const MemberBioSlice: FC<MemberBioSliceProps> = ({ slice }) => {
       className="bg-[#edf4f7] p-8 md:p-12  rounded-lg shadow-sm block-space-mini extra-big-container"
     >
       <div className="container mx-auto max-w-6xl flex flex-col md:flex-row gap-8 py-4">
-        <div className="flex flex-col items-center md:w-1/4">
+        <div className="flex flex-col items-start md:w-1/4">
           <div className="mb-4">
             <PrismicNextImage
               field={slice.primary.member_image}
               className="border-2 border-gray-300"
             />
           </div>
-          <h3 className="font-medium text-center ">
-            {slice.primary.member_name}
-          </h3>
-          <span className="text-center mt-2 text-gray-700">
+          <h4 className="font-medium text-left">{slice.primary.member_name}</h4>
+          <span className="mt-2 text-gray-700 text-sm">
             {slice.primary.designation}
           </span>
         </div>

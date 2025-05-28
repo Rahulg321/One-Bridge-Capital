@@ -51,7 +51,7 @@ const TestimonialsSidebarContent: FC<TestimonialsSidebarContentProps> = ({
                   <div className="mb-2 md:mb-4 text-sm text-gray-500">
                     {testimonial.designation}
                   </div>
-                  <blockquote className="text-sm italic text-gray-800 border-l-4 border-red-500 pl-4">
+                  <blockquote className="border-l-4 text-gray-600 text-sm border-blue-900 pl-4">
                     &ldquo;{testimonial.quote}&rdquo;
                   </blockquote>
                 </CardContent>
