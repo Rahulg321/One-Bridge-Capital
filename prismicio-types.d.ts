@@ -1373,6 +1373,21 @@ export type IndustriesOfInterestSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *InsightIndex → Default → Primary*
+ */
+export interface InsightIndexSliceDefaultPrimary {
+  /**
+   * Description field in *InsightIndex → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insight_index.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
  * Default variation for InsightIndex Slice
  *
  * - **API ID**: `default`
@@ -1381,7 +1396,7 @@ export type IndustriesOfInterestSlice = prismic.SharedSlice<
  */
 export type InsightIndexSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<InsightIndexSliceDefaultPrimary>,
   never
 >;
 
@@ -2396,6 +2411,7 @@ declare module "@prismicio/client" {
       IndustriesOfInterestSliceVariation,
       IndustriesOfInterestSliceDefault,
       InsightIndexSlice,
+      InsightIndexSliceDefaultPrimary,
       InsightIndexSliceVariation,
       InsightIndexSliceDefault,
       MemberBioSliceSlice,

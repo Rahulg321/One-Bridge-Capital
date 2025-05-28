@@ -20,12 +20,7 @@ const InsightIndex: FC<InsightIndexProps> = ({ slice }) => {
       className="block-space big-container"
     >
       <div>
-        <p>
-          Riveron Insights brings fresh perspectives on timely and relevant
-          issues shaping today’s business world. Explore our library of top
-          accounting, finance, and operations trends analysis, Riveron news, and
-          client success stories.
-        </p>
+        <p>{slice.primary.description}</p>
       </div>
       <div className="mt-10">
         <Suspense
