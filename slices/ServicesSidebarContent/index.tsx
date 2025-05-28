@@ -68,7 +68,7 @@ const ServicesSidebarContent: FC<ServicesSidebarContentProps> = ({ slice }) => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-16 lg:gap-24">
           <div className="md:col-span-1">
             <div className="md:col-span-1 md:sticky md:top-32 h-fit">
-              <h4 className="t text-gray-700 mb-4">Our Services</h4>
+              <h4 className=" text-gray-700 mb-4">Our Services</h4>
               <ServicesSidebarNav />
             </div>
           </div>
@@ -88,7 +88,7 @@ const ServicesSidebarContent: FC<ServicesSidebarContentProps> = ({ slice }) => {
 
             {slice.primary.approaches.length > 0 && (
               <div>
-                <h3 className="mt-4 md:mt-6 lg:mt-12">Our Approach</h3>
+                <h4 className="mt-4 md:mt-6 lg:mt-12">Our Approach</h4>
                 <Accordion type="single" collapsible className="mt-4">
                   {slice.primary.approaches.map((approach, index) => (
                     <AccordionItem key={index} value={`item-${index}`}>
