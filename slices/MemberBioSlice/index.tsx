@@ -27,7 +27,7 @@ const MemberBioSlice: FC<MemberBioSliceProps> = ({ slice }) => {
               className="border-2 border-gray-300"
             />
           </div>
-          <h4 className="font-medium text-left">{slice.primary.member_name}</h4>
+          <h4 className="font-bold text-left">{slice.primary.member_name}</h4>
           <span className="mt-2 text-gray-700 text-sm">
             {slice.primary.designation}
           </span>
