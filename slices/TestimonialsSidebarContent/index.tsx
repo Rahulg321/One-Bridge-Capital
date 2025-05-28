@@ -48,7 +48,7 @@ const TestimonialsSidebarContent: FC<TestimonialsSidebarContentProps> = ({
                       </PrismicNextLink>
                     )}
                   </h3>
-                  <div className="mb-2 text-sm text-gray-500">
+                  <div className="mb-2 md:mb-4 text-sm text-gray-500">
                     {testimonial.designation}
                   </div>
                   <blockquote className="text-sm italic text-gray-800 border-l-4 border-red-500 pl-4">
