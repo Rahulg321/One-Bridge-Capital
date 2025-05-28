@@ -2,7 +2,28 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "next",
+				"type": "Text"
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "serve",
+				"type": "Text"
+			},
+			"email": {
+				"__TYPE__": "FieldContent",
+				"value": "cross",
+				"type": "Text"
+			},
+			"phone_number": {
+				"__TYPE__": "FieldContent",
+				"value": "pale",
+				"type": "Text"
+			}
+		},
 		"items": []
 	}
 ]

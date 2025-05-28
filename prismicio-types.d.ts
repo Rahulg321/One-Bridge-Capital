@@ -577,6 +577,51 @@ export type ContactFormSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ContactHero → Default → Primary*
+ */
+export interface ContactHeroSliceDefaultPrimary {
+  /**
+   * Heading field in *ContactHero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_hero.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *ContactHero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_hero.default.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+
+  /**
+   * Email field in *ContactHero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_hero.default.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Phone Number field in *ContactHero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_hero.default.primary.phone_number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone_number: prismic.KeyTextField;
+}
+
+/**
  * Default variation for ContactHero Slice
  *
  * - **API ID**: `default`
@@ -585,7 +630,7 @@ export type ContactFormSlice = prismic.SharedSlice<
  */
 export type ContactHeroSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<ContactHeroSliceDefaultPrimary>,
   never
 >;
 
@@ -2357,6 +2402,7 @@ declare module "@prismicio/client" {
       ContactFormSliceVariation,
       ContactFormSliceDefault,
       ContactHeroSlice,
+      ContactHeroSliceDefaultPrimary,
       ContactHeroSliceVariation,
       ContactHeroSliceDefault,
       ContentHeadingSlice,

@@ -69,113 +69,91 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="big-container">
-      <div className="flex flex-col gap-8 md:gap-12 lg:flex-row items-start lg:gap-20">
-        <div className="lg:w-1/2 lg:mb-0">
-          <h3 className="text-gray-800">
-            We&apos;re here to support your{" "}
-            <span className="text-special italic">next project.</span>
-          </h3>
-          <p className="mt-4 text-gray-600">
-            Reach out to discuss how we can partner on your next transaction.
-            Please get in touch via the below or complete our quick contact form
-          </p>
-
-          <div className="mt-10 text-gray-700 space-y-2">
-            <span className="block">info@onebridgekspan.com</span>
-            <span className="block">+91 8561046369</span>
-          </div>
-        </div>
-
-        <div className="w-full">
-          {formStatus.type && (
-            <Alert
-              className={`mb-6 ${formStatus.type === "success" ? "bg-green-50" : "bg-red-50"}`}
-            >
-              {formStatus.type === "success" ? (
-                <CheckCircle className="h-4 w-4 text-green-600" />
-              ) : (
-                <AlertCircle className="h-4 w-4 text-red-600" />
-              )}
-              <AlertDescription
-                className={
-                  formStatus.type === "success"
-                    ? "text-green-700"
-                    : "text-red-700"
-                }
-              >
-                {formStatus.message}
-              </AlertDescription>
-            </Alert>
+    <div className="w-full">
+      {formStatus.type && (
+        <Alert
+          className={`mb-6 ${formStatus.type === "success" ? "bg-green-50" : "bg-red-50"}`}
+        >
+          {formStatus.type === "success" ? (
+            <CheckCircle className="h-4 w-4 text-green-600" />
+          ) : (
+            <AlertCircle className="h-4 w-4 text-red-600" />
           )}
-
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="grid grid-cols-1 md:grid-cols-2 gap-x-6"
+          <AlertDescription
+            className={
+              formStatus.type === "success" ? "text-green-700" : "text-red-700"
+            }
           >
-            <FormInput
-              label="First Name"
-              {...register("firstName", { required: "First name is required" })}
-              error={errors.firstName?.message}
-            />
+            {formStatus.message}
+          </AlertDescription>
+        </Alert>
+      )}
 
-            <FormInput
-              label="Last Name"
-              {...register("lastName", { required: "Last name is required" })}
-              error={errors.lastName?.message}
-            />
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="grid grid-cols-1 md:grid-cols-2 gap-x-6"
+      >
+        <FormInput
+          label="First Name"
+          {...register("firstName", { required: "First name is required" })}
+          error={errors.firstName?.message}
+        />
 
-            <FormInput
-              label="Email Address"
-              type="email"
-              {...register("email", {
-                required: "Email is required",
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "Invalid email address",
-                },
-              })}
-              error={errors.email?.message}
-            />
+        <FormInput
+          label="Last Name"
+          {...register("lastName", { required: "Last name is required" })}
+          error={errors.lastName?.message}
+        />
 
-            <FormInput
-              label="Contact Number"
-              type="tel"
-              {...register("phone", { required: "Phone number is required" })}
-              error={errors.phone?.message}
-            />
+        <FormInput
+          label="Email Address"
+          type="email"
+          {...register("email", {
+            required: "Email is required",
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "Invalid email address",
+            },
+          })}
+          error={errors.email?.message}
+        />
 
-            <div className="md:col-span-2">
-              <FormSelect
-                label="Interested In"
-                options={interestOptions}
-                {...register("interest", {
-                  required: "Please select an interest",
-                })}
-                error={errors.interest?.message}
-              />
-            </div>
+        <FormInput
+          label="Contact Number"
+          type="tel"
+          {...register("phone", { required: "Phone number is required" })}
+          error={errors.phone?.message}
+        />
 
-            <div className="md:col-span-2">
-              <FormTextarea
-                label="Leave us a message"
-                {...register("message", { required: "Message is required" })}
-                error={errors.message?.message}
-              />
-            </div>
-
-            <div className="md:col-span-2 mt-4">
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="bg-special hover:bg-special/80 text-white px-8 py-2 rounded-none"
-              >
-                {isSubmitting ? "Sending..." : "Submit"}
-              </Button>
-            </div>
-          </form>
+        <div className="md:col-span-2">
+          <FormSelect
+            label="Interested In"
+            options={interestOptions}
+            {...register("interest", {
+              required: "Please select an interest",
+            })}
+            error={errors.interest?.message}
+          />
         </div>
-      </div>
+
+        <div className="md:col-span-2">
+          <FormTextarea
+            label="Leave us a message"
+            {...register("message", { required: "Message is required" })}
+            error={errors.message?.message}
+          />
+        </div>
+
+        <div className="md:col-span-2 mt-4">
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="bg-special hover:bg-special/80 text-white px-8 py-2 rounded-none"
+          >
+            {isSubmitting ? "Sending..." : "Submit"}
+          </Button>
+        </div>
+      </form>
     </div>
   );
 }
