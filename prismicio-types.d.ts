@@ -981,6 +981,48 @@ export type EngageWithUsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *FaqSidebarContent → Default → Primary → questions*
+ */
+export interface FaqSidebarContentSliceDefaultPrimaryQuestionsItem {
+  /**
+   * Question Text field in *FaqSidebarContent → Default → Primary → questions*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_sidebar_content.default.primary.questions[].question_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  question_text: prismic.KeyTextField;
+
+  /**
+   * question_answer field in *FaqSidebarContent → Default → Primary → questions*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_sidebar_content.default.primary.questions[].question_answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  question_answer: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *FaqSidebarContent → Default → Primary*
+ */
+export interface FaqSidebarContentSliceDefaultPrimary {
+  /**
+   * questions field in *FaqSidebarContent → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_sidebar_content.default.primary.questions[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  questions: prismic.GroupField<
+    Simplify<FaqSidebarContentSliceDefaultPrimaryQuestionsItem>
+  >;
+}
+
+/**
  * Default variation for FaqSidebarContent Slice
  *
  * - **API ID**: `default`
@@ -989,7 +1031,7 @@ export type EngageWithUsSlice = prismic.SharedSlice<
  */
 export type FaqSidebarContentSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<FaqSidebarContentSliceDefaultPrimary>,
   never
 >;
 
@@ -2327,6 +2369,8 @@ declare module "@prismicio/client" {
       EngageWithUsSliceVariation,
       EngageWithUsSliceDefault,
       FaqSidebarContentSlice,
+      FaqSidebarContentSliceDefaultPrimaryQuestionsItem,
+      FaqSidebarContentSliceDefaultPrimary,
       FaqSidebarContentSliceVariation,
       FaqSidebarContentSliceDefault,
       FaqSliceSlice,

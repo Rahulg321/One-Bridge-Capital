@@ -32,7 +32,7 @@ const FaqSidebarContent: FC<FaqSidebarContentProps> = ({ slice }) => {
           </div>
 
           <div className="md:col-span-3">
-            <Accordion type="single" collapsible className="space-y-4">
+            <Accordion type="single" collapsible className="">
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <div className="">

@@ -2,7 +2,40 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"questions": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"question_text",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "ordinary",
+									"type": "Text"
+								}
+							],
+							[
+								"question_answer",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Fugiat consectetur et velit aliqua amet magna officia nisi qui culpa nisi ea. Mollit excepteur officia consectetur enim voluptate officia nostrud minim id enim commodo quis est."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
 		"items": []
 	}
 ]
