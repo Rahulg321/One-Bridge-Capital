@@ -48,7 +48,7 @@ const EngageSidebarContent: FC<EngageSidebarContentProps> = ({ slice }) => {
                   </span>
                   <div className="block">
                     <strong className="text-xs">Highlight:</strong>
-                    <div className="prose">
+                    <div className="prose text-sm">
                       <PrismicRichText field={model.highlight} />
                     </div>
                   </div>

@@ -182,10 +182,10 @@ const SlideShow: FC<SlideShowProps> = ({ slice }) => {
                         delay: 0.2,
                       }}
                     >
-                      <span className="text-special">Empowering</span> our
-                      clients to stay active in the market, to focus on selling
-                      and winning more transactions, while we manage all the
-                      execution and due diligence behind the scenes
+                      Empowering our clients to stay active in the market, to
+                      focus on selling and winning more transactions, while we
+                      manage all the execution and due diligence behind the
+                      scenes
                     </motion.p>
                     <motion.div
                       initial={{ opacity: 0, x: -40 }}
