@@ -1,0 +1,40 @@
+{
+  "id": "insight_intro",
+  "type": "SharedSlice",
+  "name": "InsightIntro",
+  "description": "InsightIntro",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "author": {
+          "type": "Text",
+          "config": {
+            "label": "Author",
+            "placeholder": ""
+          }
+        },
+        "total_time_taken": {
+          "type": "Text",
+          "config": {
+            "label": "Total Time Taken",
+            "placeholder": ""
+          }
+        },
+        "publication_date": {
+          "type": "Date",
+          "config": {
+            "label": "Publication Date",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

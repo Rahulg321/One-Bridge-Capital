@@ -1,0 +1,24 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"author": {
+				"__TYPE__": "FieldContent",
+				"value": "smooth",
+				"type": "Text"
+			},
+			"total_time_taken": {
+				"__TYPE__": "FieldContent",
+				"value": "double",
+				"type": "Text"
+			},
+			"publication_date": {
+				"__TYPE__": "FieldContent",
+				"type": "Date",
+				"value": "2013-02-13"
+			}
+		},
+		"items": []
+	}
+]

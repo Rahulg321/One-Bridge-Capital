@@ -24,6 +24,7 @@ export const components = {
   image_background: dynamic(() => import("./ImageBackground")),
   industries_of_interest: dynamic(() => import("./IndustriesOfInterest")),
   insight_index: dynamic(() => import("./InsightIndex")),
+  insight_intro: dynamic(() => import("./InsightIntro")),
   logo_contents: dynamic(() => import("./LogoContents")),
   member_bio_slice: dynamic(() => import("./MemberBioSlice")),
   one_image_background: dynamic(() => import("./OneImageBackground")),

@@ -95,6 +95,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type InsightDocumentDataSlicesSlice =
+  | InsightIntroSlice
   | ColorBackgroundSlice
   | FaqSidebarContentSlice
   | WhyUsSlice
@@ -1640,6 +1641,71 @@ export type InsightIndexSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *InsightIntro → Default → Primary*
+ */
+export interface InsightIntroSliceDefaultPrimary {
+  /**
+   * Author field in *InsightIntro → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insight_intro.default.primary.author
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author: prismic.KeyTextField;
+
+  /**
+   * Total Time Taken field in *InsightIntro → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insight_intro.default.primary.total_time_taken
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  total_time_taken: prismic.KeyTextField;
+
+  /**
+   * Publication Date field in *InsightIntro → Default → Primary*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insight_intro.default.primary.publication_date
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  publication_date: prismic.DateField;
+}
+
+/**
+ * Default variation for InsightIntro Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InsightIntroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<InsightIntroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *InsightIntro*
+ */
+type InsightIntroSliceVariation = InsightIntroSliceDefault;
+
+/**
+ * InsightIntro Shared Slice
+ *
+ * - **API ID**: `insight_intro`
+ * - **Description**: InsightIntro
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InsightIntroSlice = prismic.SharedSlice<
+  "insight_intro",
+  InsightIntroSliceVariation
+>;
+
+/**
  * Item in *LogoContents → Default → Primary → Contents*
  */
 export interface LogoContentsSliceDefaultPrimaryContentsItem {
@@ -2717,6 +2783,10 @@ declare module "@prismicio/client" {
       InsightIndexSliceDefaultPrimary,
       InsightIndexSliceVariation,
       InsightIndexSliceDefault,
+      InsightIntroSlice,
+      InsightIntroSliceDefaultPrimary,
+      InsightIntroSliceVariation,
+      InsightIntroSliceDefault,
       LogoContentsSlice,
       LogoContentsSliceDefaultPrimaryContentsItem,
       LogoContentsSliceDefaultPrimary,

@@ -1,0 +1,56 @@
+import { FC } from "react";
+import { Content } from "@prismicio/client";
+import { SliceComponentProps } from "@prismicio/react";
+import { Calendar, Clock, User } from "lucide-react";
+
+/**
+ * Props for `InsightIntro`.
+ */
+export type InsightIntroProps = SliceComponentProps<Content.InsightIntroSlice>;
+
+/**
+ * Component for "InsightIntro" Slices.
+ */
+const InsightIntro: FC<InsightIntroProps> = ({ slice }) => {
+  return (
+    <section
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+      className="w-full py-8"
+    >
+      <div className="extra-big-container mx-auto px-4">
+        <div className="flex items-center gap-8 flex-wrap">
+          <div className="flex items-center gap-2">
+            <User className="h-4 w-4 text-slate-600" />
+            <span className="text-slate-600 font-medium">Author:</span>
+            <span className="text-slate-900">{slice.primary.author}</span>
+          </div>
+
+          {/* Last Publication Date */}
+          <div className="flex items-center gap-2">
+            <Calendar className="h-4 w-4 text-slate-600" />
+            <span className="text-slate-600 font-medium">
+              Last Publication Date:
+            </span>
+            <span className="text-slate-900">
+              {slice.primary.publication_date}
+            </span>
+          </div>
+
+          {/* Total Time Taken */}
+          <div className="flex items-center gap-2">
+            <Clock className="h-4 w-4 text-slate-600" />
+            <span className="text-slate-600 font-medium">
+              Total Time Taken:
+            </span>
+            <span className="text-slate-900">
+              {slice.primary.total_time_taken}
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default InsightIntro;
