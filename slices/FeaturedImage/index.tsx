@@ -41,14 +41,14 @@ const FeaturedImage: FC<FeaturedImageProps> = ({ slice }) => {
             <h2
               id="who-we-help-heading"
               className={cn("mb-4 md:mb-6", {
-                "text-white": slice.variation !== "featuredImageTransparent",
+                "text-white ": slice.variation !== "featuredImageTransparent",
                 "text-black": slice.variation === "featuredImageTransparent",
               })}
             >
               {slice.primary.title}
             </h2>
             <div
-              className={cn("prose prose-lg max-w-none", {
+              className={cn("prose max-w-none", {
                 "text-white": slice.variation !== "featuredImageTransparent",
                 "text-black": slice.variation === "featuredImageTransparent",
               })}
