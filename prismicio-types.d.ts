@@ -95,6 +95,11 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type InsightDocumentDataSlicesSlice =
+  | ServicesColoredSectionSlice
+  | FocusSectorsSlice
+  | MemberBioSliceSlice
+  | EngageSidebarContentSlice
+  | ContentWithTwoImagesSlice
   | FileInputSliceSlice
   | ContactFormSlice
   | EngageWithUsSlice
@@ -771,11 +776,61 @@ export type ContentHeadingSliceContentWithLeftHeading =
   >;
 
 /**
+ * Primary content in *ContentHeading → ContentHeadingBlueBackground → Primary*
+ */
+export interface ContentHeadingSliceContentHeadingBlueBackgroundPrimary {
+  /**
+   * Heading field in *ContentHeading → ContentHeadingBlueBackground → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentHeadingBlueBackground.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * content field in *ContentHeading → ContentHeadingBlueBackground → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentHeadingBlueBackground.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Tagline field in *ContentHeading → ContentHeadingBlueBackground → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentHeadingBlueBackground.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tagline: prismic.RichTextField;
+}
+
+/**
+ * ContentHeadingBlueBackground variation for ContentHeading Slice
+ *
+ * - **API ID**: `contentHeadingBlueBackground`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentHeadingSliceContentHeadingBlueBackground =
+  prismic.SharedSliceVariation<
+    "contentHeadingBlueBackground",
+    Simplify<ContentHeadingSliceContentHeadingBlueBackgroundPrimary>,
+    never
+  >;
+
+/**
  * Slice variation for *ContentHeading*
  */
 type ContentHeadingSliceVariation =
   | ContentHeadingSliceDefault
-  | ContentHeadingSliceContentWithLeftHeading;
+  | ContentHeadingSliceContentWithLeftHeading
+  | ContentHeadingSliceContentHeadingBlueBackground;
 
 /**
  * ContentHeading Shared Slice
@@ -1250,9 +1305,60 @@ export type FeaturedImageSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *FeaturedImage → Featured Image Transparent → Primary*
+ */
+export interface FeaturedImageSliceFeaturedImageTransparentPrimary {
+  /**
+   * Main Image field in *FeaturedImage → Featured Image Transparent → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_image.featuredImageTransparent.primary.main_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  main_image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *FeaturedImage → Featured Image Transparent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_image.featuredImageTransparent.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Content field in *FeaturedImage → Featured Image Transparent → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_image.featuredImageTransparent.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Featured Image Transparent variation for FeaturedImage Slice
+ *
+ * - **API ID**: `featuredImageTransparent`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedImageSliceFeaturedImageTransparent =
+  prismic.SharedSliceVariation<
+    "featuredImageTransparent",
+    Simplify<FeaturedImageSliceFeaturedImageTransparentPrimary>,
+    never
+  >;
+
+/**
  * Slice variation for *FeaturedImage*
  */
-type FeaturedImageSliceVariation = FeaturedImageSliceDefault;
+type FeaturedImageSliceVariation =
+  | FeaturedImageSliceDefault
+  | FeaturedImageSliceFeaturedImageTransparent;
 
 /**
  * FeaturedImage Shared Slice
@@ -2475,9 +2581,11 @@ declare module "@prismicio/client" {
       ContentHeadingSlice,
       ContentHeadingSliceDefaultPrimary,
       ContentHeadingSliceContentWithLeftHeadingPrimary,
+      ContentHeadingSliceContentHeadingBlueBackgroundPrimary,
       ContentHeadingSliceVariation,
       ContentHeadingSliceDefault,
       ContentHeadingSliceContentWithLeftHeading,
+      ContentHeadingSliceContentHeadingBlueBackground,
       ContentWithTwoImagesSlice,
       ContentWithTwoImagesSliceDefaultPrimary,
       ContentWithTwoImagesSliceVariation,
@@ -2508,8 +2616,10 @@ declare module "@prismicio/client" {
       FaqSliceSliceDefault,
       FeaturedImageSlice,
       FeaturedImageSliceDefaultPrimary,
+      FeaturedImageSliceFeaturedImageTransparentPrimary,
       FeaturedImageSliceVariation,
       FeaturedImageSliceDefault,
+      FeaturedImageSliceFeaturedImageTransparent,
       FileInputSliceSlice,
       FileInputSliceSliceDefaultPrimary,
       FileInputSliceSliceVariation,

@@ -3,6 +3,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import { cn } from "@/lib/utils";
 /**
  * Props for `FeaturedImage`.
  */
@@ -17,10 +18,10 @@ const FeaturedImage: FC<FeaturedImageProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full big-container block-space bg-white overflow-hidden"
+      className="w-full extra-big-container block-space bg-white overflow-hidden"
     >
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row lg:items-stretch">
+        <div className="flex flex-col lg:flex-row lg:items-stretch gap-8 md:gap-12 lg:gap-16">
           <div className="w-full lg:w-1/2 relative z-10">
             <div className="relative">
               <div className="relative aspect-[4/3] lg:aspect-auto  lg:h-full">
@@ -35,11 +36,29 @@ const FeaturedImage: FC<FeaturedImageProps> = ({ slice }) => {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2 bg-[#3d6098] p-6 md:p-10 lg:p-12 flex flex-col justify-center mt-12 lg:ml-[-4rem] z-20">
-            <h2 id="who-we-help-heading" className="mb-4 md:mb-6 text-white">
+          <div
+            className={cn("w-full lg:w-1/2 z-20", {
+              "bg-[#3d6098] p-4 md:p-6 lg:p-8":
+                slice.variation !== "featuredImageTransparent",
+              "bg-none": slice.variation === "featuredImageTransparent",
+            })}
+          >
+            <h2
+              id="who-we-help-heading"
+              className={cn("mb-4 md:mb-6", {
+                "text-white": slice.variation !== "featuredImageTransparent",
+                "text-black": slice.variation === "featuredImageTransparent",
+              })}
+            >
               {slice.primary.title}
             </h2>
-            <div className="prose prose-lg max-w-none text-white " style={{}}>
+            <div
+              className={cn("prose prose-lg max-w-none", {
+                "text-white": slice.variation !== "featuredImageTransparent",
+                "text-black": slice.variation === "featuredImageTransparent",
+              })}
+              style={{}}
+            >
               <PrismicRichText field={slice.primary.content} />
             </div>
           </div>

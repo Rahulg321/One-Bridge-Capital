@@ -3,6 +3,7 @@ import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 // Helper to recursively highlight 'OneBridge' in any text node
 function highlightOneBridge(node: React.ReactNode): React.ReactNode {
@@ -56,9 +57,9 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="w-full block-space">
+      <div className="">
         {slice.variation === "contentWithLeftHeading" ? (
-          <div className="space-y-8 extra-big-container">
+          <div className="space-y-8 extra-big-container w-full block-space">
             <h2 className="text-3xl font-bold text-gray-900">
               {slice.primary.heading}
             </h2>
@@ -83,8 +84,37 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
               )}
             </div>
           </div>
+        ) : slice.variation === "contentHeadingBlueBackground" ? (
+          <div className="bg-[#3d6098]">
+            <div className="  w-full block-space text-white">
+              <div className="extra-big-container space-y-4">
+                {slice.primary.heading && (
+                  <h2 className="md:text-center">{slice.primary.heading}</h2>
+                )}
+                {slice.primary.tagline && (
+                  <div className="prose max-w-none text-white">
+                    <PrismicRichText
+                      field={slice.primary.tagline}
+                      components={{
+                        paragraph: ({ children }) => (
+                          <p>{highlightOneBridge(children)}</p>
+                        ),
+                      }}
+                    />
+                  </div>
+                )}
+                {slice.primary.content && (
+                  <div>
+                    <article className="prose max-w-none text-white">
+                      <PrismicRichText field={slice.primary.content} />
+                    </article>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         ) : (
-          <div className="extra-big-container space-y-4">
+          <div className="extra-big-container space-y-4 w-full block-space">
             {slice.primary.heading && (
               <h2 className="md:text-center">{slice.primary.heading}</h2>
             )}

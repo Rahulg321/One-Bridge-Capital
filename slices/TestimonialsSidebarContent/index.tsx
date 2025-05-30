@@ -8,15 +8,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { FaLinkedin } from "react-icons/fa";
 import { PrismicNextLink } from "@prismicio/next";
 
-/**
- * Props for `TestimonialsSidebarContent`.
- */
 export type TestimonialsSidebarContentProps =
   SliceComponentProps<Content.TestimonialsSidebarContentSlice>;
 
-/**
- * Component for "TestimonialsSidebarContent" Slices.
- */
 const TestimonialsSidebarContent: FC<TestimonialsSidebarContentProps> = ({
   slice,
 }) => {
@@ -50,16 +44,27 @@ const TestimonialsSidebarContent: FC<TestimonialsSidebarContentProps> = ({
 const TestimonialCarousel: FC<{
   testimonials: Content.TestimonialsSidebarContentSlice["primary"]["testimonials"];
 }> = ({ testimonials }) => {
-  const [index, setIndex] = useState(0);
+  const [startIndex, setStartIndex] = useState(0);
+  const VISIBLE_COUNT = 3;
+  const total = testimonials.length;
 
-  const paginate = (newDirection: number) => {
-    setIndex((prev) => {
-      const next = prev + newDirection;
-      if (next < 0) return testimonials.length - 1;
-      if (next >= testimonials.length) return 0;
+  const paginate = (direction: number) => {
+    setStartIndex((prev) => {
+      const next = prev + direction * VISIBLE_COUNT;
+      if (next < 0)
+        return (Math.ceil(total / VISIBLE_COUNT) - 1) * VISIBLE_COUNT;
+      if (next >= total) return 0;
       return next;
     });
   };
+
+  // Get the 3 testimonials to show, wrapping if needed
+  const visibleTestimonials = Array(VISIBLE_COUNT)
+    .fill(0)
+    .map((_, i) => testimonials[(startIndex + i) % total]);
+
+  // Number of groups for indicators
+  const groupCount = Math.ceil(total / VISIBLE_COUNT);
 
   return (
     <div className="relative w-full flex flex-col items-center">
@@ -67,53 +72,60 @@ const TestimonialCarousel: FC<{
         <button
           onClick={() => paginate(-1)}
           className="p-2 rounded-full border hover:bg-gray-100 transition"
-          aria-label="Previous testimonial"
+          aria-label="Previous testimonials"
         >
           &#8592;
         </button>
         <button
           onClick={() => paginate(1)}
           className="p-2 rounded-full border hover:bg-gray-100 transition"
-          aria-label="Next testimonial"
+          aria-label="Next testimonials"
         >
           &#8594;
         </button>
       </div>
-      <div className="w-full">
-        <Card className="border w-full max-w-full mx-auto">
-          <CardContent>
-            <h3 className="mb-2 font-semibold text-lg flex items-center gap-2 flex-wrap">
-              {testimonials[index].person_name}
-              {testimonials[index].linkedin_url && (
-                <PrismicNextLink
-                  field={testimonials[index].linkedin_url}
-                  className="text-blue-600 hover:text-blue-800 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Visit ${testimonials[index].person_name}'s LinkedIn profile`}
-                >
-                  <FaLinkedin size={20} />
-                </PrismicNextLink>
-              )}
-            </h3>
-            <div className="mb-2 md:mb-4 text-sm text-gray-500 break-words">
-              {testimonials[index].designation}
-            </div>
-            <blockquote className="border-l-4 text-gray-600 text-xs italic border-blue-900 pl-4 break-words">
-              &ldquo;{testimonials[index].quote}&rdquo;
-            </blockquote>
-          </CardContent>
-        </Card>
+      <div className="w-full flex flex-col gap-6">
+        {visibleTestimonials.map((testimonial, i) => (
+          <Card
+            key={i}
+            className="border w-full max-w-full mx-auto shadow-md h-full flex flex-col justify-between"
+          >
+            <CardContent>
+              <h3 className="mb-2 font-semibold text-lg flex items-center gap-2 flex-wrap">
+                {testimonial.person_name}
+                {testimonial.linkedin_url && (
+                  <PrismicNextLink
+                    field={testimonial.linkedin_url}
+                    className="text-blue-600 hover:text-blue-800 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${testimonial.person_name}'s LinkedIn profile`}
+                  >
+                    <FaLinkedin size={20} />
+                  </PrismicNextLink>
+                )}
+              </h3>
+              <div className="mb-2 md:mb-4 text-sm text-gray-500 break-words">
+                {testimonial.designation}
+              </div>
+              <blockquote className="border-l-4 text-gray-600 text-xs italic border-blue-900 pl-4 break-words">
+                &ldquo;{testimonial.quote}&rdquo;
+              </blockquote>
+            </CardContent>
+          </Card>
+        ))}
       </div>
       <div className="flex gap-2 mt-4 flex-wrap justify-center">
-        {testimonials.map((_, i: number) => (
-          <button
-            key={i}
-            onClick={() => setIndex(i)}
-            className={`w-2 h-2 rounded-full ${i === index ? "bg-blue-900" : "bg-gray-300"}`}
-            aria-label={`Go to testimonial ${i + 1}`}
-          />
-        ))}
+        {Array(groupCount)
+          .fill(0)
+          .map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setStartIndex(i * VISIBLE_COUNT)}
+              className={`w-2 h-2 rounded-full ${i === Math.floor(startIndex / VISIBLE_COUNT) ? "bg-blue-900" : "bg-gray-300"}`}
+              aria-label={`Go to testimonial group ${i + 1}`}
+            />
+          ))}
       </div>
     </div>
   );

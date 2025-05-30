@@ -46,6 +46,21 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "services_colored_section": {
+              "type": "SharedSlice"
+            },
+            "focus_sectors": {
+              "type": "SharedSlice"
+            },
+            "member_bio_slice": {
+              "type": "SharedSlice"
+            },
+            "engage_sidebar_content": {
+              "type": "SharedSlice"
+            },
+            "content_with_two_images": {
+              "type": "SharedSlice"
+            },
             "file_input_slice": {
               "type": "SharedSlice"
             },

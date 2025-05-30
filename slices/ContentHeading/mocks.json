@@ -65,7 +65,6 @@
 				]
 			},
 			"background_image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
@@ -84,7 +83,48 @@
 					"background": "transparent"
 				},
 				"alt": "worried",
+				"credits": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "contentHeadingBlueBackground",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "common",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Est aute sint incididunt cupidatat duis reprehenderit anim incididunt eiusmod in velit. Ea ullamco proident voluptate ullamco consequat aliquip. Culpa ex nostrud quis proident ut consequat aliqua culpa minim consectetur irure ipsum esse sunt."
+						}
+					}
+				]
+			},
+			"tagline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sunt excepteur veniam cupidatat ut dolor."
+						}
+					}
+				]
 			}
 		},
 		"items": [
