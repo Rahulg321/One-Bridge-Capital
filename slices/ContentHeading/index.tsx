@@ -137,6 +137,50 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
               </div>
             </div>
           </div>
+        ) : slice.variation === "contentHeadingGrayBackground" ? (
+          <div className="bg-muted extra-big-container w-full block-space-mini">
+            <div className="w-full ">
+              <div className="space-y-4 md:text-center px-4 md:px-6">
+                {slice.primary.heading && (
+                  <h2 className="md:text-center">{slice.primary.heading}</h2>
+                )}
+                {slice.primary.tagline && (
+                  <div className="prose max-w-none   prose-strong:text-muted-foreground prose-b:text-muted-foreground  text-muted-foreground">
+                    <PrismicRichText field={slice.primary.tagline} />
+                  </div>
+                )}
+                {slice.primary.content && (
+                  <div>
+                    <article className="prose max-w-none">
+                      <PrismicRichText field={slice.primary.content} />
+                    </article>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ) : slice.variation === "contentLeftAlignedBlueBg" ? (
+          <div className="bg-[#3d6098] extra-big-container w-full block-space-mini">
+            <div className="w-full text-left ">
+              <div className="space-y-4 md:text-center px-4 md:px-6">
+                {slice.primary.heading && (
+                  <h2 className="text-left">{slice.primary.heading}</h2>
+                )}
+                {slice.primary.tagline && (
+                  <div className="prose max-w-none text-left   prose-strong:text-white prose-b:text-white  text-white">
+                    <PrismicRichText field={slice.primary.tagline} />
+                  </div>
+                )}
+                {slice.primary.content && (
+                  <div>
+                    <article className="prose max-w-none text-left   prose-strong:text-white prose-b:text-white  text-white">
+                      <PrismicRichText field={slice.primary.content} />
+                    </article>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         ) : (
           <div className="extra-big-container space-y-4 w-full block-space-mini">
             {slice.primary.heading && (

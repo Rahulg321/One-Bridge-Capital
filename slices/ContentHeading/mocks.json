@@ -172,5 +172,83 @@
 				"value": []
 			}
 		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "contentHeadingGrayBackground",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "problem",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Anim voluptate culpa do."
+						}
+					}
+				]
+			},
+			"tagline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cupidatat voluptate deserunt eiusmod deserunt cillum."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "contentLeftAlignedBlueBg",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "north",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliquip consequat incididunt non fugiat anim dolore magna esse commodo eiusmod esse incididunt. Excepteur aute tempor non quis labore eu laboris id consectetur exercitation sint. Fugiat ullamco non eu sit Lorem."
+						}
+					}
+				]
+			},
+			"tagline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Laborum cillum velit sit eu irure nisi ad ex do."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

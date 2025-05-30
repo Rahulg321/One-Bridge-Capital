@@ -879,13 +879,113 @@ export type ContentHeadingSliceContentBlueBackgroundMargins =
   >;
 
 /**
+ * Primary content in *ContentHeading → ContentHeadingGrayBackground → Primary*
+ */
+export interface ContentHeadingSliceContentHeadingGrayBackgroundPrimary {
+  /**
+   * Heading field in *ContentHeading → ContentHeadingGrayBackground → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentHeadingGrayBackground.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * content field in *ContentHeading → ContentHeadingGrayBackground → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentHeadingGrayBackground.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Tagline field in *ContentHeading → ContentHeadingGrayBackground → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentHeadingGrayBackground.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tagline: prismic.RichTextField;
+}
+
+/**
+ * ContentHeadingGrayBackground variation for ContentHeading Slice
+ *
+ * - **API ID**: `contentHeadingGrayBackground`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentHeadingSliceContentHeadingGrayBackground =
+  prismic.SharedSliceVariation<
+    "contentHeadingGrayBackground",
+    Simplify<ContentHeadingSliceContentHeadingGrayBackgroundPrimary>,
+    never
+  >;
+
+/**
+ * Primary content in *ContentHeading → ContentLeftAlignedBlueBg → Primary*
+ */
+export interface ContentHeadingSliceContentLeftAlignedBlueBgPrimary {
+  /**
+   * Heading field in *ContentHeading → ContentLeftAlignedBlueBg → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentLeftAlignedBlueBg.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * content field in *ContentHeading → ContentLeftAlignedBlueBg → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentLeftAlignedBlueBg.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Tagline field in *ContentHeading → ContentLeftAlignedBlueBg → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentLeftAlignedBlueBg.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tagline: prismic.RichTextField;
+}
+
+/**
+ * ContentLeftAlignedBlueBg variation for ContentHeading Slice
+ *
+ * - **API ID**: `contentLeftAlignedBlueBg`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentHeadingSliceContentLeftAlignedBlueBg =
+  prismic.SharedSliceVariation<
+    "contentLeftAlignedBlueBg",
+    Simplify<ContentHeadingSliceContentLeftAlignedBlueBgPrimary>,
+    never
+  >;
+
+/**
  * Slice variation for *ContentHeading*
  */
 type ContentHeadingSliceVariation =
   | ContentHeadingSliceDefault
   | ContentHeadingSliceContentWithLeftHeading
   | ContentHeadingSliceContentHeadingBlueBackground
-  | ContentHeadingSliceContentBlueBackgroundMargins;
+  | ContentHeadingSliceContentBlueBackgroundMargins
+  | ContentHeadingSliceContentHeadingGrayBackground
+  | ContentHeadingSliceContentLeftAlignedBlueBg;
 
 /**
  * ContentHeading Shared Slice
@@ -2775,11 +2875,15 @@ declare module "@prismicio/client" {
       ContentHeadingSliceContentWithLeftHeadingPrimary,
       ContentHeadingSliceContentHeadingBlueBackgroundPrimary,
       ContentHeadingSliceContentBlueBackgroundMarginsPrimary,
+      ContentHeadingSliceContentHeadingGrayBackgroundPrimary,
+      ContentHeadingSliceContentLeftAlignedBlueBgPrimary,
       ContentHeadingSliceVariation,
       ContentHeadingSliceDefault,
       ContentHeadingSliceContentWithLeftHeading,
       ContentHeadingSliceContentHeadingBlueBackground,
       ContentHeadingSliceContentBlueBackgroundMargins,
+      ContentHeadingSliceContentHeadingGrayBackground,
+      ContentHeadingSliceContentLeftAlignedBlueBg,
       ContentWithTwoImagesSlice,
       ContentWithTwoImagesSliceDefaultPrimary,
       ContentWithTwoImagesSliceVariation,
