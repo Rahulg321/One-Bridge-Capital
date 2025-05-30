@@ -95,6 +95,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type InsightDocumentDataSlicesSlice =
+  | FileInputSliceSlice
   | ContactFormSlice
   | EngageWithUsSlice
   | ServicesSidebarContentSlice
@@ -1252,6 +1253,61 @@ type FeaturedImageSliceVariation = FeaturedImageSliceDefault;
 export type FeaturedImageSlice = prismic.SharedSlice<
   "featured_image",
   FeaturedImageSliceVariation
+>;
+
+/**
+ * Primary content in *FileInputSlice → Default → Primary*
+ */
+export interface FileInputSliceSliceDefaultPrimary {
+  /**
+   * Content File field in *FileInputSlice → Default → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: file_input_slice.default.primary.content_file
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  content_file: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
+   * Heading field in *FileInputSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: file_input_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for FileInputSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FileInputSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FileInputSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FileInputSlice*
+ */
+type FileInputSliceSliceVariation = FileInputSliceSliceDefault;
+
+/**
+ * FileInputSlice Shared Slice
+ *
+ * - **API ID**: `file_input_slice`
+ * - **Description**: FileInputSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FileInputSliceSlice = prismic.SharedSlice<
+  "file_input_slice",
+  FileInputSliceSliceVariation
 >;
 
 /**
@@ -2443,6 +2499,10 @@ declare module "@prismicio/client" {
       FeaturedImageSliceDefaultPrimary,
       FeaturedImageSliceVariation,
       FeaturedImageSliceDefault,
+      FileInputSliceSlice,
+      FileInputSliceSliceDefaultPrimary,
+      FileInputSliceSliceVariation,
+      FileInputSliceSliceDefault,
       FocusSectorsSlice,
       FocusSectorsSliceVariation,
       FocusSectorsSliceDefault,

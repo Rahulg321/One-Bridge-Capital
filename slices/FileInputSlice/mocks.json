@@ -1,0 +1,27 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"content_file": {
+				"key": "73573665-ce5e-44db-892d-9e3ee0e9817d",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "FileLink",
+					"id": "mock_Media_link",
+					"kind": "file",
+					"name": "mock_name",
+					"url": "https://source.unsplash.com/daily",
+					"size": "0",
+					"text": "worried"
+				}
+			},
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "tool",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

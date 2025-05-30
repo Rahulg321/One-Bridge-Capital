@@ -18,6 +18,7 @@ export const components = {
   faq_sidebar_content: dynamic(() => import("./FaqSidebarContent")),
   faq_slice: dynamic(() => import("./FaqSlice")),
   featured_image: dynamic(() => import("./FeaturedImage")),
+  file_input_slice: dynamic(() => import("./FileInputSlice")),
   focus_sectors: dynamic(() => import("./FocusSectors")),
   hero: dynamic(() => import("./Hero")),
   image_background: dynamic(() => import("./ImageBackground")),

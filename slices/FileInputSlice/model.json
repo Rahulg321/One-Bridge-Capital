@@ -1,0 +1,35 @@
+{
+  "id": "file_input_slice",
+  "type": "SharedSlice",
+  "name": "FileInputSlice",
+  "description": "FileInputSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "content_file": {
+          "type": "Link",
+          "config": {
+            "label": "Content File",
+            "placeholder": "",
+            "select": "media",
+            "allowText": true
+          }
+        },
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

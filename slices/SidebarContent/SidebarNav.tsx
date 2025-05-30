@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/sector-expertise", label: "Our Sector Expertise" },
   { href: "/engage-with-us", label: "How to Engage With Us" },
   { href: "/testimonials", label: "Hear from our Clients" },
+
   { href: "/frequently-asked-questions", label: "Frequently Asked Questions" },
 ];
 
