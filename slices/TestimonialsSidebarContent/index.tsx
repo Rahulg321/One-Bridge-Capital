@@ -68,22 +68,7 @@ const TestimonialCarousel: FC<{
 
   return (
     <div className="relative w-full flex flex-col items-center">
-      <div className="flex justify-between w-full mb-4">
-        <button
-          onClick={() => paginate(-1)}
-          className="p-2 rounded-full border hover:bg-gray-100 transition"
-          aria-label="Previous testimonials"
-        >
-          &#8592;
-        </button>
-        <button
-          onClick={() => paginate(1)}
-          className="p-2 rounded-full border hover:bg-gray-100 transition"
-          aria-label="Next testimonials"
-        >
-          &#8594;
-        </button>
-      </div>
+      {/* Testimonials List */}
       <div className="w-full flex flex-col gap-6">
         {visibleTestimonials.map((testimonial, i) => (
           <Card
@@ -115,6 +100,24 @@ const TestimonialCarousel: FC<{
           </Card>
         ))}
       </div>
+      {/* Navigation Buttons at the Bottom */}
+      <div className="flex justify-center gap-4 mt-4">
+        <button
+          onClick={() => paginate(-1)}
+          className="p-2 rounded-full border bg-white hover:bg-gray-100 transition shadow"
+          aria-label="Previous testimonials"
+        >
+          &#8592;
+        </button>
+        <button
+          onClick={() => paginate(1)}
+          className="p-2 rounded-full border bg-white hover:bg-gray-100 transition shadow"
+          aria-label="Next testimonials"
+        >
+          &#8594;
+        </button>
+      </div>
+      {/* Indicator Dots */}
       <div className="flex gap-2 mt-4 flex-wrap justify-center">
         {Array(groupCount)
           .fill(0)
