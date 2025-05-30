@@ -17,7 +17,7 @@ const ContentWithTwoImages: FC<ContentWithTwoImagesProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space-mini px-4 extra-big-container mx-auto"
+      className="block-space px-4 extra-big-container mx-auto"
     >
       <div className="flex flex-col-reverse md:flex-row gap-8">
         <article className="prose basis-2/3">
@@ -31,6 +31,7 @@ const ContentWithTwoImages: FC<ContentWithTwoImagesProps> = ({ slice }) => {
               className="object-cover"
             />
           </div>
+
           <div className="">
             <PrismicNextImage
               field={slice.primary.second_image}

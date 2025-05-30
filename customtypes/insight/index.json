@@ -46,6 +46,18 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "color_background": {
+              "type": "SharedSlice"
+            },
+            "faq_sidebar_content": {
+              "type": "SharedSlice"
+            },
+            "why_us": {
+              "type": "SharedSlice"
+            },
+            "logo_contents": {
+              "type": "SharedSlice"
+            },
             "services_colored_section": {
               "type": "SharedSlice"
             },

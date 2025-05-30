@@ -4,15 +4,10 @@ import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import { cn } from "@/lib/utils";
-/**
- * Props for `FeaturedImage`.
- */
+
 export type FeaturedImageProps =
   SliceComponentProps<Content.FeaturedImageSlice>;
 
-/**
- * Component for "FeaturedImage" Slices.
- */
 const FeaturedImage: FC<FeaturedImageProps> = ({ slice }) => {
   return (
     <section
@@ -20,7 +15,7 @@ const FeaturedImage: FC<FeaturedImageProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="w-full extra-big-container block-space bg-white overflow-hidden"
     >
-      <div className="container mx-auto px-4">
+      <div className="mx-auto px-4">
         <div className="flex flex-col lg:flex-row lg:items-stretch gap-8 md:gap-12 lg:gap-16">
           <div className="w-full lg:w-1/2 relative z-10">
             <div className="relative">

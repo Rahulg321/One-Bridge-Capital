@@ -7,8 +7,8 @@ const SimpleFooter = () => {
     <footer className="w-full py-4 px-4 md:px-6 border-t">
       <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
         <div className="text-xs text-muted-foreground mb-4 sm:mb-0 text-center sm:text-left">
-          © {new Date().getFullYear()} OneBridge Capital. All Rights Reserved.
-          Developed by{" "}
+          © {new Date().getFullYear()} OneBridge Knowledge Partners. All Rights
+          Reserved. Developed by{" "}
           <Link href="https://apptaeon.com" className="hover:underline">
             Apptaeon
           </Link>

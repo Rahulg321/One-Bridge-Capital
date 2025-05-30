@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import MainLogo from "@/public/one-bridge-final-logo.png";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

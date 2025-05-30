@@ -95,6 +95,10 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type InsightDocumentDataSlicesSlice =
+  | ColorBackgroundSlice
+  | FaqSidebarContentSlice
+  | WhyUsSlice
+  | LogoContentsSlice
   | ServicesColoredSectionSlice
   | FocusSectorsSlice
   | MemberBioSliceSlice
@@ -1636,6 +1640,78 @@ export type InsightIndexSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *LogoContents → Default → Primary → Contents*
+ */
+export interface LogoContentsSliceDefaultPrimaryContentsItem {
+  /**
+   * Logo field in *LogoContents → Default → Primary → Contents*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logo_contents.default.primary.contents[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Description field in *LogoContents → Default → Primary → Contents*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logo_contents.default.primary.contents[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *LogoContents → Default → Primary*
+ */
+export interface LogoContentsSliceDefaultPrimary {
+  /**
+   * Contents field in *LogoContents → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logo_contents.default.primary.contents[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  contents: prismic.GroupField<
+    Simplify<LogoContentsSliceDefaultPrimaryContentsItem>
+  >;
+}
+
+/**
+ * Default variation for LogoContents Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LogoContentsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LogoContentsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *LogoContents*
+ */
+type LogoContentsSliceVariation = LogoContentsSliceDefault;
+
+/**
+ * LogoContents Shared Slice
+ *
+ * - **API ID**: `logo_contents`
+ * - **Description**: LogoContents
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LogoContentsSlice = prismic.SharedSlice<
+  "logo_contents",
+  LogoContentsSliceVariation
+>;
+
+/**
  * Primary content in *MemberBioSlice → Default → Primary*
  */
 export interface MemberBioSliceSliceDefaultPrimary {
@@ -2641,6 +2717,11 @@ declare module "@prismicio/client" {
       InsightIndexSliceDefaultPrimary,
       InsightIndexSliceVariation,
       InsightIndexSliceDefault,
+      LogoContentsSlice,
+      LogoContentsSliceDefaultPrimaryContentsItem,
+      LogoContentsSliceDefaultPrimary,
+      LogoContentsSliceVariation,
+      LogoContentsSliceDefault,
       MemberBioSliceSlice,
       MemberBioSliceSliceDefaultPrimary,
       MemberBioSliceSliceVariation,

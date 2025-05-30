@@ -471,6 +471,17 @@ body {
   margin-bottom: 2em;
 }
 
+.prose iframe {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  aspect-ratio: 16/9;
+  border-radius: 0.375rem;
+  border: 1px solid var(--color-border);
+  margin: 0;
+}
+
 .prose figure {
   margin-top: 2em;
   margin-bottom: 2em;
