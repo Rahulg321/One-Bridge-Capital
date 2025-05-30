@@ -830,12 +830,62 @@ export type ContentHeadingSliceContentHeadingBlueBackground =
   >;
 
 /**
+ * Primary content in *ContentHeading → ContentBlueBackgroundMargins → Primary*
+ */
+export interface ContentHeadingSliceContentBlueBackgroundMarginsPrimary {
+  /**
+   * Heading field in *ContentHeading → ContentBlueBackgroundMargins → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentBlueBackgroundMargins.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * content field in *ContentHeading → ContentBlueBackgroundMargins → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentBlueBackgroundMargins.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Tagline field in *ContentHeading → ContentBlueBackgroundMargins → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentBlueBackgroundMargins.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tagline: prismic.RichTextField;
+}
+
+/**
+ * ContentBlueBackgroundMargins variation for ContentHeading Slice
+ *
+ * - **API ID**: `contentBlueBackgroundMargins`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentHeadingSliceContentBlueBackgroundMargins =
+  prismic.SharedSliceVariation<
+    "contentBlueBackgroundMargins",
+    Simplify<ContentHeadingSliceContentBlueBackgroundMarginsPrimary>,
+    never
+  >;
+
+/**
  * Slice variation for *ContentHeading*
  */
 type ContentHeadingSliceVariation =
   | ContentHeadingSliceDefault
   | ContentHeadingSliceContentWithLeftHeading
-  | ContentHeadingSliceContentHeadingBlueBackground;
+  | ContentHeadingSliceContentHeadingBlueBackground
+  | ContentHeadingSliceContentBlueBackgroundMargins;
 
 /**
  * ContentHeading Shared Slice
@@ -2724,10 +2774,12 @@ declare module "@prismicio/client" {
       ContentHeadingSliceDefaultPrimary,
       ContentHeadingSliceContentWithLeftHeadingPrimary,
       ContentHeadingSliceContentHeadingBlueBackgroundPrimary,
+      ContentHeadingSliceContentBlueBackgroundMarginsPrimary,
       ContentHeadingSliceVariation,
       ContentHeadingSliceDefault,
       ContentHeadingSliceContentWithLeftHeading,
       ContentHeadingSliceContentHeadingBlueBackground,
+      ContentHeadingSliceContentBlueBackgroundMargins,
       ContentWithTwoImagesSlice,
       ContentWithTwoImagesSliceDefaultPrimary,
       ContentWithTwoImagesSliceVariation,

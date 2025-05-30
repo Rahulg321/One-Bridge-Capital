@@ -113,6 +113,30 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
               </div>
             </div>
           </div>
+        ) : slice.variation === "contentBlueBackgroundMargins" ? (
+          <div className="bg-[#3d6098] extra-big-container">
+            <div className="w-full block-space text-white">
+              <div className="space-y-4 md:text-center px-4 md:px-6">
+                {slice.primary.heading && (
+                  <h2 className="text-white md:text-center">
+                    {slice.primary.heading}
+                  </h2>
+                )}
+                {slice.primary.tagline && (
+                  <div className="prose max-w-none   prose-strong:text-white prose-b:text-white  text-white">
+                    <PrismicRichText field={slice.primary.tagline} />
+                  </div>
+                )}
+                {slice.primary.content && (
+                  <div>
+                    <article className="prose max-w-none   prose-strong:text-white prose-b:text-white  text-white">
+                      <PrismicRichText field={slice.primary.content} />
+                    </article>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         ) : (
           <div className="extra-big-container space-y-4 w-full block-space">
             {slice.primary.heading && (

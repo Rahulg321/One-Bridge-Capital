@@ -18,10 +18,9 @@ const InsightIntro: FC<InsightIntroProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="w-full py-8"
     >
-      <div className="extra-big-container mx-auto px-4">
+      <div className="extra-big-container mx-auto ">
         <div className="flex items-center gap-8 flex-wrap">
           <div className="flex items-center gap-2">
-            <User className="h-4 w-4 text-slate-600" />
             <span className="text-slate-600 font-medium">Author:</span>
             <span className="text-slate-900">{slice.primary.author}</span>
           </div>

@@ -262,7 +262,6 @@ body {
 }
 
 .prose strong {
-  color: var(--color-foreground);
   font-weight: 600;
 }
 

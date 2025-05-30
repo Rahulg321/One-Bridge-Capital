@@ -133,5 +133,44 @@
 				"value": []
 			}
 		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "contentBlueBackgroundMargins",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "term",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Id sit cillum amet deserunt labore elit dolore elit. Eu ullamco veniam anim sint incididunt."
+						}
+					}
+				]
+			},
+			"tagline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Mollit sint proident dolore laboris."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]
