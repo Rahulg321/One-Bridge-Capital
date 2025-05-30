@@ -13,7 +13,7 @@ const FeaturedImage: FC<FeaturedImageProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full extra-big-container block-space bg-white overflow-hidden"
+      className="w-full extra-big-container block-space-mini bg-white overflow-hidden"
     >
       <div className="mx-auto px-4">
         <div className="flex flex-col lg:flex-row lg:items-stretch gap-8 md:gap-12 lg:gap-16">

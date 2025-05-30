@@ -16,7 +16,7 @@ const InsightIntro: FC<InsightIntroProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full py-8"
+      className="w-full block-space-mini"
     >
       <div className="extra-big-container mx-auto ">
         <div className="flex items-center gap-8 flex-wrap">

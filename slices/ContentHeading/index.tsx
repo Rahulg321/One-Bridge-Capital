@@ -59,7 +59,7 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
     >
       <div className="">
         {slice.variation === "contentWithLeftHeading" ? (
-          <div className="space-y-8 extra-big-container w-full block-space">
+          <div className="space-y-8 extra-big-container w-full block-space-mini">
             <h2 className="text-3xl font-bold text-gray-900">
               {slice.primary.heading}
             </h2>
@@ -85,7 +85,7 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
             </div>
           </div>
         ) : slice.variation === "contentHeadingBlueBackground" ? (
-          <div className="bg-[#3d6098]">
+          <div className="bg-[#3d6098] w-full block-space-mini">
             <div className="  w-full block-space text-white">
               <div className="extra-big-container space-y-4">
                 {slice.primary.heading && (
@@ -114,8 +114,8 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
             </div>
           </div>
         ) : slice.variation === "contentBlueBackgroundMargins" ? (
-          <div className="bg-[#3d6098] extra-big-container">
-            <div className="w-full block-space text-white">
+          <div className="bg-[#3d6098] extra-big-container w-full block-space-mini">
+            <div className="w-full text-white">
               <div className="space-y-4 md:text-center px-4 md:px-6">
                 {slice.primary.heading && (
                   <h2 className="text-white md:text-center">
@@ -138,7 +138,7 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
             </div>
           </div>
         ) : (
-          <div className="extra-big-container space-y-4 w-full block-space">
+          <div className="extra-big-container space-y-4 w-full block-space-mini">
             {slice.primary.heading && (
               <h2 className="md:text-center">{slice.primary.heading}</h2>
             )}

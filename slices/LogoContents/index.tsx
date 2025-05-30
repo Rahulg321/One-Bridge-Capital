@@ -12,7 +12,7 @@ const LogoContents: FC<LogoContentsProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="extra-big-container mx-auto block-space space-y-8">
+      <div className="extra-big-container mx-auto block-space-mini space-y-8">
         {/* Manufacturing and Labor */}
         {slice.primary.contents.map((content, index) => {
           return (

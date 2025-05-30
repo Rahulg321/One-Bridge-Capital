@@ -19,7 +19,7 @@ const FileInputSlice: FC<FileInputSliceProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space big-container"
+      className="block-space-mini big-container"
     >
       <div className="max-w-sm mx-auto bg-gray-100 p-8 rounded-lg text-center">
         <div className="mb-6">
