@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { createClient } from "@/prismicio";
 
 /**
  * Props for `ServicesSidebarContent`.
@@ -57,7 +58,12 @@ function highlightOneBridge(node: React.ReactNode): React.ReactNode {
 /**
  * Component for "ServicesSidebarContent" Slices.
  */
-const ServicesSidebarContent: FC<ServicesSidebarContentProps> = ({ slice }) => {
+const ServicesSidebarContent: FC<ServicesSidebarContentProps> = async ({
+  slice,
+}) => {
+  const client = createClient();
+  const services = await client.getAllByType("service");
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -69,7 +75,7 @@ const ServicesSidebarContent: FC<ServicesSidebarContentProps> = ({ slice }) => {
           <div className="md:col-span-1">
             <div className="md:col-span-1 md:sticky md:top-32 h-fit">
               <h4 className=" text-gray-700 mb-4">Our Services</h4>
-              <ServicesSidebarNav />
+              <ServicesSidebarNav services={services} />
             </div>
           </div>
 

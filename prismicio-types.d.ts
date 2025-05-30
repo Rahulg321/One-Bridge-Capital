@@ -347,6 +347,17 @@ type ServiceDocumentDataSlicesSlice =
  */
 interface ServiceDocumentData {
   /**
+   * Title field in *Service*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
    * Slice Zone field in *Service*
    *
    * - **Field Type**: Slice Zone
