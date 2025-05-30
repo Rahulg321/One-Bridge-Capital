@@ -20,7 +20,7 @@ const ContentWithTwoImages: FC<ContentWithTwoImagesProps> = ({ slice }) => {
       className="block-space-mini  extra-big-container mx-auto"
     >
       <div className="flex flex-col-reverse md:flex-row gap-8">
-        <article className="prose basis-2/3">
+        <article className="prose max-w-prose w-full text-justify">
           <PrismicRichText field={slice.primary.content} />
         </article>
 

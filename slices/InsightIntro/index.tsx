@@ -19,7 +19,7 @@ const InsightIntro: FC<InsightIntroProps> = ({ slice }) => {
       className="w-full block-space-mini"
     >
       <div className="extra-big-container mx-auto ">
-        <div className="flex items-center gap-8 flex-wrap">
+        <div className="flex items-center gap-4 md:gap-8 flex-wrap">
           <div className="flex items-center gap-2">
             <span className="text-slate-600 font-medium">Author:</span>
             <span className="text-slate-900">{slice.primary.author}</span>
@@ -27,7 +27,6 @@ const InsightIntro: FC<InsightIntroProps> = ({ slice }) => {
 
           {/* Last Publication Date */}
           <div className="flex items-center gap-2">
-            <Calendar className="h-4 w-4 text-slate-600" />
             <span className="text-slate-600 font-medium">
               Last Publication Date:
             </span>
@@ -38,7 +37,6 @@ const InsightIntro: FC<InsightIntroProps> = ({ slice }) => {
 
           {/* Total Time Taken */}
           <div className="flex items-center gap-2">
-            <Clock className="h-4 w-4 text-slate-600" />
             <span className="text-slate-600 font-medium">Read Time:</span>
             <span className="text-slate-900">
               {slice.primary.total_time_taken}
