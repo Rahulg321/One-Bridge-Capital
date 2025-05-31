@@ -113,7 +113,7 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
           </div>
         ) : slice.variation === "contentHeadingJustified" ? (
           <div className="w-full block-space-mini">
-            <div className="  w-full block-space">
+            <div className="  w-full ">
               <div className="extra-big-container space-y-4">
                 {slice.primary.heading && (
                   <h2 className="md:text-center">{slice.primary.heading}</h2>
@@ -132,7 +132,7 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
                 )}
                 {slice.primary.content && (
                   <div>
-                    <article className="prose max-w-none text-justify w-full">
+                    <article className="prose max-w-none text-justify w-full ">
                       <PrismicRichText field={slice.primary.content} />
                     </article>
                   </div>

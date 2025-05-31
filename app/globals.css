@@ -508,13 +508,13 @@ body {
 }
 
 .prose ul > li {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .prose ol > li {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .prose ul > li > *:first-child,
