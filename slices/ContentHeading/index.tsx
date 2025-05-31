@@ -60,9 +60,7 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
       <div className="">
         {slice.variation === "contentWithLeftHeading" ? (
           <div className="space-y-8 extra-big-container w-full block-space-mini">
-            <h2 className="text-3xl font-bold text-gray-900">
-              {slice.primary.heading}
-            </h2>
+            <h2 className="font-bold text-gray-900">{slice.primary.heading}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 {slice.primary.tagline && (
@@ -106,6 +104,35 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
                 {slice.primary.content && (
                   <div>
                     <article className="prose max-w-none text-white">
+                      <PrismicRichText field={slice.primary.content} />
+                    </article>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ) : slice.variation === "contentHeadingJustified" ? (
+          <div className="w-full block-space-mini">
+            <div className="  w-full block-space">
+              <div className="extra-big-container space-y-4">
+                {slice.primary.heading && (
+                  <h2 className="md:text-center">{slice.primary.heading}</h2>
+                )}
+                {slice.primary.tagline && (
+                  <div className="prose max-w-none w-full text-justify">
+                    <PrismicRichText
+                      field={slice.primary.tagline}
+                      components={{
+                        paragraph: ({ children }) => (
+                          <p>{highlightOneBridge(children)}</p>
+                        ),
+                      }}
+                    />
+                  </div>
+                )}
+                {slice.primary.content && (
+                  <div>
+                    <article className="prose max-w-none text-justify w-full">
                       <PrismicRichText field={slice.primary.content} />
                     </article>
                   </div>
