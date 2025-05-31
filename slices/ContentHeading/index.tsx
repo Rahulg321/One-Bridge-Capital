@@ -84,7 +84,7 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
           </div>
         ) : slice.variation === "contentHeadingBlueBackground" ? (
           <div className="bg-[#3d6098] w-full block-space-mini">
-            <div className="  w-full block-space text-white">
+            <div className="  w-full  text-white">
               <div className="extra-big-container space-y-4">
                 {slice.primary.heading && (
                   <h2 className="md:text-center">{slice.primary.heading}</h2>
