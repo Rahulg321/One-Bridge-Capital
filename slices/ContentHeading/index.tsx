@@ -208,6 +208,28 @@ const ContentHeading: FC<ContentHeadingProps> = ({ slice }) => {
               </div>
             </div>
           </div>
+        ) : slice.variation === "contentLeftGrayBg" ? (
+          <div className="bg-muted extra-big-container w-full block-space-mini">
+            <div className="w-full text-left ">
+              <div className="space-y-4 md:text-center px-4 md:px-6">
+                {slice.primary.heading && (
+                  <h2 className="text-left">{slice.primary.heading}</h2>
+                )}
+                {slice.primary.tagline && (
+                  <div className="prose max-w-none text-left">
+                    <PrismicRichText field={slice.primary.tagline} />
+                  </div>
+                )}
+                {slice.primary.content && (
+                  <div>
+                    <article className="prose max-w-none text-left">
+                      <PrismicRichText field={slice.primary.content} />
+                    </article>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         ) : (
           <div className="extra-big-container space-y-4 w-full block-space-mini">
             {slice.primary.heading && (

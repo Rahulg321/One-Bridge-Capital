@@ -1026,6 +1026,54 @@ export type ContentHeadingSliceContentHeadingJustified =
   >;
 
 /**
+ * Primary content in *ContentHeading → Content Left Gray Bg → Primary*
+ */
+export interface ContentHeadingSliceContentLeftGrayBgPrimary {
+  /**
+   * Heading field in *ContentHeading → Content Left Gray Bg → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentLeftGrayBg.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * content field in *ContentHeading → Content Left Gray Bg → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentLeftGrayBg.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Tagline field in *ContentHeading → Content Left Gray Bg → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_heading.contentLeftGrayBg.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tagline: prismic.RichTextField;
+}
+
+/**
+ * Content Left Gray Bg variation for ContentHeading Slice
+ *
+ * - **API ID**: `contentLeftGrayBg`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentHeadingSliceContentLeftGrayBg = prismic.SharedSliceVariation<
+  "contentLeftGrayBg",
+  Simplify<ContentHeadingSliceContentLeftGrayBgPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *ContentHeading*
  */
 type ContentHeadingSliceVariation =
@@ -1035,7 +1083,8 @@ type ContentHeadingSliceVariation =
   | ContentHeadingSliceContentBlueBackgroundMargins
   | ContentHeadingSliceContentHeadingGrayBackground
   | ContentHeadingSliceContentLeftAlignedBlueBg
-  | ContentHeadingSliceContentHeadingJustified;
+  | ContentHeadingSliceContentHeadingJustified
+  | ContentHeadingSliceContentLeftGrayBg;
 
 /**
  * ContentHeading Shared Slice
@@ -2928,6 +2977,7 @@ declare module "@prismicio/client" {
       ContentHeadingSliceContentHeadingGrayBackgroundPrimary,
       ContentHeadingSliceContentLeftAlignedBlueBgPrimary,
       ContentHeadingSliceContentHeadingJustifiedPrimary,
+      ContentHeadingSliceContentLeftGrayBgPrimary,
       ContentHeadingSliceVariation,
       ContentHeadingSliceDefault,
       ContentHeadingSliceContentWithLeftHeading,
@@ -2936,6 +2986,7 @@ declare module "@prismicio/client" {
       ContentHeadingSliceContentHeadingGrayBackground,
       ContentHeadingSliceContentLeftAlignedBlueBg,
       ContentHeadingSliceContentHeadingJustified,
+      ContentHeadingSliceContentLeftGrayBg,
       ContentWithTwoImagesSlice,
       ContentWithTwoImagesSliceDefaultPrimary,
       ContentWithTwoImagesSliceVariation,

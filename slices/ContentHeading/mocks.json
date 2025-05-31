@@ -289,5 +289,44 @@
 				"value": []
 			}
 		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "contentLeftGrayBg",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "including",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Voluptate cillum irure aliqua irure mollit. Id veniam magna exercitation minim labore veniam aute. Amet sunt cupidatat ex excepteur amet elit velit esse non proident minim dolore ea."
+						}
+					}
+				]
+			},
+			"tagline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi do reprehenderit ad fugiat officia anim qui amet qui laborum officia duis deserunt. Incididunt non veniam dolor et. Dolore exercitation quis consectetur consequat reprehenderit elit eiusmod incididunt tempor consequat non."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]
