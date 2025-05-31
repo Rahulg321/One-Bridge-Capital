@@ -4,7 +4,7 @@ import { Linkedin, Phone } from "lucide-react";
 
 const SimpleFooter = () => {
   return (
-    <footer className="w-full py-4 px-4 md:px-6 border-t">
+    <footer className="w-full mt-4 md:mt-6 py-4 px-4 md:px-6 border-t">
       <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
         <div className="text-xs text-muted-foreground mb-4 sm:mb-0 text-center sm:text-left">
           © {new Date().getFullYear()} OneBridge Knowledge Partners. All Rights

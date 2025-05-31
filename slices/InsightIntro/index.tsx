@@ -7,10 +7,6 @@ import { Calendar, Clock, User } from "lucide-react";
  * Props for `InsightIntro`.
  */
 export type InsightIntroProps = SliceComponentProps<Content.InsightIntroSlice>;
-
-/**
- * Component for "InsightIntro" Slices.
- */
 const InsightIntro: FC<InsightIntroProps> = ({ slice }) => {
   return (
     <section
