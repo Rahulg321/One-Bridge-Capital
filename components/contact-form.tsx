@@ -1,25 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { CheckCircle, AlertCircle } from "lucide-react";
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import axios from "axios";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import FormInput from "@/components/ui/form-input";
 import FormTextarea from "@/components/ui/form-textarea";
 import FormSelect from "@/components/ui/form-select";
-
-interface FormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  interest: string;
-  message: string;
-}
+import { contactFormSchema } from "@/lib/schemas/contact-form-schema";
 
 export default function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isPending, startTransition] = useTransition();
   const [formStatus, setFormStatus] = useState<{
     type: "success" | "error" | null;
     message: string;
@@ -28,13 +33,6 @@ export default function ContactForm() {
     message: "",
   });
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<FormData>();
-
   const interestOptions = [
     { value: "partnership", label: "Strategic Partnership" },
     { value: "information", label: "General Information" },
@@ -42,30 +40,40 @@ export default function ContactForm() {
     { value: "other", label: "Other" },
   ];
 
-  const onSubmit = async (data: FormData) => {
-    setIsSubmitting(true);
+  const form = useForm<z.infer<typeof contactFormSchema>>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      interest: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = async (data: z.infer<typeof contactFormSchema>) => {
     setFormStatus({ type: null, message: "" });
-
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      // if (!response.ok) throw new Error('Failed to submit form')
-
-      setFormStatus({
-        type: "success",
-        message: "Thank you for your message. We'll get back to you soon!",
-      });
-      reset();
-    } catch (error) {
-      console.log(error);
-
-      setFormStatus({
-        type: "error",
-        message: "There was an error submitting your form. Please try again.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    startTransition(async () => {
+      try {
+        const response = await axios.post("/api/send-email", data);
+        if (response.status === 200) {
+          setFormStatus({
+            type: "success",
+            message: "Thank you for your message. We'll get back to you soon!",
+          });
+          form.reset();
+        } else {
+          throw new Error("An error occured");
+        }
+      } catch (error) {
+        console.log(error);
+        setFormStatus({
+          type: "error",
+          message: "There was an error submitting your form. Please try again.",
+        });
+      }
+    });
   };
 
   return (
@@ -88,72 +96,125 @@ export default function ContactForm() {
           </AlertDescription>
         </Alert>
       )}
-
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="grid grid-cols-1 md:grid-cols-2 gap-x-6"
-      >
-        <FormInput
-          label="First Name"
-          {...register("firstName", { required: "First name is required" })}
-          error={errors.firstName?.message}
-        />
-
-        <FormInput
-          label="Last Name"
-          {...register("lastName", { required: "Last name is required" })}
-          error={errors.lastName?.message}
-        />
-
-        <FormInput
-          label="Email Address"
-          type="email"
-          {...register("email", {
-            required: "Email is required",
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: "Invalid email address",
-            },
-          })}
-          error={errors.email?.message}
-        />
-
-        <FormInput
-          label="Contact Number"
-          type="tel"
-          {...register("phone", { required: "Phone number is required" })}
-          error={errors.phone?.message}
-        />
-
-        <div className="md:col-span-2">
-          <FormSelect
-            label="Interested In"
-            options={interestOptions}
-            {...register("interest", {
-              required: "Please select an interest",
-            })}
-            error={errors.interest?.message}
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="grid grid-cols-1 md:grid-cols-2 gap-x-6"
+        >
+          <FormField
+            control={form.control}
+            name="firstName"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <FormInput
+                    label="First Name"
+                    {...field}
+                    error={form.formState.errors.firstName?.message}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
           />
-        </div>
-
-        <div className="md:col-span-2">
-          <FormTextarea
-            label="Leave us a message"
-            {...register("message", { required: "Message is required" })}
-            error={errors.message?.message}
+          <FormField
+            control={form.control}
+            name="lastName"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <FormInput
+                    label="Last Name"
+                    {...field}
+                    error={form.formState.errors.lastName?.message}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
           />
-        </div>
-
-        <div className="md:col-span-2 mt-4">
-          <Button
-            type="submit"
-            disabled={isSubmitting}
-            className="bg-special hover:bg-special/80 text-white px-8 py-2 rounded-none"
-          >
-            {isSubmitting ? "Sending..." : "Submit"}
-          </Button>
-        </div>
-      </form>
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <FormInput
+                    label="Email Address"
+                    type="email"
+                    {...field}
+                    error={form.formState.errors.email?.message}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <FormInput
+                    label="Contact Number"
+                    type="tel"
+                    {...field}
+                    error={form.formState.errors.phone?.message}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <div className="md:col-span-2">
+            <FormField
+              control={form.control}
+              name="interest"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <FormSelect
+                      label="Interested In"
+                      options={interestOptions}
+                      {...field}
+                      error={form.formState.errors.interest?.message}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className="md:col-span-2">
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <FormTextarea
+                      label="Leave us a message"
+                      {...field}
+                      error={form.formState.errors.message?.message}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className="md:col-span-2 mt-4">
+            <Button
+              type="submit"
+              disabled={isPending}
+              className="bg-special cursor-pointer hover:bg-special/80 text-white px-8 py-2 rounded-none"
+            >
+              {isPending ? "Sending..." : "Submit"}
+            </Button>
+          </div>
+        </form>
+      </Form>
     </div>
   );
 }
