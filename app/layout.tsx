@@ -5,6 +5,7 @@ import Header from "@/components/header";
 import { Toaster } from "@/components/ui/sonner";
 import SimpleFooter from "@/components/simple-footer";
 import { baseUrl } from "./sitemap";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const libreBaskerville = Libre_Baskerville({
   variable: "--font-libre-baskerville",
@@ -63,6 +64,7 @@ export default function RootLayout({
         {children}
         <SimpleFooter />
         <Toaster />
+        <GoogleAnalytics gaId="G-QYC3XQ1184" />
       </body>
     </html>
   );
