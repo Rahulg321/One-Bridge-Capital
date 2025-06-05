@@ -63,6 +63,7 @@ export default function RootLayout({
         <Header />
         {children}
         <SimpleFooter />
+
         <Toaster />
         <GoogleAnalytics gaId="G-QYC3XQ1184" />
       </body>

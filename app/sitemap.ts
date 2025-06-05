@@ -29,17 +29,17 @@ export default async function sitemap() {
   }));
 
   const routes = [
-    "",
+    "/",
     "/insights",
     "/about",
     "/contact",
     "/services",
-    "why-choose-us",
-    "core-values",
-    "sector-expertise",
-    "engage-with-us",
-    "testimonials",
-    "frequently-asked-questions",
+    "/why-choose-us",
+    "/core-values",
+    "/sector-expertise",
+    "/engage-with-us",
+    "/testimonials",
+    "/frequently-asked-questions",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split("T")[0],
