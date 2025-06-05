@@ -59,6 +59,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="msvalidate.01" content="F41F468FE18575C44647876CDCD94B31" />
+      </head>
       <body className={`${libreBaskerville.variable} antialiased`}>
         <Header />
         {children}
