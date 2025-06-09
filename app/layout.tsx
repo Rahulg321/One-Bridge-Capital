@@ -61,6 +61,12 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="msvalidate.01" content="F41F468FE18575C44647876CDCD94B31" />
+
+        <script
+          async
+          src="https://pub-64d7c9742ee54006ae9f38e02aa8539e.r2.dev/6594dad7-ac9d-4ad7-a38a-a9dc38cd7b96/script.min.js"
+          data-pid="6594dad7-ac9d-4ad7-a38a-a9dc38cd7b96"
+        ></script>
       </head>
       <body className={`${libreBaskerville.variable} antialiased`}>
         <Header />
