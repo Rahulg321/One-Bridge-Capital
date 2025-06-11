@@ -51,17 +51,17 @@ const TestimonialCarousel: FC<{
   const paginate = (direction: number) => {
     setStartIndex((prev) => {
       const next = prev + direction * VISIBLE_COUNT;
-      if (next < 0)
-        return (Math.ceil(total / VISIBLE_COUNT) - 1) * VISIBLE_COUNT;
+      if (next < 0) return 0;
       if (next >= total) return 0;
       return next;
     });
   };
 
-  // Get the 3 testimonials to show, wrapping if needed
-  const visibleTestimonials = Array(VISIBLE_COUNT)
-    .fill(0)
-    .map((_, i) => testimonials[(startIndex + i) % total]);
+  // Get testimonials to show, only showing remaining items on last page
+  const visibleTestimonials = testimonials.slice(
+    startIndex,
+    Math.min(startIndex + VISIBLE_COUNT, total)
+  );
 
   // Number of groups for indicators
   const groupCount = Math.ceil(total / VISIBLE_COUNT);
@@ -104,15 +104,17 @@ const TestimonialCarousel: FC<{
       <div className="flex justify-center gap-4 mt-4">
         <button
           onClick={() => paginate(-1)}
-          className="p-2 rounded-full border bg-white hover:bg-gray-100 transition shadow"
+          className="p-2 rounded-full cursor-pointer border bg-white hover:bg-gray-100 transition shadow disabled:opacity-50 disabled:cursor-not-allowed"
           aria-label="Previous testimonials"
+          disabled={startIndex === 0}
         >
           &#8592;
         </button>
         <button
           onClick={() => paginate(1)}
-          className="p-2 rounded-full border bg-white hover:bg-gray-100 transition shadow"
+          className="p-2 rounded-full cursor-pointer border bg-white hover:bg-gray-100 transition shadow disabled:opacity-50 disabled:cursor-not-allowed"
           aria-label="Next testimonials"
+          disabled={startIndex + VISIBLE_COUNT >= total}
         >
           &#8594;
         </button>
